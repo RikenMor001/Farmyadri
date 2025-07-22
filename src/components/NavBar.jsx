@@ -23,7 +23,7 @@ export default function NavBar(){
             <div className="hover:text-slate-950 transition-all duration-300 text-slate-700 cursor-pointer">
                 Contact Us
             </div>
-            <button className="bg-slate-900 text-white px-4 py-2 rounded-md hover:bg-slate-800 transition-all duration-300 hover:cursor-pointer">
+            <button className="bg-slate-900 text-white px-4 py-2 rounded-4xl hover:bg-slate-800 transition-all duration-300 hover:cursor-pointer">
                 Book Now
             </button>
         </div>
