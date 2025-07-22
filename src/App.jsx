@@ -1,4 +1,5 @@
 import NavBar from "./components/NavBar"
+import { motion } from "framer-motion"
 
 function App() {
 
@@ -6,9 +7,13 @@ function App() {
     <div>
       <NavBar/>
       <div className="flex justify-center items-center h-screen">
-        <div className="text-8xl font-semibold text-center tracking-wider text-slate-900"> 
+        <motion.div className="text-8xl font-semibold text-center tracking-wider text-slate-900"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        > 
           Experience Serenity <br/> at Our <br/> Wellness Resort
-        </div>
+        </motion.div>
       </div>
     </div>
   )
