@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import farmImage from "../assets/farm.jpg"
 
 export default function LandingPage(){
     return <div>
@@ -33,13 +34,27 @@ export default function LandingPage(){
                         <div className="text-xl text-left tracking-wider text-slate-900 font-serif flex-1 pl-12 leading-relaxed space-y-4">
                             <p>At Farmyadri, we believe in the power of nature to heal and transform. Our journey began with a vision to create a space where people can reconnect with themselves, nature, and the ancient wisdom of Ayurveda.</p>
                             
-                            <p>Farmyadri is a 100% organic farm located in the heart of the Himalayas. It is a place where you can escape the hustle and bustle of city life and reconnect with nature.</p>
-                            
-                            <p>Farmyadri is a resort and a spa place to relax and rejuvenate with family and friends.</p>
+                            <p>
+                                Farmyadri is a 100% organic farm located in the heart of the Himalayas. It is a place where you can escape the hustle and bustle of city life and reconnect with nature.
+                            </p>
+
+                            <p>
+                                Farmyadri is a resort and a spa place to relax and rejuvenate with family and friends.
+                            </p>
                         </div>
-                        <div className="flex-1">
-                            {/* Image placeholder - you can add your image here */}
-                        </div>
+                        <motion.div className="flex-1 flex justify-center items-center"
+                        initial={{ opacity: 0, y: 100 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1.0 }}
+                        whileHover={{ scale: 1.05 }}
+                        >
+                            <img 
+                                src={farmImage} 
+                                alt="FarmYadri organic farm" 
+                                className="rounded-lg shadow-lg max-w-full h-auto object-cover"
+                                style={{ maxHeight: '400px' }}
+                            />
+                        </motion.div>
                     </div>
                 </div>
             </div>
