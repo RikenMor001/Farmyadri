@@ -49,7 +49,7 @@ export default function LandingPage(){
                         initial={{ opacity: 0, y: 100 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1.0 }}
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.02 }}
                         >
                             <img 
                                 src={farmImage} 
