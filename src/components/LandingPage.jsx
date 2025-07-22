@@ -25,17 +25,17 @@ export default function LandingPage(){
         </section>
 
         {/* Story Section */}
-        <section className="bg-amber-50 py-8">
+        <section className="bg-stone-100 py-8">
             <div className="container mx-auto px-4 py-8">
                 <div className="flex flex-col items-center justify-center">
-                    <h2 className="text-5xl font-bold text-center text-slate-900 mb-6 font-serif">Nature On Your View</h2>
+                    <h2 className="text-5xl font-bold text-center text-slate-900 mb-8 font-serif">Nature On Your View</h2>
                     <div className="flex items-start gap-8">
                         <div className="text-xl text-left tracking-wider text-slate-900 font-serif flex-1 pl-12 leading-relaxed space-y-4">
                             <p>At Farmyadri, we believe in the power of nature to heal and transform. Our journey began with a vision to create a space where people can reconnect with themselves, nature, and the ancient wisdom of Ayurveda.</p>
                             
                             <p>Farmyadri is a 100% organic farm located in the heart of the Himalayas. It is a place where you can escape the hustle and bustle of city life and reconnect with nature.</p>
                             
-                            <p>Farmyadri is a place where you can escape the hustle and bustle of city life and reconnect with nature.</p>
+                            <p>Farmyadri is a resort and a spa place to relax and rejuvenate with family and friends.</p>
                         </div>
                         <div className="flex-1">
                             {/* Image placeholder - you can add your image here */}
