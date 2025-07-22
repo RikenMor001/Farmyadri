@@ -41,6 +41,9 @@ export default function LandingPage(){
                             <p>
                                 Farmyadri is a resort and a spa place to relax and rejuvenate with family and friends.
                             </p>
+                            <p>
+                                From farm-to-table meals made with freshly harvested, organic produce to guided nature walks and yoga sessions at sunrise, every moment at Farmyadri is a step toward holistic wellness. We also offer immersive workshops and retreats that help you reconnect with your inner self, learn sustainable living practices, and embrace the healing rhythms of the natural world.
+                            </p>
                         </div>
                         <motion.div className="flex-1 flex justify-center items-center"
                         initial={{ opacity: 0, y: 100 }}
@@ -52,7 +55,7 @@ export default function LandingPage(){
                                 src={farmImage} 
                                 alt="FarmYadri organic farm" 
                                 className="rounded-lg shadow-lg max-w-full h-auto object-cover"
-                                style={{ maxHeight: '400px' }}
+                                style={{ maxHeight: '500px' }}
                             />
                         </motion.div>
                     </div>
