@@ -3,6 +3,7 @@ import farmImage from "../assets/farm.jpg"
 
 export default function LandingPage(){
     return <div>
+        
         {/* Hero Section */}
         <section className="flex flex-col justify-center items-center h-screen font-serif">
             <motion.div className="text-8xl font-semibold text-center tracking-wider text-slate-900"
@@ -26,41 +27,49 @@ export default function LandingPage(){
         </section>
 
         {/* Story Section */}
-        <section className="bg-stone-100 py-8">
-            <div className="container mx-auto px-4 py-8">
-                <div className="flex flex-col items-center justify-center">
-                    <h2 className="text-5xl font-bold text-center text-slate-900 mb-8 font-serif">Nature On Your View</h2>
-                    <div className="flex items-start gap-8">
-                        <div className="text-xl text-left tracking-wider text-slate-900 font-serif flex-1 pl-12 leading-relaxed space-y-4">
-                            <p>At Farmyadri, we believe in the power of nature to heal and transform. Our journey began with a vision to create a space where people can reconnect with themselves, nature, and the ancient wisdom of Ayurveda.</p>
-                            
-                            <p>
-                                Farmyadri is a 100% organic farm located in the heart of the Himalayas. It is a place where you can escape the hustle and bustle of city life and reconnect with nature.
-                            </p>
-
-                            <p>
-                                Farmyadri is a resort and a spa place to relax and rejuvenate with family and friends.
-                            </p>
-                            <p>
-                                From farm-to-table meals made with freshly harvested, organic produce to guided nature walks and yoga sessions at sunrise, every moment at Farmyadri is a step toward holistic wellness. We also offer immersive workshops and retreats that help you reconnect with your inner self, learn sustainable living practices, and embrace the healing rhythms of the natural world.
-                            </p>
+        <section className="bg-slate-100 py-16">
+                <div className="container mx-auto px-4 py-12">
+                    <motion.div 
+                        className="flex flex-col items-center justify-center"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-900 mb-8 font-serif">Nature On Your View</h2>
+                        <div className="flex flex-col lg:flex-row items-start gap-12 max-w-7xl">
+                            <div className="text-lg md:text-xl text-left tracking-wider text-slate-900 font-serif flex-1 pl-4 lg:pl-12 leading-relaxed space-y-6">
+                                <p>At Farmyadri, we believe in the power of nature to heal and transform. Our journey began with a vision to create a space where people can reconnect with themselves, nature, and the ancient wisdom of Ayurveda.</p>
+                                
+                                <p>Farmyadri is a 100% organic farm located in the heart of the Himalayas. It is a place where you can escape the hustle and bustle of city life and reconnect with nature.</p>
+                                
+                                <p>Farmyadri is a resort and a spa place to relax and rejuvenate with family and friends.</p>
+                                
+                                <p>From farm-to-table meals made with freshly harvested, organic produce to guided nature walks and yoga sessions at sunrise, every moment at Farmyadri is a step toward holistic wellness. We also offer immersive workshops and retreats that help you reconnect with your inner self, learn sustainable living practices, and embrace the healing rhythms of the natural world.</p>
+                                
+                                <button className="mt-8 bg-slate-900 text-white px-6 py-3 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg">
+                                    Learn More About Us
+                                </button>
+                            </div>
+                            <motion.div 
+                                className="flex-1 flex justify-center items-center"
+                                initial={{ opacity: 0, x: 100 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 1.0, delay: 0.3 }}
+                                viewport={{ once: true }}
+                                whileHover={{ scale: 1.02 }}
+                            >
+                                <img 
+                                    src={farmImage} 
+                                    alt="FarmYadri organic farm" 
+                                    className="rounded-2xl shadow-2xl max-w-full h-auto object-cover"
+                                    style={{ maxHeight: '600px' }}
+                                />
+                            </motion.div>
                         </div>
-                        <motion.div className="flex-1 flex justify-center items-center"
-                        initial={{ opacity: 0, y: 100 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1.0 }}
-                        whileHover={{ scale: 1.02 }}
-                        >
-                            <img 
-                                src={farmImage} 
-                                alt="FarmYadri organic farm" 
-                                className="rounded-lg shadow-lg max-w-full h-auto object-cover"
-                                style={{ maxHeight: '500px' }}
-                            />
-                        </motion.div>
-                    </div>
+                    </motion.div>
                 </div>
-            </div>
-        </section>
+            </section>
+        
     </div>   
 }
