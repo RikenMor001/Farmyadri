@@ -149,7 +149,7 @@ export default function LandingPage(){
                         ].map((service, index) => (
                             <motion.div 
                                 key={index}
-                                className="bg-slate-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 hover:scale-105 border border-slate-200"
+                                className="bg-slate-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 hover:scale-105 border border-slate-200 cursor-pointer"
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
