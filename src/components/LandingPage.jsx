@@ -71,5 +71,68 @@ export default function LandingPage(){
                 </div>
             </section>
         
+        {/* Services Section */}
+            <section className="bg-white py-16">
+                <div className="container mx-auto px-4">
+                    <motion.div 
+                        className="text-center mb-16"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 font-serif">Our Wellness Services</h2>
+                        <p className="text-xl text-slate-600 max-w-3xl mx-auto">Experience holistic wellness through our carefully curated programs designed to nourish your mind, body, and soul.</p>
+                    </motion.div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 max-w-7xl mx-auto">
+                        {[
+                            {
+                                title: "Ayurvedic Therapies",
+                                description: "Traditional healing treatments using natural herbs and oils for complete rejuvenation.",
+                                icon: "🌿"
+                            },
+                            {
+                                title: "Yoga & Meditation",
+                                description: "Daily sessions in serene surroundings to enhance your spiritual well-being.",
+                                icon: "🧘‍♀️"
+                            },
+                            {
+                                title: "Organic Farm Tours",
+                                description: "Explore our sustainable farming practices and connect with nature.",
+                                icon: "🌱"
+                            },
+                            {
+                                title: "Wellness Workshops",
+                                description: "Learn sustainable living practices and holistic wellness techniques.",
+                                icon: "📚"
+                            },
+                            {
+                                title: "Nature Walks",
+                                description: "Guided treks through the Himalayan landscape for physical and mental clarity.",
+                                icon: "🏔️"
+                            },
+                            {
+                                title: "Farm-to-Table Dining",
+                                description: "Fresh, organic meals prepared with ingredients from our own farm.",
+                                icon: "🍽️"
+                            }
+                        ].map((service, index) => (
+                            <motion.div 
+                                key={index}
+                                className="bg-slate-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 hover:scale-105 border border-slate-200"
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                            >
+                                <div className="text-4xl mb-4">{service.icon}</div>
+                                <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
+                                <p className="text-slate-600 leading-relaxed">{service.description}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
     </div>   
 }
