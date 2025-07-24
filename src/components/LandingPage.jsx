@@ -5,7 +5,7 @@ export default function LandingPage(){
     return (
         <div className="min-h-screen">
             {/* Hero Section */}
-            <section className="relative flex flex-col justify-center items-center h-screen font-serif bg-gradient-to-br from-slate-50 via-amber-50 to-stone-100">
+            <section className="relative flex flex-col justify-center items-center h-screen font-serif bg-white">
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute inset-0 bg-gradient-to-br from-slate-200/20 to-transparent"></div>
@@ -56,7 +56,7 @@ export default function LandingPage(){
             </section>
 
             {/* Story Section */}
-            <section className="bg-slate-100 py-16">
+            <section className="bg-gradient-to-br from-amber-50 to-stone-100 py-16">
                 <div className="container mx-auto px-4 py-12">
                     <motion.div 
                         className="flex flex-col items-center justify-center"
@@ -160,6 +160,15 @@ export default function LandingPage(){
                                 <p className="text-slate-600 leading-relaxed">{service.description}</p>
                             </motion.div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Info on services*/}
+            <section className="bg-gradient-to-br from-amber-50 to-stone-100 py-16">
+                <div className="container mx-auto px-4">
+                    <div className="text-center text-4xl font-bold text-slate-900 mb-8 font-serif"> 
+                        Explore Our Services
                     </div>
                 </div>
             </section>
