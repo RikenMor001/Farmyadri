@@ -2,29 +2,57 @@ import { motion } from "framer-motion"
 import farmImage from "../assets/farm.jpg"
 
 export default function LandingPage(){
-    return <div>
-        
+    return <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="flex flex-col justify-center items-center h-screen font-serif">
-            <motion.div className="text-8xl font-semibold text-center tracking-wider text-slate-900"
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.0 }}
-            > 
-            Experience Serenity <br/> at Our <br/> Wellness Resort
-            </motion.div>
-            <div className="text-2xl text-center tracking-wider text-slate-900 mt-7">
-            Discover transformation through mindful living, healing therapies <br/> and connection with nature.
-            </div>
-            <div className="flex justify-center items-center mt-7">
-            <button className="bg-slate-900 text-white px-5 py-4 rounded-4xl mr-4 hover:bg-slate-700 transition-colors duration-300 cursor-pointer text-lg">
-                Book Your Stay
-            </button>
-            <button className="bg-white text-black px-5 py-4 rounded-4xl hover:bg-black transition-colors duration-300 cursor-pointer text-lg border border-slate-900 hover:text-white">
-                Explore Services
-            </button>
-            </div>
-        </section>
+        <section className="relative flex flex-col justify-center items-center h-screen font-serif bg-gradient-to-br from-slate-50 via-amber-50 to-stone-100">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-5">
+                    <div className="absolute inset-0 bg-gradient-to-br from-slate-200/20 to-transparent"></div>
+                </div>
+                
+                <motion.div 
+                    className="text-6xl md:text-8xl font-bold text-center tracking-wider text-slate-900 z-10"
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.2 }}
+                > 
+                    Experience Serenity <br/> at Our <br/> Wellness Resort
+                </motion.div>
+                
+                <motion.div 
+                    className="text-xl md:text-2xl text-center tracking-wider text-slate-700 mt-8 max-w-4xl px-4 z-10"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.2, delay: 0.3 }}
+                >
+                    Discover transformation through mindful living, healing therapies and connection with nature.
+                </motion.div>
+                
+                <motion.div 
+                    className="flex flex-col md:flex-row justify-center items-center mt-10 gap-4 z-10"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.2, delay: 0.6 }}
+                >
+                    <button className="bg-slate-900 text-white px-8 py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-lg font-medium hover:scale-105 shadow-lg">
+                        Book Your Stay
+                    </button>
+                    <button className="bg-white text-slate-900 px-8 py-4 rounded-full hover:bg-slate-100 transition-all duration-300 cursor-pointer text-lg font-medium border-2 border-slate-900 hover:scale-105 shadow-lg">
+                        Explore Services
+                    </button>
+                </motion.div>
+                
+                {/* Scroll Indicator */}
+                <motion.div 
+                    className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                >
+                    <div className="w-6 h-10 border-2 border-slate-600 rounded-full flex justify-center">
+                        <div className="w-1 h-3 bg-slate-600 rounded-full mt-2"></div>
+                    </div>
+                </motion.div>
+            </section>
 
         {/* Story Section */}
         <section className="bg-slate-100 py-16">
