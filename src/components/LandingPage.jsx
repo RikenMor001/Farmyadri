@@ -2,11 +2,12 @@ import { motion } from "framer-motion"
 import farmImage from "../assets/farm.jpg"
 
 export default function LandingPage(){
-    return <div className="min-h-screen">
-        {/* Hero Section */}
-        <section className="relative flex flex-col justify-center items-center h-screen font-serif bg-gradient-to-br from-slate-50 via-amber-50 to-stone-100">
+    return (
+        <div className="min-h-screen">
+            {/* Hero Section */}
+            <section className="relative flex flex-col justify-center items-center h-screen font-serif bg-gradient-to-br from-slate-50 via-amber-50 to-stone-100">
                 {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-5">
+                <div className="absolute inset-0 opacity-10">
                     <div className="absolute inset-0 bg-gradient-to-br from-slate-200/20 to-transparent"></div>
                 </div>
                 
@@ -54,8 +55,8 @@ export default function LandingPage(){
                 </motion.div>
             </section>
 
-        {/* Story Section */}
-        <section className="bg-slate-100 py-16">
+            {/* Story Section */}
+            <section className="bg-slate-100 py-16">
                 <div className="container mx-auto px-4 py-12">
                     <motion.div 
                         className="flex flex-col items-center justify-center"
@@ -98,8 +99,8 @@ export default function LandingPage(){
                     </motion.div>
                 </div>
             </section>
-        
-        {/* Services Section */}
+
+            {/* Services Section */}
             <section className="bg-white py-16">
                 <div className="container mx-auto px-4">
                     <motion.div 
@@ -162,5 +163,6 @@ export default function LandingPage(){
                     </div>
                 </div>
             </section>
-    </div>   
+        </div>
+    )
 }
