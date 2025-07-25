@@ -42,10 +42,10 @@ export default function LandingPage(){
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2, delay: 0.6 }}
                 >
-                    <button className="bg-slate-900 text-white px-8 py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-lg font-medium hover:scale-105 shadow-lg">
+                    <button className="bg-slate-950 text-white px-8 py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-lg font-medium hover:scale-105 shadow-lg border border-white">
                         Book Your Stay
                     </button>
-                    <button className="bg-white text-slate-900 px-8 py-4 rounded-full hover:bg-slate-100 transition-all duration-300 cursor-pointer text-lg font-medium border-2 border-slate-900 hover:scale-105 shadow-lg">
+                    <button className="bg-slate-950 text-white px-8 py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-lg font-medium hover:scale-105 shadow-lg border border-white">
                         Explore Services
                     </button>
                 </motion.div>
@@ -56,8 +56,8 @@ export default function LandingPage(){
                     animate={{ y: [0, 10, 0] }}
                     transition={{ duration: 2, repeat: Infinity }}
                 >
-                    <div className="w-6 h-10 border-2 border-slate-600 rounded-full flex justify-center">
-                        <div className="w-1 h-3 bg-slate-600 rounded-full mt-2"></div>
+                    <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+                        <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
                     </div>
                 </motion.div>
             </section>
