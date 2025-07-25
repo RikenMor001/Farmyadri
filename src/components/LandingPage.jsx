@@ -1,18 +1,25 @@
 import { motion } from "framer-motion"
 import farmImage from "../assets/farm.jpg"
+import bg from "../assets/bg.jpg"
 
 export default function LandingPage(){
     return (
         <div className="min-h-screen">
             {/* Hero Section */}
-            <section className="relative flex flex-col justify-center items-center h-screen font-serif bg-white">
-                {/* Background Pattern */}
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute inset-0 bg-gradient-to-br from-slate-200/20 to-transparent"></div>
-                </div>
+            <section 
+                className="relative flex flex-col justify-center items-center h-screen font-serif"
+                style={{
+                    backgroundImage: `url(${bg})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                }}
+            >
+                {/* Background Overlay */}
+                <div className="absolute inset-0 bg-black/30"></div>
                 
                 <motion.div 
-                    className="text-6xl md:text-8xl font-bold text-center tracking-wider text-slate-900 z-10"
+                    className="text-6xl md:text-8xl font-bold text-center tracking-wider text-white z-10"
                     initial={{ opacity: 0, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2 }}
@@ -21,7 +28,7 @@ export default function LandingPage(){
                 </motion.div>
                 
                 <motion.div 
-                    className="text-xl md:text-2xl text-center tracking-wider text-slate-700 mt-8 max-w-4xl px-4 z-10"
+                    className="text-xl md:text-2xl text-center tracking-wider text-white mt-8 max-w-4xl px-4 z-10"
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2, delay: 0.3 }}
