@@ -176,6 +176,9 @@ export default function LandingPage(){
                 <div className="container mx-auto px-4">
                     <div className="text-center text-4xl font-bold text-slate-900 mb-8 font-serif"> 
                         Explore Our Services
+                        <p className="text-center text-xl text-slate-700 max-w-3xl mx-auto mt-4 font-light font-serif">
+                            From rejuvenating spa treatments to transformative yoga sessions, discover the perfect experience for your wellness journey.
+                        </p>
                     </div>
                 </div>
             </section>
