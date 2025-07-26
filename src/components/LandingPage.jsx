@@ -442,7 +442,9 @@ export default function LandingPage(){
                                      </svg>
                                  </a>
                                  <a 
-                                     href="#"
+                                     href="https://www.facebook.com/share/166Lvzi7VC/"
+                                     target="_blank"
+                                     rel="noopener noreferrer"
                                      className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300 cursor-pointer"
                                      title="Follow us on Facebook"
                                  >
