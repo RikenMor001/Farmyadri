@@ -12,13 +12,21 @@ export default function NavBar(){
         setIsSidebarOpen(false)
     }
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+        closeSidebar()
+    }
+
     const navItems = [
-        { name: "Home", href: "#home" },
-        { name: "About Us", href: "#about" },
-        { name: "Gallery", href: "#gallery" },
-        { name: "Wellness Program", href: "#wellness" },
-        { name: "Accommodation", href: "#accommodation" },
-        { name: "Contact Us", href: "#contact" }
+        { name: "Home", href: "#home", action: scrollToTop },
+        { name: "About Us", href: "#about", action: () => closeSidebar() },
+        { name: "Gallery", href: "#gallery", action: () => closeSidebar() },
+        { name: "Wellness Program", href: "#wellness", action: () => closeSidebar() },
+        { name: "Accommodation", href: "#accommodation", action: () => closeSidebar() },
+        { name: "Contact Us", href: "#contact", action: () => closeSidebar() }
     ]
 
     return (
@@ -35,6 +43,7 @@ export default function NavBar(){
                         <div 
                             key={item.name}
                             className="hover:text-slate-950 transition-all duration-300 text-slate-700 cursor-pointer"
+                            onClick={item.action}
                         >
                             {item.name}
                         </div>
@@ -136,7 +145,7 @@ export default function NavBar(){
                                     >
                                         <div 
                                             className="text-lg font-medium text-slate-700 hover:text-slate-900 transition-colors duration-300 cursor-pointer py-3 border-b border-gray-100"
-                                            onClick={closeSidebar}
+                                            onClick={item.action}
                                         >
                                             {item.name}
                                         </div>
