@@ -396,7 +396,144 @@ export default function LandingPage(){
                          </div>
                     </motion.div>
                 </div>
-             </section>
-        </div>
-    )
-}
+                          </section>
+
+             {/* Footer */}
+             <footer className="bg-black text-white py-20">
+                 <div className="container mx-auto px-6">
+                     <motion.div 
+                         className="grid grid-cols-1 lg:grid-cols-4 gap-8 max-w-7xl mx-auto"
+                         initial={{ opacity: 0, y: 50 }}
+                         whileInView={{ opacity: 1, y: 0 }}
+                         transition={{ duration: 0.8 }}
+                         viewport={{ once: true }}
+                     >
+                         {/* Company Info */}
+                         <motion.div 
+                             initial={{ opacity: 0, x: -50 }}
+                             whileInView={{ opacity: 1, x: 0 }}
+                             transition={{ duration: 0.8, delay: 0.2 }}
+                             viewport={{ once: true }}
+                         >
+                             <h3 className="text-2xl font-bold font-serif mb-4 text-white">Farm Yadri</h3>
+                             <p className="text-gray-300 leading-relaxed text-sm mb-4">
+                                 Experience serenity and transformation at our wellness resort nestled in the heart of nature.
+                             </p>
+                             <div className="flex space-x-3">
+                                 <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors duration-300 cursor-pointer">
+                                     <span className="text-white text-sm">📧</span>
+                                 </div>
+                                 <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors duration-300 cursor-pointer">
+                                     <span className="text-white text-sm">📱</span>
+                                 </div>
+                                 <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors duration-300 cursor-pointer">
+                                     <span className="text-white text-sm">📍</span>
+                                 </div>
+                             </div>
+                         </motion.div>
+
+                         {/* Navigation Links */}
+                         <motion.div 
+                             initial={{ opacity: 0, y: 30 }}
+                             whileInView={{ opacity: 1, y: 0 }}
+                             transition={{ duration: 0.8, delay: 0.4 }}
+                             viewport={{ once: true }}
+                         >
+                             <h4 className="text-lg font-semibold mb-4 text-white border-b border-gray-700 pb-2">Quick Links</h4>
+                             <div className="space-y-3">
+                                 <a href="#" className="block text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm">Home</a>
+                                 <a href="#" className="block text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm">About Us</a>
+                                 <a href="#" className="block text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm">Services</a>
+                                 <a href="#" className="block text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm">Bookings</a>
+                                 <a href="#" className="block text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm">Contact</a>
+                                 <a href="#" className="block text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm">FAQ</a>
+                             </div>
+                         </motion.div>
+
+                         {/* Contact Information */}
+                         <motion.div 
+                             initial={{ opacity: 0, x: 50 }}
+                             whileInView={{ opacity: 1, x: 0 }}
+                             transition={{ duration: 0.8, delay: 0.6 }}
+                             viewport={{ once: true }}
+                         >
+                             <h4 className="text-lg font-semibold mb-4 text-white border-b border-gray-700 pb-2">Contact Us</h4>
+                             <div className="space-y-3">
+                                 <div className="bg-gray-900 p-3 rounded-lg">
+                                     <p className="text-white font-semibold text-sm">Rushneet Singh</p>
+                                     <p className="text-gray-400 text-xs">For more details</p>
+                                 </div>
+                                 <div className="bg-gray-900 p-3 rounded-lg">
+                                     <a 
+                                         href="mailto:rasneet65@gmail.com" 
+                                         className="text-blue-400 hover:text-blue-300 transition-colors duration-300 font-medium text-sm"
+                                     >
+                                         rasneet65@gmail.com
+                                     </a>
+                                 </div>
+                                 <div className="bg-gray-900 p-3 rounded-lg">
+                                     <div className="text-gray-300 text-xs space-y-1">
+                                         <p className="flex items-center">
+                                             <span className="mr-1">📍</span>
+                                             Lal Bahadur Shastri Marg
+                                         </p>
+                                         <p className="ml-4">Mumbai, 400083</p>
+                                         <p className="ml-4">Maharashtra, India</p>
+                                     </div>
+                                 </div>
+                             </div>
+                         </motion.div>
+
+                         {/* Map Section */}
+                         <motion.div 
+                             initial={{ opacity: 0, x: 50 }}
+                             whileInView={{ opacity: 1, x: 0 }}
+                             transition={{ duration: 0.8, delay: 0.8 }}
+                             viewport={{ once: true }}
+                         >
+                             <h4 className="text-lg font-semibold mb-4 text-white border-b border-gray-700 pb-2">Our Location</h4>
+                             <div className="bg-gray-900 p-3 rounded-lg">
+                                 <iframe 
+                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.5!2d72.8777!3d19.0760!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sLal%20Bahadur%20Shastri%20Marg%2C%20Mumbai%2C%20Maharashtra%20400083!5e0!3m2!1sen!2sin!4v1234567890&markers=color:red%7Clabel:F%7C19.0760,72.8777"
+                                     width="100%" 
+                                     height="120" 
+                                     style={{ border: 0 }} 
+                                     allowFullScreen="" 
+                                     loading="lazy" 
+                                     referrerPolicy="no-referrer-when-downgrade"
+                                     className="rounded-lg"
+                                     title="Farm Yadri Location - Lal Bahadur Shastri Marg, Mumbai"
+                                 ></iframe>
+                                 <div className="mt-2 text-gray-300 text-xs">
+                                     <p className="font-medium text-white mb-1">📍 Farm Yadri</p>
+                                     <p>Mumbai, Maharashtra</p>
+                                     <a 
+                                         href="https://www.google.com/maps?q=Lal+Bahadur+Shastri+Marg,+Mumbai,+400083,+Maharashtra,+India"
+                                         target="_blank"
+                                         rel="noopener noreferrer"
+                                         className="inline-block mt-2 bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1 rounded transition-colors duration-300"
+                                     >
+                                         View Larger Map
+                                     </a>
+                                 </div>
+                             </div>
+                         </motion.div>
+                     </motion.div>
+
+                     {/* Bottom Border */}
+                     <motion.div 
+                         className="border-t border-gray-800 mt-12 pt-8 text-center"
+                         initial={{ opacity: 0 }}
+                         whileInView={{ opacity: 1 }}
+                         transition={{ duration: 0.8, delay: 0.8 }}
+                         viewport={{ once: true }}
+                     >
+                         <p className="text-gray-400 text-sm">
+                             © 2024 Farm Yadri. All rights reserved. | Designed with ❤️ for wellness
+                         </p>
+                     </motion.div>
+                 </div>
+             </footer>
+         </div>
+     )
+ }
