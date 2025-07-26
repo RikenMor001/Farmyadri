@@ -201,6 +201,91 @@ export default function LandingPage(){
                     </motion.div>
                 </div>
             </section>
+
+                         {/* Your transformative journey */}
+             <section className="bg-gradient-to-br from-amber-50 to-stone-100 py-16">
+                 <div className="container mx-auto px-4">
+                     <motion.div 
+                         className="text-center mb-16"
+                         initial={{ opacity: 0, y: 50 }}
+                         whileInView={{ opacity: 1, y: 0 }}
+                         transition={{ duration: 0.8 }}
+                         viewport={{ once: true }}
+                     >
+                         <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 font-serif">Your Transformative Journey</h2>
+                         <p className="text-xl text-slate-600 max-w-3xl mx-auto font-serif font-light mb-12">
+                             Every guest follows a carefully curated path toward wellness and self-discovery.
+                         </p>
+                     </motion.div>
+
+                     {/* Flow Chart */}
+                     <div className="max-w-6xl mx-auto">
+                         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+                             {[
+                                 {
+                                     step: "1",
+                                     title: "Arrival & Welcome",
+                                     description: "Begin your journey with a warm welcome and serene check-in experience.",
+                                     icon: "🏡"
+                                 },
+                                 {
+                                     step: "2", 
+                                     title: "Assessment & Planning",
+                                     description: "Work with our wellness experts to create your personalized transformation plan.",
+                                     icon: "📋"
+                                 },
+                                 {
+                                     step: "3",
+                                     title: "Healing & Restoration", 
+                                     description: "Immerse yourself in our spa treatments, yoga sessions, and healing therapies.",
+                                     icon: "🧘‍♀️"
+                                 },
+                                 {
+                                     step: "4",
+                                     title: "Nourishment",
+                                     description: "Enjoy our farm-to-table cuisine designed to nourish your body and soul.",
+                                     icon: "🍽️"
+                                 },
+                                 {
+                                     step: "5",
+                                     title: "Integration",
+                                     description: "Learn practices and techniques you can take home for lasting transformation.",
+                                     icon: "✨"
+                                 }
+                             ].map((item, index) => (
+                                 <motion.div 
+                                     key={index}
+                                     className="flex flex-col items-center text-center flex-1"
+                                     initial={{ opacity: 0, y: 50 }}
+                                     whileInView={{ opacity: 1, y: 0 }}
+                                     transition={{ duration: 0.6, delay: index * 0.1 }}
+                                     viewport={{ once: true }}
+                                 >
+                                     {/* Step Circle */}
+                                     <div className="relative mb-6">
+                                         <div className="w-16 h-16 bg-slate-900 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg">
+                                             {item.step}
+                                         </div>
+                                         {/* Arrow (except for last item) */}
+                                         {index < 4 && (
+                                             <div className="hidden lg:block absolute top-1/2 -right-8 transform -translate-y-1/2 text-slate-400 text-2xl">
+                                                 →
+                                             </div>
+                                         )}
+                                     </div>
+                                     
+                                     {/* Icon */}
+                                     <div className="text-4xl mb-4">{item.icon}</div>
+                                     
+                                     {/* Content */}
+                                     <h3 className="text-lg font-bold text-slate-900 mb-2 font-serif">{item.title}</h3>
+                                     <p className="text-sm text-slate-600 leading-relaxed max-w-xs">{item.description}</p>
+                                 </motion.div>
+                             ))}
+                         </div>
+                     </div>
+                 </div>
+             </section>
         </div>
     )
 }
