@@ -529,7 +529,7 @@ export default function LandingPage(){
                          viewport={{ once: true }}
                      >
                          <p className="text-gray-400 text-sm">
-                             © 2024 Farm Yadri. All rights reserved. | Designed with ❤️ for wellness
+                             © 2025 Farm Yadri. All rights reserved. | Designed with ❤️ for wellness
                          </p>
                      </motion.div>
                  </div>
