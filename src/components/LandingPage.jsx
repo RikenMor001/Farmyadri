@@ -286,6 +286,117 @@ export default function LandingPage(){
                      </div>
                  </div>
              </section>
+
+             {/* Testimonials */}
+             <section className="bg-white py-16">
+                <div className="container mx-auto px-4">
+                    <motion.div 
+                        className="text-center mb-16"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 font-serif">Transaformative Stories</h2>
+                        <p className="text-xl text-slate-600 max-w-3xl mx-auto font-serif font-light mb-12">
+                            Hear from guests who have experienced profound transformation during their stay with us.
+                        </p>
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                             {/* Testimonial 1 */}
+                             <div className="flex flex-col">
+                                 <section className="bg-slate-50 p-6 rounded-2xl shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer h-full">
+                                     <motion.div className="flex items-center mb-4"
+                                     initial={{ opacity: 0, y: 50 }}
+                                     whileInView={{ opacity: 1, y: 0 }}
+                                     transition={{ duration: 0.6, delay: 0.1 }}
+                                     viewport={{ once: true }}
+                                     >
+                                         <div className="flex text-yellow-400 text-xl mb-2">
+                                             ⭐⭐⭐⭐⭐
+                                         </div>
+                                     </motion.div>
+                                     <p className="text-slate-700 mb-6 italic leading-relaxed">
+                                         "Farmyadri was exactly what my soul needed. The peaceful surroundings, organic food, and healing therapies helped me reconnect with myself. I left feeling completely renewed and transformed. This place is truly magical."
+                                     </p>
+                                     <div className="flex items-center">
+                                         <div className="w-12 h-12 bg-slate-300 rounded-full mr-4 flex items-center justify-center">
+                                             <span className="text-slate-600 font-bold">S</span>
+                                         </div>
+                                         <div>
+                                             <p className="font-semibold text-slate-900">Sarah Johnson</p>
+                                             <p className="text-sm text-slate-600">Wellness Enthusiast</p>
+                                         </div>
+                                     </div>
+                                 </section>
+                                 
+                                 {/* Read More Button */}
+                                 <motion.button 
+                                     className="mt-4 bg-slate-900 text-white px-6 py-3 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg self-start"
+                                     initial={{ opacity: 0, y: 20 }}
+                                     whileInView={{ opacity: 1, y: 0 }}
+                                     transition={{ duration: 0.6, delay: 0.3 }}
+                                     viewport={{ once: true }}
+                                     whileHover={{ scale: 1.05 }}
+                                 >
+                                     Read More
+                                 </motion.button>
+                             </div>
+
+                             {/* Testimonial 2 */}
+                             <section className="bg-slate-50 p-6 rounded-2xl shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer h-83">
+                                 <motion.div className="flex items-center mb-4"
+                                 initial={{ opacity: 0, y: 50 }}
+                                 whileInView={{ opacity: 1, y: 0 }}
+                                 transition={{ duration: 0.6, delay: 0.1 }}
+                                 viewport={{ once: true }}
+                                 >
+                                     <div className="flex text-yellow-400 text-xl mb-2">
+                                         ⭐⭐⭐⭐⭐
+                                     </div>
+                                 </motion.div>
+                                 <p className="text-slate-700 mb-6 italic leading-relaxed">
+                                     "The farm-to-table experience was incredible. Every meal was not just delicious but nourishing. The yoga sessions at sunrise and the peaceful atmosphere helped me find inner peace I never knew existed."
+                                 </p>
+                                 <div className="flex items-center">
+                                     <div className="w-12 h-12 bg-slate-300 rounded-full mr-4 flex items-center justify-center">
+                                         <span className="text-slate-600 font-bold">M</span>
+                                     </div>
+                                     <div>
+                                         <p className="font-semibold text-slate-900">Michael Chen</p>
+                                         <p className="text-sm text-slate-600">Business Executive</p>
+                                     </div>
+                                 </div>
+                             </section>
+
+                             {/* Testimonial 3 */}
+                             <section className="bg-slate-50 p-6 rounded-2xl shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer h-83">
+                                 <motion.div className="flex items-center mb-4"
+                                 initial={{ opacity: 0, y: 50 }}
+                                 whileInView={{ opacity: 1, y: 0 }}
+                                 transition={{ duration: 0.6, delay: 0.1 }}
+                                 viewport={{ once: true }}
+                                 >
+                                     <div className="flex text-yellow-400 text-xl mb-2">
+                                         ⭐⭐⭐⭐⭐
+                                     </div>
+                                 </motion.div>
+                                 <p className="text-slate-700 mb-6 italic leading-relaxed">
+                                     "This was a life-changing experience. The Ayurvedic treatments, meditation sessions, and connection with nature helped me overcome stress and anxiety. I learned practices I can use daily. Farmyadri is truly transformative."
+                                 </p>
+                                 <div className="flex items-center">
+                                     <div className="w-12 h-12 bg-slate-300 rounded-full mr-4 flex items-center justify-center">
+                                         <span className="text-slate-600 font-bold">E</span>
+                                     </div>
+                                     <div>
+                                         <p className="font-semibold text-slate-900">Emma Rodriguez</p>
+                                         <p className="text-sm text-slate-600">Yoga Teacher</p>
+                                     </div>
+                                 </div>
+                             </section>
+                         </div>
+                    </motion.div>
+                </div>
+             </section>
         </div>
     )
 }
