@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import farmImage from "../assets/farm.jpg"
 import bg from "../assets/bg.jpg"
+import philo2 from "../assets/philo2.jpg"
 
 export default function LandingPage(){
     return (
@@ -171,15 +172,33 @@ export default function LandingPage(){
                 </div>
             </section>
 
-            {/* Info on services*/}
-            <section className="bg-gradient-to-br from-amber-50 to-stone-100 py-16">
+            {/* Our Philosophy */}
+            <section className="bg-gradient-to-br from-amber-50 to-stone-100 py-16"
+                style={{
+                    backgroundImage: `url(${philo2})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundBlendMode: 'overlay',
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                }}
+            >
                 <div className="container mx-auto px-4">
-                    <div className="text-center text-4xl font-bold text-slate-900 mb-8 font-serif"> 
-                        Explore Our Services
-                        <p className="text-center text-xl text-slate-700 max-w-3xl mx-auto mt-4 font-light font-serif">
-                            From rejuvenating spa treatments to transformative yoga sessions, discover the perfect experience for your wellness journey.
+                    <motion.div 
+                        className="text-center mb-16"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif">Our Philosophy</h2>
+                        <p className="text-xl text-white max-w-3xl mx-auto italic font-serif font-semibold text-center mb-4">
+                            "Wellness is not a destination, but a way of traveling through life with awareness, gratitude, and deep connection to ourselves and the world around us."
                         </p>
-                    </div>
+                        <p className="text-xl text-white max-w-3xl mx-auto mt-4 font-serif font-light text-center mb-12"> 
+                            At Farm Yadri, we believe that every individual carries within them the capacity for profound healing and transformation. Our role is not to fix or change you, but to create the perfect conditions for your own inner wisdom to emerge and guide you toward wholeness.
+                        </p>
+                    </motion.div>
                 </div>
             </section>
         </div>
