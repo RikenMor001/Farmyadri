@@ -24,7 +24,7 @@ export default function NavBar(){
     return (
         <>
             {/* Main Navbar */}
-            <div className="flex justify-between items-center p-3 border-b-2 border-gray-200 shadow-lg fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-sm">
+            <div className="flex justify-between items-center px-4 py-3 border-b-2 border-gray-200 shadow-lg fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-sm">
                 <div className="text-xl sm:text-2xl font-bold tracking-wider hover:text-slate-950 transition-all duration-300 text-slate-700 cursor-pointer hover:scale-105">
                     Farm Yadri
                 </div>
@@ -48,7 +48,7 @@ export default function NavBar(){
                 <div className="lg:hidden">
                     <button
                         onClick={toggleSidebar}
-                        className="text-slate-700 hover:text-slate-950 transition-colors duration-300 p-2"
+                        className="text-slate-700 hover:text-slate-950 transition-colors duration-300 p-1"
                         aria-label="Toggle menu"
                     >
                         <svg 
