@@ -20,16 +20,16 @@ export default function LandingPage(){
                 <div className="absolute inset-0 bg-black/30"></div>
                 
                 <motion.div 
-                    className="text-6xl md:text-8xl font-bold text-center tracking-wider text-white z-10"
+                    className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-center tracking-wider text-white z-10 px-4"
                     initial={{ opacity: 0, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2 }}
                 > 
-                    Experience Serenity <br/> at Our <br/> Wellness Resort
+                    Experience Serenity <br className="hidden sm:block"/> at Our <br className="hidden sm:block"/> Wellness Resort
                 </motion.div>
                 
                 <motion.div 
-                    className="text-xl md:text-2xl text-center tracking-wider text-white mt-8 max-w-4xl px-4 z-10"
+                    className="text-lg sm:text-xl md:text-2xl text-center tracking-wider text-white mt-6 sm:mt-8 max-w-4xl px-4 z-10"
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2, delay: 0.3 }}
@@ -38,15 +38,15 @@ export default function LandingPage(){
                 </motion.div>
                 
                 <motion.div 
-                    className="flex flex-col md:flex-row justify-center items-center mt-10 gap-4 z-10"
+                    className="flex flex-col sm:flex-row justify-center items-center mt-8 sm:mt-10 gap-4 z-10 px-4"
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2, delay: 0.6 }}
                 >
-                    <button className="bg-slate-950 text-white px-8 py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-lg font-medium hover:scale-105 shadow-lg border border-white">
+                    <button className="bg-slate-950 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-base sm:text-lg font-medium hover:scale-105 shadow-lg border border-white w-full sm:w-auto">
                         Book Your Stay
                     </button>
-                    <button className="bg-slate-950 text-white px-8 py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-lg font-medium hover:scale-105 shadow-lg border border-white">
+                    <button className="bg-slate-950 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-base sm:text-lg font-medium hover:scale-105 shadow-lg border border-white w-full sm:w-auto">
                         Explore Services
                     </button>
                 </motion.div>
@@ -73,9 +73,9 @@ export default function LandingPage(){
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-900 mb-8 font-serif">Nature On Your View</h2>
-                        <div className="flex flex-col lg:flex-row items-start gap-12 max-w-7xl">
-                            <div className="text-lg md:text-xl text-left tracking-wider text-slate-900 font-serif flex-1 pl-4 lg:pl-12 leading-relaxed space-y-6">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-slate-900 mb-6 sm:mb-8 font-serif px-4">Nature On Your View</h2>
+                        <div className="flex flex-col lg:flex-row items-start gap-8 sm:gap-12 max-w-7xl px-4">
+                            <div className="text-base sm:text-lg md:text-xl text-left tracking-wider text-slate-900 font-serif flex-1 pl-0 lg:pl-12 leading-relaxed space-y-4 sm:space-y-6">
                                 <p>At Farmyadri, we believe in the power of nature to heal and transform. Our journey began with a vision to create a space where people can reconnect with themselves, nature, and the ancient wisdom of Ayurveda.</p>
                                 
                                 <p>Farmyadri is a 100% organic farm located in the heart of the Himalayas. It is a place where you can escape the hustle and bustle of city life and reconnect with nature.</p>
@@ -84,12 +84,12 @@ export default function LandingPage(){
                                 
                                 <p>From farm-to-table meals made with freshly harvested, organic produce to guided nature walks and yoga sessions at sunrise, every moment at Farmyadri is a step toward holistic wellness. We also offer immersive workshops and retreats that help you reconnect with your inner self, learn sustainable living practices, and embrace the healing rhythms of the natural world.</p>
                                 
-                                <button className="mt-8 bg-slate-900 text-white px-6 py-3 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg">
+                                <button className="mt-6 sm:mt-8 bg-slate-900 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm sm:text-base">
                                     Learn More About Us
                                 </button>
                             </div>
                             <motion.div 
-                                className="flex-1 flex justify-center items-center"
+                                className="flex-1 flex justify-center items-center mt-8 lg:mt-0"
                                 initial={{ opacity: 0, x: 100 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 1.0, delay: 0.3 }}
@@ -99,8 +99,8 @@ export default function LandingPage(){
                                 <img 
                                     src={farmImage} 
                                     alt="FarmYadri organic farm" 
-                                    className="rounded-2xl shadow-2xl max-w-full h-auto object-cover"
-                                    style={{ maxHeight: '600px' }}
+                                    className="rounded-2xl shadow-2xl max-w-full h-auto object-cover px-4 lg:px-0"
+                                    style={{ maxHeight: '400px', minHeight: '300px' }}
                                 />
                             </motion.div>
                         </div>
@@ -118,11 +118,11 @@ export default function LandingPage(){
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 font-serif">Our Wellness Services</h2>
-                        <p className="text-xl text-slate-600 max-w-3xl mx-auto">Experience holistic wellness through our carefully curated programs designed to nourish your mind, body, and soul.</p>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 font-serif px-4">Our Wellness Services</h2>
+                        <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto px-4">Experience holistic wellness through our carefully curated programs designed to nourish your mind, body, and soul.</p>
                     </motion.div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-7 max-w-7xl mx-auto px-4">
                         {[
                             {
                                 title: "Ayurvedic Therapies",
@@ -157,7 +157,7 @@ export default function LandingPage(){
                         ].map((service, index) => (
                             <motion.div 
                                 key={index}
-                                className="bg-slate-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 hover:scale-105 border border-slate-200 cursor-pointer"
+                                className="bg-slate-50 p-6 sm:p-8 rounded-2xl hover:shadow-xl transition-all duration-300 hover:scale-105 border border-slate-200 cursor-pointer"
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -191,11 +191,11 @@ export default function LandingPage(){
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif">Our Philosophy</h2>
-                        <p className="text-xl text-white max-w-3xl mx-auto italic font-serif font-semibold text-center mb-4">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 font-serif px-4">Our Philosophy</h2>
+                        <p className="text-lg sm:text-xl text-white max-w-3xl mx-auto italic font-serif font-semibold text-center mb-4 px-4">
                             "Wellness is not a destination, but a way of traveling through life with awareness, gratitude, and deep connection to ourselves and the world around us."
                         </p>
-                        <p className="text-xl text-white max-w-3xl mx-auto mt-4 font-serif font-light text-center mb-12"> 
+                        <p className="text-base sm:text-xl text-white max-w-3xl mx-auto mt-4 font-serif font-light text-center mb-8 sm:mb-12 px-4"> 
                             At Farm Yadri, we believe that every individual carries within them the capacity for profound healing and transformation. Our role is not to fix or change you, but to create the perfect conditions for your own inner wisdom to emerge and guide you toward wholeness.
                         </p>
                     </motion.div>
@@ -212,15 +212,15 @@ export default function LandingPage(){
                          transition={{ duration: 0.8 }}
                          viewport={{ once: true }}
                      >
-                         <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 font-serif">Your Transformative Journey</h2>
-                         <p className="text-xl text-slate-600 max-w-3xl mx-auto font-serif font-light mb-12">
+                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 font-serif px-4">Your Transformative Journey</h2>
+                         <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-serif font-light mb-8 sm:mb-12 px-4">
                              Every guest follows a carefully curated path toward wellness and self-discovery.
                          </p>
                      </motion.div>
 
                      {/* Flow Chart */}
-                     <div className="max-w-6xl mx-auto">
-                         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+                     <div className="max-w-6xl mx-auto px-4">
+                         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8">
                              {[
                                  {
                                      step: "1",
@@ -297,14 +297,14 @@ export default function LandingPage(){
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 font-serif">Transaformative Stories</h2>
-                        <p className="text-xl text-slate-600 max-w-3xl mx-auto font-serif font-light mb-12">
+                                                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 font-serif px-4">Transformative Stories</h2>
+                         <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-serif font-light mb-8 sm:mb-12 px-4">
                             Hear from guests who have experienced profound transformation during their stay with us.
                         </p>
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto px-4">
                              {/* Testimonial 1 */}
                              <div className="flex flex-col">
-                                 <section className="bg-slate-50 p-6 rounded-2xl shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer h-full">
+                                 <section className="bg-slate-50 p-4 sm:p-6 rounded-2xl shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer h-full">
                                      <motion.div className="flex items-center mb-4"
                                      initial={{ opacity: 0, y: 50 }}
                                      whileInView={{ opacity: 1, y: 0 }}
@@ -331,7 +331,7 @@ export default function LandingPage(){
                                  
                                  {/* Read More Button */}
                                  <motion.button 
-                                     className="mt-4 bg-slate-900 text-white px-6 py-3 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg self-start"
+                                     className="mt-4 bg-slate-900 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg self-start text-sm sm:text-base"
                                      initial={{ opacity: 0, y: 20 }}
                                      whileInView={{ opacity: 1, y: 0 }}
                                      transition={{ duration: 0.6, delay: 0.3 }}
@@ -343,7 +343,7 @@ export default function LandingPage(){
                              </div>
 
                              {/* Testimonial 2 */}
-                             <section className="bg-slate-50 p-6 rounded-2xl shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer h-83">
+                             <section className="bg-slate-50 p-4 sm:p-6 rounded-2xl shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer h-83">
                                  <motion.div className="flex items-center mb-4"
                                  initial={{ opacity: 0, y: 50 }}
                                  whileInView={{ opacity: 1, y: 0 }}
@@ -369,7 +369,7 @@ export default function LandingPage(){
                              </section>
 
                              {/* Testimonial 3 */}
-                             <section className="bg-slate-50 p-6 rounded-2xl shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer h-83">
+                             <section className="bg-slate-50 p-4 sm:p-6 rounded-2xl shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer h-83">
                                  <motion.div className="flex items-center mb-4"
                                  initial={{ opacity: 0, y: 50 }}
                                  whileInView={{ opacity: 1, y: 0 }}
@@ -402,7 +402,7 @@ export default function LandingPage(){
              <footer className="bg-black text-white py-20">
                  <div className="container mx-auto px-6">
                      <motion.div 
-                         className="grid grid-cols-1 lg:grid-cols-4 gap-8 max-w-7xl mx-auto"
+                         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-7xl mx-auto"
                          initial={{ opacity: 0, y: 50 }}
                          whileInView={{ opacity: 1, y: 0 }}
                          transition={{ duration: 0.8 }}
@@ -415,17 +415,17 @@ export default function LandingPage(){
                              transition={{ duration: 0.8, delay: 0.2 }}
                              viewport={{ once: true }}
                          >
-                             <h3 className="text-2xl font-bold font-serif mb-4 text-white">Farm Yadri</h3>
-                             <p className="text-gray-300 leading-relaxed text-sm mb-4">
+                             <h3 className="text-xl sm:text-2xl font-bold font-serif mb-3 sm:mb-4 text-white">Farm Yadri</h3>
+                             <p className="text-gray-300 leading-relaxed text-xs sm:text-sm mb-3 sm:mb-4">
                                  Experience serenity and transformation at our wellness resort nestled in the heart of nature.
                              </p>
-                             <div className="flex space-x-3">
+                             <div className="flex space-x-2 sm:space-x-3">
                                  <a 
                                      href="mailto:rasneet65@gmail.com"
-                                     className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300 cursor-pointer"
+                                     className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300 cursor-pointer"
                                      title="Email us"
                                  >
-                                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                     <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                                          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                                          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                                      </svg>
@@ -434,19 +434,19 @@ export default function LandingPage(){
                                      href="https://www.instagram.com/farmyadri?igsh=eXg1Ymk0aHd5emht"
                                      target="_blank"
                                      rel="noopener noreferrer"
-                                     className="w-8 h-8 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 rounded-full flex items-center justify-center hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 transition-all duration-300 cursor-pointer"
+                                     className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 rounded-full flex items-center justify-center hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 transition-all duration-300 cursor-pointer"
                                      title="Follow us on Instagram"
                                  >
-                                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                     <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
                                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                                      </svg>
                                  </a>
                                  <a 
                                      href="#"
-                                     className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300 cursor-pointer"
+                                     className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300 cursor-pointer"
                                      title="Follow us on Facebook"
                                  >
-                                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                     <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
                                          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                                      </svg>
                                  </a>
