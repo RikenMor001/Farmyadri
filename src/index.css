@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+/* Prevent layout shift on mobile */
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Ensure navbar doesn't shift on load */
+.navbar-container {
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
