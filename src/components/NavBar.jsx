@@ -24,8 +24,8 @@ export default function NavBar(){
     return (
         <>
             {/* Main Navbar */}
-            <div className="flex justify-between items-center px-4 py-3 border-b-2 border-gray-200 shadow-lg fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-sm">
-                <div className="text-xl sm:text-2xl font-bold tracking-wider hover:text-slate-950 transition-all duration-300 text-slate-700 cursor-pointer hover:scale-105">
+            <div className="navbar-container flex justify-between items-center px-4 py-3 border-b-2 border-gray-200 shadow-lg fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-sm w-full max-w-full overflow-hidden">
+                <div className="text-xl sm:text-2xl font-bold tracking-wider hover:text-slate-950 transition-all duration-300 text-slate-700 cursor-pointer hover:scale-105 flex-shrink-0">
                     Farm Yadri
                 </div>
                 
@@ -45,10 +45,10 @@ export default function NavBar(){
                 </div>
 
                 {/* Mobile Hamburger Menu */}
-                <div className="lg:hidden">
+                <div className="lg:hidden flex-shrink-0">
                     <button
                         onClick={toggleSidebar}
-                        className="text-slate-700 hover:text-slate-950 transition-colors duration-300 p-1"
+                        className="text-slate-700 hover:text-slate-950 transition-colors duration-300 p-1 flex items-center justify-center"
                         aria-label="Toggle menu"
                     >
                         <svg 
