@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { Link } from "react-router-dom"
 
 export default function NavBar(){
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -21,12 +22,12 @@ export default function NavBar(){
     }
 
     const navItems = [
-        { name: "Home", href: "#home", action: scrollToTop },
-        { name: "About Us", href: "#about", action: () => closeSidebar() },
-        { name: "Gallery", href: "#gallery", action: () => closeSidebar() },
-        { name: "Wellness Program", href: "#wellness", action: () => closeSidebar() },
-        { name: "Accommodation", href: "#accommodation", action: () => closeSidebar() },
-        { name: "Contact Us", href: "#contact", action: () => closeSidebar() }
+        { name: "Home", href: "/", action: scrollToTop, isLink: true },
+        { name: "About Us", href: "/about", action: () => closeSidebar(), isLink: true },
+        { name: "Gallery", href: "#gallery", action: () => closeSidebar(), isLink: false },
+        { name: "Wellness Program", href: "#wellness", action: () => closeSidebar(), isLink: false },
+        { name: "Accommodation", href: "#accommodation", action: () => closeSidebar(), isLink: false },
+        { name: "Contact Us", href: "#contact", action: () => closeSidebar(), isLink: false }
     ]
 
     return (
@@ -40,13 +41,24 @@ export default function NavBar(){
                 {/* Desktop Navigation */}
                 <div className="hidden lg:flex items-center space-x-6">
                     {navItems.map((item) => (
-                        <div 
-                            key={item.name}
-                            className="hover:text-slate-950 transition-all duration-300 text-slate-700 cursor-pointer"
-                            onClick={item.action}
-                        >
-                            {item.name}
-                        </div>
+                        item.isLink ? (
+                            <Link 
+                                key={item.name}
+                                to={item.href}
+                                className="hover:text-slate-950 transition-all duration-300 text-slate-700 cursor-pointer"
+                                onClick={item.action}
+                            >
+                                {item.name}
+                            </Link>
+                        ) : (
+                            <div 
+                                key={item.name}
+                                className="hover:text-slate-950 transition-all duration-300 text-slate-700 cursor-pointer"
+                                onClick={item.action}
+                            >
+                                {item.name}
+                            </div>
+                        )
                     ))}
                     <button className="bg-slate-900 text-white px-4 py-2 rounded-full hover:bg-slate-800 transition-all duration-300 hover:cursor-pointer">
                         Book Now
@@ -143,12 +155,22 @@ export default function NavBar(){
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: index * 0.1 }}
                                     >
-                                        <div 
-                                            className="text-lg font-medium text-slate-700 hover:text-slate-900 transition-colors duration-300 cursor-pointer py-3 border-b border-gray-100"
-                                            onClick={item.action}
-                                        >
-                                            {item.name}
-                                        </div>
+                                        {item.isLink ? (
+                                            <Link 
+                                                to={item.href}
+                                                className="text-lg font-medium text-slate-700 hover:text-slate-900 transition-colors duration-300 cursor-pointer py-3 border-b border-gray-100 block"
+                                                onClick={item.action}
+                                            >
+                                                {item.name}
+                                            </Link>
+                                        ) : (
+                                            <div 
+                                                className="text-lg font-medium text-slate-700 hover:text-slate-900 transition-colors duration-300 cursor-pointer py-3 border-b border-gray-100"
+                                                onClick={item.action}
+                                            >
+                                                {item.name}
+                                            </div>
+                                        )}
                                     </motion.div>
                                 ))}
                             </div>
