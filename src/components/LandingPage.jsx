@@ -2,6 +2,13 @@ import { motion } from "framer-motion"
 import farmImage from "../assets/farm.jpg"
 import bg from "../assets/bg.jpg"
 import philo2 from "../assets/philo2.jpg"
+import NIK01579 from "../assets/NIK01579.jpg"
+import NIK01582 from "../assets/NIK01582.jpg"
+import NIK01593 from "../assets/NIK01593.jpg"
+import NIK01616 from "../assets/NIK01616.jpg"
+import NIK01630 from "../assets/NIK01630.jpg"
+import NIK01715 from "../assets/NIK01715.jpg"
+import NIK01823 from "../assets/NIK01823-Edit.jpg"
 
 export default function LandingPage(){
     return (
@@ -25,7 +32,7 @@ export default function LandingPage(){
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2 }}
                 > 
-                    Experience Serenity <br className="hidden sm:block"/> at Our <br className="hidden sm:block"/> Wellness Resort
+                    Where Nature <br className="hidden sm:block"/> Meets <br className="hidden sm:block"/> Serenity
                 </motion.div>
                 
                 <motion.div 
@@ -34,7 +41,7 @@ export default function LandingPage(){
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2, delay: 0.3 }}
                 >
-                    Discover transformation through mindful living, healing therapies and connection with nature.
+                    "In every walk with nature, one receives far more than he seeks."
                 </motion.div>
                 
                 <motion.div 
@@ -84,7 +91,7 @@ export default function LandingPage(){
                                 
                                 <p>From farm-to-table meals made with freshly harvested, organic produce to guided nature walks and yoga sessions at sunrise, every moment at Farmyadri is a step toward holistic wellness. We also offer immersive workshops and retreats that help you reconnect with your inner self, learn sustainable living practices, and embrace the healing rhythms of the natural world.</p>
                                 
-                                <button className="mt-6 sm:mt-8 bg-slate-900 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm sm:text-base">
+                                <button className="mt-6 sm:mt-8 bg-slate-900 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg self-start text-sm sm:text-base cursor-pointer">
                                     Learn More About Us
                                 </button>
                             </div>
@@ -109,7 +116,7 @@ export default function LandingPage(){
             </section>
 
             {/* Services Section */}
-            <section className="bg-white py-16">
+            <section className="bg-gradient-to-br from-amber-50 to-stone-100 py-20">
                 <div className="container mx-auto px-4">
                     <motion.div 
                         className="text-center mb-16"
@@ -122,52 +129,226 @@ export default function LandingPage(){
                         <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto px-4">Experience holistic wellness through our carefully curated programs designed to nourish your mind, body, and soul.</p>
                     </motion.div>
                     
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-7 max-w-7xl mx-auto px-4">
-                        {[
-                            {
-                                title: "Ayurvedic Therapies",
-                                description: "Traditional healing treatments using natural herbs and oils for complete rejuvenation.",
-                                icon: "🌿"
-                            },
-                            {
-                                title: "Yoga & Meditation",
-                                description: "Daily sessions in serene surroundings to enhance your spiritual well-being.",
-                                icon: "🧘‍♀️"
-                            },
-                            {
-                                title: "Organic Farm Tours",
-                                description: "Explore our sustainable farming practices and connect with nature.",
-                                icon: "🌱"
-                            },
-                            {
-                                title: "Wellness Workshops",
-                                description: "Learn sustainable living practices and holistic wellness techniques.",
-                                icon: "📚"
-                            },
-                            {
-                                title: "Nature Walks",
-                                description: "Guided treks through the Himalayan landscape for physical and mental clarity.",
-                                icon: "🏔️"
-                            },
-                            {
-                                title: "Farm-to-Table Dining",
-                                description: "Fresh, organic meals prepared with ingredients from our own farm.",
-                                icon: "🍽️"
-                            }
-                        ].map((service, index) => (
-                            <motion.div 
-                                key={index}
-                                className="bg-slate-50 p-6 sm:p-8 rounded-2xl hover:shadow-xl transition-all duration-300 hover:scale-105 border border-slate-200 cursor-pointer"
-                                initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
-                                viewport={{ once: true }}
+                    <div className="max-w-6xl mx-auto">
+                        {/* Service 1 - Ayurvedic Therapies */}
+                        <motion.div 
+                            className="mb-20"
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.1 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="flex flex-col lg:flex-row items-center gap-12">
+                                <div className="lg:w-1/2">
+                                    <h3 className="text-3xl font-bold text-slate-900 mb-4 font-serif">Ayurvedic Therapies</h3>
+                                    <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                                        Experience the ancient wisdom of Ayurveda with our traditional healing treatments. 
+                                        Using natural herbs, oils, and time-tested techniques, our therapies provide complete 
+                                        rejuvenation for your mind, body, and spirit.
+                                    </p>
+                                    <div className="space-y-3">
+                                        <div className="flex items-center">
+                                            <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                            <span className="text-slate-700">Abhyanga - Traditional oil massage</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                            <span className="text-slate-700">Shirodhara - Oil therapy for mind</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                            <span className="text-slate-700">Panchakarma - Detoxification</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="lg:w-1/2">
+                                    <div className="relative overflow-hidden rounded-2xl shadow-xl group">
+                                        <img 
+                                            src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                            alt="Ayurvedic herbs and oils" 
+                                            className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                            <p className="italic text-lg leading-relaxed">
+                                                "The gentle touch of nature's healing hands, guided by centuries of wisdom, 
+                                                brings restoration to weary souls and peace to troubled minds."
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Service 2 - Yoga & Meditation */}
+                        <motion.div 
+                            className="mb-20"
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
+                                <div className="lg:w-1/2">
+                                    <h3 className="text-3xl font-bold text-slate-900 mb-4 font-serif">Yoga & Meditation</h3>
+                                    <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                                        Begin each day with the rising sun and the gentle guidance of our experienced teachers. 
+                                        Our yoga and meditation sessions are held in serene natural settings, allowing you to 
+                                        connect deeply with your inner self and the world around you.
+                                    </p>
+                                    <div className="space-y-3">
+                                        <div className="flex items-center">
+                                            <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                                            <span className="text-slate-700">Sunrise Hatha Yoga</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                                            <span className="text-slate-700">Mindfulness Meditation</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                                            <span className="text-slate-700">Pranayama Breathing</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="lg:w-1/2">
+                                    <div className="relative overflow-hidden rounded-2xl shadow-xl group">
+                                        <img 
+                                            src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                            alt="Yoga in nature" 
+                                            className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                            <p className="italic text-lg leading-relaxed">
+                                                "In the stillness of morning, when the world awakens with the sun, 
+                                                we find our center and remember our connection to all that is."
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Service 3 - Organic Farm Experience */}
+                        <motion.div 
+                            className="mb-20"
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.3 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="flex flex-col lg:flex-row items-center gap-12">
+                                <div className="lg:w-1/2">
+                                    <h3 className="text-3xl font-bold text-slate-900 mb-4 font-serif">Organic Farm Experience</h3>
+                                    <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                                        Walk through our lush organic gardens and learn the art of sustainable farming. 
+                                        Experience the joy of harvesting fresh herbs and vegetables, and understand the 
+                                        deep connection between the food we eat and our overall well-being.
+                                    </p>
+                                    <div className="space-y-3">
+                                        <div className="flex items-center">
+                                            <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                                            <span className="text-slate-700">Guided farm tours</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                                            <span className="text-slate-700">Herb garden workshops</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
+                                            <span className="text-slate-700">Sustainable practices</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="lg:w-1/2">
+                                    <div className="relative overflow-hidden rounded-2xl shadow-xl group">
+                                        <img 
+                                            src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                            alt="Organic farm garden" 
+                                            className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                            <p className="italic text-lg leading-relaxed">
+                                                "From seed to table, every step is a lesson in patience, care, 
+                                                and the beautiful cycle of life that sustains us all."
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Service 4 - Nature Walks */}
+                        <motion.div 
+                            className="mb-20"
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
+                                <div className="lg:w-1/2">
+                                    <h3 className="text-3xl font-bold text-slate-900 mb-4 font-serif">Nature Walks</h3>
+                                    <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                                        Explore the pristine Himalayan landscape with our experienced guides. 
+                                        Each walk is a journey of discovery, where you'll learn about local flora, 
+                                        fauna, and the ancient wisdom embedded in these sacred mountains.
+                                    </p>
+                                    <div className="space-y-3">
+                                        <div className="flex items-center">
+                                            <div className="w-2 h-2 bg-slate-500 rounded-full mr-3"></div>
+                                            <span className="text-slate-700">Guided mountain trails</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <div className="w-2 h-2 bg-slate-500 rounded-full mr-3"></div>
+                                            <span className="text-slate-700">Bird watching sessions</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <div className="w-2 h-2 bg-slate-500 rounded-full mr-3"></div>
+                                            <span className="text-slate-700">Sunset viewpoints</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="lg:w-1/2">
+                                    <div className="relative overflow-hidden rounded-2xl shadow-xl group">
+                                        <img 
+                                            src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                            alt="Himalayan mountain trails" 
+                                            className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                            <p className="italic text-lg leading-relaxed">
+                                                "In the embrace of these ancient mountains, we find perspective, 
+                                                peace, and a reminder of our place in the grand tapestry of life."
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Call to Action */}
+                        <motion.div 
+                            className="text-center mt-16"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.5 }}
+                            viewport={{ once: true }}
+                        >
+                            <p className="text-lg text-slate-700 mb-6 font-serif">
+                                Ready to experience these wellness services?
+                            </p>
+                            <motion.button 
+                                className="bg-slate-900 text-white px-8 py-4 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-lg cursor-pointer"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
                             >
-                                <div className="text-4xl mb-4">{service.icon}</div>
-                                <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
-                                <p className="text-slate-600 leading-relaxed">{service.description}</p>
-                            </motion.div>
-                        ))}
+                                Book Your Wellness Journey
+                            </motion.button>
+                        </motion.div>
                     </div>
                 </div>
             </section>
@@ -193,17 +374,17 @@ export default function LandingPage(){
                     >
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 font-serif px-4">Our Philosophy</h2>
                         <p className="text-lg sm:text-xl text-white max-w-3xl mx-auto italic font-serif font-semibold text-center mb-4 px-4">
-                            "Wellness is not a destination, but a way of traveling through life with awareness, gratitude, and deep connection to ourselves and the world around us."
+                            "Nature is not a place to visit. It is home. And in its embrace, we find our true selves."
                         </p>
                         <p className="text-base sm:text-xl text-white max-w-3xl mx-auto mt-4 font-serif font-light text-center mb-8 sm:mb-12 px-4"> 
-                            At Farm Yadri, we believe that every individual carries within them the capacity for profound healing and transformation. Our role is not to fix or change you, but to create the perfect conditions for your own inner wisdom to emerge and guide you toward wholeness.
+                            At Farm Yadri, we believe that the greatest healing comes from reconnecting with the natural world. Our philosophy centers on creating a sanctuary where guests can rediscover their innate connection to the earth, find peace in the rhythm of nature, and experience the profound wisdom that comes from living in harmony with the environment around us.
                         </p>
                     </motion.div>
                 </div>
             </section>
 
-                         {/* Your transformative journey */}
-             <section className="bg-gradient-to-br from-amber-50 to-stone-100 py-16">
+             {/* Experience Our Resort */}
+             <section className="bg-gradient-to-br from-amber-50 to-stone-100 py-20">
                  <div className="container mx-auto px-4">
                      <motion.div 
                          className="text-center mb-16"
@@ -212,83 +393,237 @@ export default function LandingPage(){
                          transition={{ duration: 0.8 }}
                          viewport={{ once: true }}
                      >
-                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 font-serif px-4">Your Transformative Journey</h2>
+                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 font-serif px-4">Experience Our Resort</h2>
                          <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-serif font-light mb-8 sm:mb-12 px-4">
-                             Every guest follows a carefully curated path toward wellness and self-discovery.
+                             Immerse yourself in the natural beauty and tranquility of our Himalayan retreat.
                          </p>
                      </motion.div>
 
-                     {/* Flow Chart */}
-                     <div className="max-w-6xl mx-auto px-4">
-                         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8">
-                             {[
-                                 {
-                                     step: "1",
-                                     title: "Arrival & Welcome",
-                                     description: "Begin your journey with a warm welcome and serene check-in experience.",
-                                     icon: "🏡"
-                                 },
-                                 {
-                                     step: "2", 
-                                     title: "Assessment & Planning",
-                                     description: "Work with our wellness experts to create your personalized transformation plan.",
-                                     icon: "📋"
-                                 },
-                                 {
-                                     step: "3",
-                                     title: "Healing & Restoration", 
-                                     description: "Immerse yourself in our spa treatments, yoga sessions, and healing therapies.",
-                                     icon: "🧘‍♀️"
-                                 },
-                                 {
-                                     step: "4",
-                                     title: "Nourishment",
-                                     description: "Enjoy our farm-to-table cuisine designed to nourish your body and soul.",
-                                     icon: "🍽️"
-                                 },
-                                 {
-                                     step: "5",
-                                     title: "Integration",
-                                     description: "Learn practices and techniques you can take home for lasting transformation.",
-                                     icon: "✨"
-                                 }
-                             ].map((item, index) => (
-                                 <motion.div 
-                                     key={index}
-                                     className="flex flex-col items-center text-center flex-1"
-                                     initial={{ opacity: 0, y: 50 }}
-                                     whileInView={{ opacity: 1, y: 0 }}
-                                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                                     viewport={{ once: true }}
-                                 >
-                                     {/* Step Circle */}
-                                     <div className="relative mb-6">
-                                         <div className="w-16 h-16 bg-slate-900 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg">
-                                             {item.step}
-                                         </div>
-                                         {/* Arrow (except for last item) */}
-                                         {index < 4 && (
-                                             <div className="hidden lg:block absolute top-1/2 -right-8 transform -translate-y-1/2 text-slate-400 text-2xl">
-                                                 →
+                     {/* Resort Features Grid */}
+                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                         {/* Luxury Villas */}
+                         <motion.div 
+                             className="group"
+                             initial={{ opacity: 0, y: 50 }}
+                             whileInView={{ opacity: 1, y: 0 }}
+                             transition={{ duration: 0.6, delay: 0.1 }}
+                             viewport={{ once: true }}
+                         >
+                             <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                                 <div className="relative h-80">
+                                     <img 
+                                         src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                         alt="Luxury villa with mountain view" 
+                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                     />
+                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                         <h4 className="text-xl font-bold mb-2 font-serif">Luxury Villas</h4>
+                                         <p className="text-sm opacity-90 mb-3">
+                                             Elegant accommodations with panoramic mountain views, private balconies, 
+                                             and modern amenities that blend seamlessly with nature.
+                                         </p>
+                                         <div className="flex items-center">
+                                             <div className="w-8 h-8 bg-white/20 rounded-full mr-3 flex items-center justify-center">
+                                                 <span className="text-white text-sm font-bold">V</span>
                                              </div>
-                                         )}
+                                             <span className="text-sm font-medium">Mountain View Suites</span>
+                                         </div>
                                      </div>
-                                     
-                                     {/* Icon */}
-                                     <div className="text-4xl mb-4">{item.icon}</div>
-                                     
-                                     {/* Content */}
-                                     <h3 className="text-lg font-bold text-slate-900 mb-2 font-serif">{item.title}</h3>
-                                     <p className="text-sm text-slate-600 leading-relaxed max-w-xs">{item.description}</p>
-                                 </motion.div>
-                             ))}
-                         </div>
+                                 </div>
+                             </div>
+                         </motion.div>
+
+                         {/* Farm-to-Table Dining */}
+                         <motion.div 
+                             className="group"
+                             initial={{ opacity: 0, y: 50 }}
+                             whileInView={{ opacity: 1, y: 0 }}
+                             transition={{ duration: 0.6, delay: 0.2 }}
+                             viewport={{ once: true }}
+                         >
+                             <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                                 <div className="relative h-80">
+                                     <img 
+                                         src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                         alt="Fresh organic farm-to-table dining" 
+                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                     />
+                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                         <h4 className="text-xl font-bold mb-2 font-serif">Farm-to-Table Dining</h4>
+                                         <p className="text-sm opacity-90 mb-3">
+                                             Savor fresh, organic meals prepared with ingredients harvested from our own 
+                                             gardens, creating a truly farm-to-table experience.
+                                         </p>
+                                         <div className="flex items-center">
+                                             <div className="w-8 h-8 bg-white/20 rounded-full mr-3 flex items-center justify-center">
+                                                 <span className="text-white text-sm font-bold">F</span>
+                                             </div>
+                                             <span className="text-sm font-medium">Organic Cuisine</span>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </motion.div>
+
+                         {/* Spa & Wellness */}
+                         <motion.div 
+                             className="group"
+                             initial={{ opacity: 0, y: 50 }}
+                             whileInView={{ opacity: 1, y: 0 }}
+                             transition={{ duration: 0.6, delay: 0.3 }}
+                             viewport={{ once: true }}
+                         >
+                             <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                                 <div className="relative h-80">
+                                     <img 
+                                         src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                         alt="Spa and wellness treatments" 
+                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                     />
+                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                         <h4 className="text-xl font-bold mb-2 font-serif">Spa & Wellness</h4>
+                                         <p className="text-sm opacity-90 mb-3">
+                                             Rejuvenate your mind and body with our comprehensive spa treatments 
+                                             and wellness programs in serene natural surroundings.
+                                         </p>
+                                         <div className="flex items-center">
+                                             <div className="w-8 h-8 bg-white/20 rounded-full mr-3 flex items-center justify-center">
+                                                 <span className="text-white text-sm font-bold">S</span>
+                                             </div>
+                                             <span className="text-sm font-medium">Healing Therapies</span>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </motion.div>
+
+                         {/* Nature Trails */}
+                         <motion.div 
+                             className="group"
+                             initial={{ opacity: 0, y: 50 }}
+                             whileInView={{ opacity: 1, y: 0 }}
+                             transition={{ duration: 0.6, delay: 0.4 }}
+                             viewport={{ once: true }}
+                         >
+                             <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                                 <div className="relative h-80">
+                                     <img 
+                                         src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                         alt="Scenic nature trails" 
+                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                     />
+                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                         <h4 className="text-xl font-bold mb-2 font-serif">Nature Trails</h4>
+                                         <p className="text-sm opacity-90 mb-3">
+                                             Explore pristine Himalayan landscapes with guided nature walks, 
+                                             bird watching, and breathtaking sunset viewpoints.
+                                         </p>
+                                         <div className="flex items-center">
+                                             <div className="w-8 h-8 bg-white/20 rounded-full mr-3 flex items-center justify-center">
+                                                 <span className="text-white text-sm font-bold">N</span>
+                                             </div>
+                                             <span className="text-sm font-medium">Mountain Adventures</span>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </motion.div>
+
+                         {/* Cultural Experience */}
+                         <motion.div 
+                             className="group"
+                             initial={{ opacity: 0, y: 50 }}
+                             whileInView={{ opacity: 1, y: 0 }}
+                             transition={{ duration: 0.6, delay: 0.5 }}
+                             viewport={{ once: true }}
+                         >
+                             <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                                 <div className="relative h-80">
+                                     <img 
+                                         src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                         alt="Traditional cultural experience" 
+                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                     />
+                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                         <h4 className="text-xl font-bold mb-2 font-serif">Cultural Experience</h4>
+                                         <p className="text-sm opacity-90 mb-3">
+                                             Immerse yourself in local traditions with music, dance performances, 
+                                             and authentic Himalayan cultural experiences.
+                                         </p>
+                                         <div className="flex items-center">
+                                             <div className="w-8 h-8 bg-white/20 rounded-full mr-3 flex items-center justify-center">
+                                                 <span className="text-white text-sm font-bold">C</span>
+                                             </div>
+                                             <span className="text-sm font-medium">Local Traditions</span>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </motion.div>
+
+                         {/* Organic Gardens */}
+                         <motion.div 
+                             className="group"
+                             initial={{ opacity: 0, y: 50 }}
+                             whileInView={{ opacity: 1, y: 0 }}
+                             transition={{ duration: 0.6, delay: 0.6 }}
+                             viewport={{ once: true }}
+                         >
+                             <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                                 <div className="relative h-80">
+                                     <img 
+                                         src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                         alt="Lush organic gardens" 
+                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                     />
+                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                         <h4 className="text-xl font-bold mb-2 font-serif">Organic Gardens</h4>
+                                         <p className="text-sm opacity-90 mb-3">
+                                             Wander through our lush organic gardens, learn sustainable farming, 
+                                             and experience the joy of harvesting fresh produce.
+                                         </p>
+                                         <div className="flex items-center">
+                                             <div className="w-8 h-8 bg-white/20 rounded-full mr-3 flex items-center justify-center">
+                                                 <span className="text-white text-sm font-bold">G</span>
+                                             </div>
+                                             <span className="text-sm font-medium">Sustainable Living</span>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </motion.div>
                      </div>
+
+                     {/* Call to Action */}
+                     <motion.div 
+                         className="text-center mt-16"
+                         initial={{ opacity: 0, y: 30 }}
+                         whileInView={{ opacity: 1, y: 0 }}
+                         transition={{ duration: 0.8, delay: 0.7 }}
+                         viewport={{ once: true }}
+                     >
+                         <p className="text-lg text-slate-700 mb-6 font-serif">
+                             Ready to experience the magic of Farmyadri?
+                         </p>
+                         <motion.button 
+                             className="bg-slate-900 text-white px-8 py-4 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-lg cursor-pointer"
+                             whileHover={{ scale: 1.05 }}
+                             whileTap={{ scale: 0.95 }}
+                         >
+                             Book Your Stay
+                         </motion.button>
+                     </motion.div>
                  </div>
              </section>
 
-             {/* Testimonials */}
-             <section className="bg-white py-16">
+             {/* Transformative Stories - New Enhanced Version */}
+             <section className="bg-gradient-to-br from-amber-50 to-stone-100 py-20">
                 <div className="container mx-auto px-4">
                     <motion.div 
                         className="text-center mb-16"
@@ -297,106 +632,281 @@ export default function LandingPage(){
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                                                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 font-serif px-4">Transformative Stories</h2>
-                         <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-serif font-light mb-8 sm:mb-12 px-4">
-                            Hear from guests who have experienced profound transformation during their stay with us.
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 font-serif px-4">Transformative Stories</h2>
+                        <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-serif font-light mb-8 sm:mb-12 px-4">
+                            Every moment at Farmyadri is a step toward transformation. Experience the magic through the eyes of our guests.
                         </p>
-                                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto px-4">
-                             {/* Testimonial 1 */}
-                             <div className="flex flex-col">
-                                 <section className="bg-slate-50 p-4 sm:p-6 rounded-2xl shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer h-full">
-                                     <motion.div className="flex items-center mb-4"
-                                     initial={{ opacity: 0, y: 50 }}
-                                     whileInView={{ opacity: 1, y: 0 }}
-                                     transition={{ duration: 0.6, delay: 0.1 }}
-                                     viewport={{ once: true }}
-                                     >
-                                         <div className="flex text-yellow-400 text-xl mb-2">
-                                             ⭐⭐⭐⭐⭐
-                                         </div>
-                                     </motion.div>
-                                     <p className="text-slate-700 mb-6 italic leading-relaxed">
-                                         "Farmyadri was exactly what my soul needed. The peaceful surroundings, organic food, and healing therapies helped me reconnect with myself. I left feeling completely renewed and transformed. This place is truly magical."
-                                     </p>
-                                     <div className="flex items-center">
-                                         <div className="w-12 h-12 bg-slate-300 rounded-full mr-4 flex items-center justify-center">
-                                             <span className="text-slate-600 font-bold">S</span>
-                                         </div>
-                                         <div>
-                                             <p className="font-semibold text-slate-900">Sarah Johnson</p>
-                                             <p className="text-sm text-slate-600">Wellness Enthusiast</p>
-                                         </div>
-                                     </div>
-                                 </section>
-                                 
-                                 {/* Read More Button */}
-                                 <motion.button 
-                                     className="mt-4 bg-slate-900 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg self-start text-sm sm:text-base"
-                                     initial={{ opacity: 0, y: 20 }}
-                                     whileInView={{ opacity: 1, y: 0 }}
-                                     transition={{ duration: 0.6, delay: 0.3 }}
-                                     viewport={{ once: true }}
-                                     whileHover={{ scale: 1.05 }}
-                                 >
-                                     Read More
-                                 </motion.button>
-                             </div>
+                    </motion.div>
 
-                             {/* Testimonial 2 */}
-                             <section className="bg-slate-50 p-4 sm:p-6 rounded-2xl shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer h-83">
-                                 <motion.div className="flex items-center mb-4"
-                                 initial={{ opacity: 0, y: 50 }}
-                                 whileInView={{ opacity: 1, y: 0 }}
-                                 transition={{ duration: 0.6, delay: 0.1 }}
-                                 viewport={{ once: true }}
-                                 >
-                                     <div className="flex text-yellow-400 text-xl mb-2">
-                                         ⭐⭐⭐⭐⭐
-                                     </div>
-                                 </motion.div>
-                                 <p className="text-slate-700 mb-6 italic leading-relaxed">
-                                     "The farm-to-table experience was incredible. Every meal was not just delicious but nourishing. The yoga sessions at sunrise and the peaceful atmosphere helped me find inner peace I never knew existed."
-                                 </p>
-                                 <div className="flex items-center">
-                                     <div className="w-12 h-12 bg-slate-300 rounded-full mr-4 flex items-center justify-center">
-                                         <span className="text-slate-600 font-bold">M</span>
-                                     </div>
-                                     <div>
-                                         <p className="font-semibold text-slate-900">Michael Chen</p>
-                                         <p className="text-sm text-slate-600">Business Executive</p>
-                                     </div>
-                                 </div>
-                             </section>
+                    {/* Hero Story with Large Image */}
+                    <motion.div 
+                        className="mb-16"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <div className="relative overflow-hidden rounded-3xl shadow-2xl">
+                            <div className="relative h-96 md:h-[500px]">
+                                <img 
+                                    src={NIK01823} 
+                                    alt="Serene resort landscape" 
+                                    className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 30 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.8, delay: 0.3 }}
+                                        viewport={{ once: true }}
+                                    >
+                                        <h3 className="text-2xl md:text-3xl font-bold mb-4 font-serif">"A Journey to Inner Peace"</h3>
+                                        <p className="text-lg md:text-xl mb-4 opacity-90">
+                                            "The moment I stepped into Farmyadri, I felt the weight of the world lift from my shoulders. 
+                                            The serene surroundings, the gentle sounds of nature, and the warm hospitality created the perfect 
+                                            environment for my transformation journey."
+                                        </p>
+                                        <div className="flex items-center">
+                                            <div className="w-12 h-12 bg-white/20 rounded-full mr-4 flex items-center justify-center backdrop-blur-sm">
+                                                <span className="text-white font-bold">A</span>
+                                            </div>
+                                            <div>
+                                                <p className="font-semibold">Anita Sharma</p>
+                                                <p className="text-sm opacity-80">Wellness Coach</p>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
 
-                             {/* Testimonial 3 */}
-                             <section className="bg-slate-50 p-4 sm:p-6 rounded-2xl shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer h-83">
-                                 <motion.div className="flex items-center mb-4"
-                                 initial={{ opacity: 0, y: 50 }}
-                                 whileInView={{ opacity: 1, y: 0 }}
-                                 transition={{ duration: 0.6, delay: 0.1 }}
-                                 viewport={{ once: true }}
-                                 >
-                                     <div className="flex text-yellow-400 text-xl mb-2">
-                                         ⭐⭐⭐⭐⭐
-                                     </div>
-                                 </motion.div>
-                                 <p className="text-slate-700 mb-6 italic leading-relaxed">
-                                     "This was a life-changing experience. The Ayurvedic treatments, meditation sessions, and connection with nature helped me overcome stress and anxiety. I learned practices I can use daily. Farmyadri is truly transformative."
-                                 </p>
-                                 <div className="flex items-center">
-                                     <div className="w-12 h-12 bg-slate-300 rounded-full mr-4 flex items-center justify-center">
-                                         <span className="text-slate-600 font-bold">E</span>
-                                     </div>
-                                     <div>
-                                         <p className="font-semibold text-slate-900">Emma Rodriguez</p>
-                                         <p className="text-sm text-slate-600">Yoga Teacher</p>
-                                     </div>
-                                 </div>
-                             </section>
-                         </div>
+                    {/* Photo Grid Stories */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
+                        {/* Story 1 */}
+                        <motion.div 
+                            className="group"
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                                <div className="relative h-80">
+                                    <img 
+                                        src={NIK01579} 
+                                        alt="Yoga and meditation" 
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                        <h4 className="text-xl font-bold mb-2 font-serif">"Finding Balance"</h4>
+                                        <p className="text-sm opacity-90 mb-3">
+                                            "The daily yoga sessions at sunrise transformed my perspective on life. 
+                                            I learned to find peace in every moment."
+                                        </p>
+                                        <div className="flex items-center">
+                                            <div className="w-8 h-8 bg-white/20 rounded-full mr-3 flex items-center justify-center">
+                                                <span className="text-white text-sm font-bold">M</span>
+                                            </div>
+                                            <span className="text-sm font-medium">Maria Chen</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Story 2 */}
+                        <motion.div 
+                            className="group"
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                                <div className="relative h-80">
+                                    <img 
+                                        src={NIK01616} 
+                                        alt="Organic farm experience" 
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                        <h4 className="text-xl font-bold mb-2 font-serif">"Farm to Soul"</h4>
+                                        <p className="text-sm opacity-90 mb-3">
+                                            "Working in the organic garden taught me the true meaning of nourishment. 
+                                            Every meal became a celebration of life."
+                                        </p>
+                                        <div className="flex items-center">
+                                            <div className="w-8 h-8 bg-white/20 rounded-full mr-3 flex items-center justify-center">
+                                                <span className="text-white text-sm font-bold">R</span>
+                                            </div>
+                                            <span className="text-sm font-medium">Raj Patel</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Story 3 */}
+                        <motion.div 
+                            className="group"
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                                <div className="relative h-80">
+                                    <img 
+                                        src={NIK01593} 
+                                        alt="Healing therapies" 
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                        <h4 className="text-xl font-bold mb-2 font-serif">"Healing Touch"</h4>
+                                        <p className="text-sm opacity-90 mb-3">
+                                            "The Ayurvedic treatments were life-changing. I felt years of stress melt away 
+                                            with each therapy session."
+                                        </p>
+                                        <div className="flex items-center">
+                                            <div className="w-8 h-8 bg-white/20 rounded-full mr-3 flex items-center justify-center">
+                                                <span className="text-white text-sm font-bold">S</span>
+                                            </div>
+                                            <span className="text-sm font-medium">Sarah Johnson</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Story 4 */}
+                        <motion.div 
+                            className="group"
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.4 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                                <div className="relative h-80">
+                                    <img 
+                                        src={NIK01582} 
+                                        alt="Nature connection" 
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                        <h4 className="text-xl font-bold mb-2 font-serif">"Nature's Embrace"</h4>
+                                        <p className="text-sm opacity-90 mb-3">
+                                            "Walking through the Himalayan trails, I discovered my connection to the earth 
+                                            and found my true purpose."
+                                        </p>
+                                        <div className="flex items-center">
+                                            <div className="w-8 h-8 bg-white/20 rounded-full mr-3 flex items-center justify-center">
+                                                <span className="text-white text-sm font-bold">D</span>
+                                            </div>
+                                            <span className="text-sm font-medium">David Kim</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Story 5 */}
+                        <motion.div 
+                            className="group"
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.5 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                                <div className="relative h-80">
+                                    <img 
+                                        src={NIK01630} 
+                                        alt="Mindful living" 
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                        <h4 className="text-xl font-bold mb-2 font-serif">"Mindful Living"</h4>
+                                        <p className="text-sm opacity-90 mb-3">
+                                            "Learning to live mindfully changed everything. I now carry the peace of Farmyadri 
+                                            wherever I go."
+                                        </p>
+                                        <div className="flex items-center">
+                                            <div className="w-8 h-8 bg-white/20 rounded-full mr-3 flex items-center justify-center">
+                                                <span className="text-white text-sm font-bold">L</span>
+                                            </div>
+                                            <span className="text-sm font-medium">Lisa Wang</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Story 6 */}
+                        <motion.div 
+                            className="group"
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.6 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                                <div className="relative h-80">
+                                    <img 
+                                        src={NIK01715} 
+                                        alt="Community connection" 
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                        <h4 className="text-xl font-bold mb-2 font-serif">"Community Spirit"</h4>
+                                        <p className="text-sm opacity-90 mb-3">
+                                            "The connections I made here are lifelong. We shared stories, laughter, and 
+                                            the journey of transformation together."
+                                        </p>
+                                        <div className="flex items-center">
+                                            <div className="w-8 h-8 bg-white/20 rounded-full mr-3 flex items-center justify-center">
+                                                <span className="text-white text-sm font-bold">E</span>
+                                            </div>
+                                            <span className="text-sm font-medium">Emma Rodriguez</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    {/* Call to Action */}
+                    <motion.div 
+                        className="text-center mt-16"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.7 }}
+                        viewport={{ once: true }}
+                    >
+                        <p className="text-lg text-slate-700 mb-6 font-serif">
+                            Ready to write your own transformative story?
+                        </p>
+                        <motion.button 
+                            className="mt-4 bg-slate-900 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg self-start text-sm sm:text-base cursor-pointer"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                            viewport={{ once: true }}
+                            whileHover={{ scale: 1.05 }}
+                        >
+                            Read More
+                        </motion.button>
                     </motion.div>
                 </div>
-                          </section>
+            </section>
 
              {/* Footer */}
              <footer className="bg-black text-white py-20">
