@@ -2,13 +2,12 @@ import { motion } from "framer-motion"
 import farmImage from "../assets/farm.jpg"
 import bg from "../assets/bg.jpg"
 import philo2 from "../assets/philo2.jpg"
-import NIK01579 from "../assets/NIK01579.jpg"
+import NIK01823 from "../assets/NIK01823-Edit.jpg"
 import NIK01582 from "../assets/NIK01582.jpg"
 import NIK01593 from "../assets/NIK01593.jpg"
 import NIK01616 from "../assets/NIK01616.jpg"
 import NIK01630 from "../assets/NIK01630.jpg"
 import NIK01715 from "../assets/NIK01715.jpg"
-import NIK01823 from "../assets/NIK01823-Edit.jpg"
 
 export default function LandingPage(){
     return (
@@ -446,7 +445,7 @@ export default function LandingPage(){
                                  <div className="relative h-80">
                                      <img 
                                          src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                                         alt="Fresh organic farm-to-table dining" 
+                                         alt="Elegant restaurant dining" 
                                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                      />
                                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -623,25 +622,27 @@ export default function LandingPage(){
              </section>
 
              {/* Transformative Stories - New Enhanced Version */}
-             <section className="bg-gradient-to-br from-amber-50 to-stone-100 py-20">
+             <section className="py-16 sm:py-20 bg-gradient-to-br from-amber-50 to-stone-100">
                 <div className="container mx-auto px-4">
                     <motion.div 
-                        className="text-center mb-16"
-                        initial={{ opacity: 0, y: 50 }}
+                        className="text-center mb-12 sm:mb-16"
+                        initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 font-serif px-4">Transformative Stories</h2>
-                        <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-serif font-light mb-8 sm:mb-12 px-4">
-                            Every moment at Farmyadri is a step toward transformation. Experience the magic through the eyes of our guests.
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-4">
+                            Transformative Stories
+                        </h2>
+                        <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+                            Real experiences from our guests who found peace, healing, and transformation in nature's embrace.
                         </p>
                     </motion.div>
 
-                    {/* Hero Story with Large Image */}
+                    {/* Hero Story */}
                     <motion.div 
-                        className="mb-16"
-                        initial={{ opacity: 0, y: 50 }}
+                        className="mb-12 sm:mb-16"
+                        initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
@@ -650,32 +651,26 @@ export default function LandingPage(){
                             <div className="relative h-96 md:h-[500px]">
                                 <img 
                                     src={NIK01823} 
-                                    alt="Serene resort landscape" 
+                                    alt="Peaceful mountain retreat" 
                                     className="w-full h-full object-cover"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                                <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12 text-white">
                                     <motion.div
                                         initial={{ opacity: 0, y: 30 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.8, delay: 0.3 }}
                                         viewport={{ once: true }}
                                     >
-                                        <h3 className="text-2xl md:text-3xl font-bold mb-4 font-serif">"A Journey to Inner Peace"</h3>
-                                        <p className="text-lg md:text-xl mb-4 opacity-90">
-                                            "The moment I stepped into Farmyadri, I felt the weight of the world lift from my shoulders. 
-                                            The serene surroundings, the gentle sounds of nature, and the warm hospitality created the perfect 
-                                            environment for my transformation journey."
+                                        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+                                            Finding Peace in the Mountains
+                                        </h3>
+                                        <p className="text-lg sm:text-xl leading-relaxed mb-6 max-w-3xl">
+                                            "After months of stress and burnout, I found myself at Farm Yadri. The moment I stepped onto the property, surrounded by the majestic Himalayas, I felt an immediate sense of calm. The daily yoga sessions at sunrise, the organic farm-to-table meals, and the guided meditation walks transformed not just my vacation, but my entire perspective on life."
                                         </p>
-                                        <div className="flex items-center">
-                                            <div className="w-12 h-12 bg-white/20 rounded-full mr-4 flex items-center justify-center backdrop-blur-sm">
-                                                <span className="text-white font-bold">A</span>
-                                            </div>
-                                            <div>
-                                                <p className="font-semibold">Anita Sharma</p>
-                                                <p className="text-sm opacity-80">Wellness Coach</p>
-                                            </div>
-                                        </div>
+                                        <p className="text-lg opacity-90">
+                                            - Sarah M., Corporate Executive
+                                        </p>
                                     </motion.div>
                                 </div>
                             </div>
@@ -683,226 +678,232 @@ export default function LandingPage(){
                     </motion.div>
 
                     {/* Photo Grid Stories */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                         {/* Story 1 */}
                         <motion.div 
-                            className="group"
-                            initial={{ opacity: 0, y: 50 }}
+                            className="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer"
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
                             viewport={{ once: true }}
+                            whileHover={{ y: -5 }}
                         >
-                            <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
-                                <div className="relative h-80">
-                                    <img 
-                                        src={NIK01579} 
-                                        alt="Yoga and meditation" 
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                        <h4 className="text-xl font-bold mb-2 font-serif">"Finding Balance"</h4>
-                                        <p className="text-sm opacity-90 mb-3">
-                                            "The daily yoga sessions at sunrise transformed my perspective on life. 
-                                            I learned to find peace in every moment."
-                                        </p>
-                                        <div className="flex items-center">
-                                            <div className="w-8 h-8 bg-white/20 rounded-full mr-3 flex items-center justify-center">
-                                                <span className="text-white text-sm font-bold">M</span>
-                                            </div>
-                                            <span className="text-sm font-medium">Maria Chen</span>
-                                        </div>
-                                    </div>
+                            <div className="relative h-64">
+                                <img 
+                                    src={NIK01582} 
+                                    alt="Traditional Indian curry" 
+                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                    <h4 className="text-xl font-bold mb-2">Traditional Curry</h4>
+                                    <p className="text-sm mb-4 opacity-90">
+                                        "The authentic Indian curry prepared with fresh spices and organic vegetables was a revelation. Each bite transported me to the heart of traditional Indian cuisine."
+                                    </p>
+                                    <motion.button 
+                                        className="bg-white text-slate-900 px-4 py-2 rounded-full hover:bg-slate-100 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm cursor-pointer"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.6, delay: 0.3 }}
+                                        viewport={{ once: true }}
+                                        whileHover={{ scale: 1.05 }}
+                                    >
+                                        Read More
+                                    </motion.button>
                                 </div>
                             </div>
                         </motion.div>
 
                         {/* Story 2 */}
                         <motion.div 
-                            className="group"
-                            initial={{ opacity: 0, y: 50 }}
+                            className="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer"
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             viewport={{ once: true }}
+                            whileHover={{ y: -5 }}
                         >
-                            <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
-                                <div className="relative h-80">
-                                    <img 
-                                        src={NIK01616} 
-                                        alt="Organic farm experience" 
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                        <h4 className="text-xl font-bold mb-2 font-serif">"Farm to Soul"</h4>
-                                        <p className="text-sm opacity-90 mb-3">
-                                            "Working in the organic garden taught me the true meaning of nourishment. 
-                                            Every meal became a celebration of life."
-                                        </p>
-                                        <div className="flex items-center">
-                                            <div className="w-8 h-8 bg-white/20 rounded-full mr-3 flex items-center justify-center">
-                                                <span className="text-white text-sm font-bold">R</span>
-                                            </div>
-                                            <span className="text-sm font-medium">Raj Patel</span>
-                                        </div>
-                                    </div>
+                            <div className="relative h-64">
+                                <img 
+                                    src={NIK01582} 
+                                    alt="Fresh Indian spices" 
+                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                    <h4 className="text-xl font-bold mb-2">Spice Garden</h4>
+                                    <p className="text-sm mb-4 opacity-90">
+                                        "Learning about traditional Indian spices and their healing properties was fascinating. The aromas from our spice garden filled every meal with authenticity."
+                                    </p>
+                                    <motion.button 
+                                        className="bg-white text-slate-900 px-4 py-2 rounded-full hover:bg-slate-100 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm cursor-pointer"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.6, delay: 0.3 }}
+                                        viewport={{ once: true }}
+                                        whileHover={{ scale: 1.05 }}
+                                    >
+                                        Read More
+                                    </motion.button>
                                 </div>
                             </div>
                         </motion.div>
 
                         {/* Story 3 */}
                         <motion.div 
-                            className="group"
-                            initial={{ opacity: 0, y: 50 }}
+                            className="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer"
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.3 }}
                             viewport={{ once: true }}
+                            whileHover={{ y: -5 }}
                         >
-                            <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
-                                <div className="relative h-80">
-                                    <img 
-                                        src={NIK01593} 
-                                        alt="Healing therapies" 
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                        <h4 className="text-xl font-bold mb-2 font-serif">"Healing Touch"</h4>
-                                        <p className="text-sm opacity-90 mb-3">
-                                            "The Ayurvedic treatments were life-changing. I felt years of stress melt away 
-                                            with each therapy session."
-                                        </p>
-                                        <div className="flex items-center">
-                                            <div className="w-8 h-8 bg-white/20 rounded-full mr-3 flex items-center justify-center">
-                                                <span className="text-white text-sm font-bold">S</span>
-                                            </div>
-                                            <span className="text-sm font-medium">Sarah Johnson</span>
-                                        </div>
-                                    </div>
+                            <div className="relative h-64">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                    alt="Elegant restaurant dining" 
+                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                    <h4 className="text-xl font-bold mb-2">Dining Excellence</h4>
+                                    <p className="text-sm mb-4 opacity-90">
+                                        "Every meal was a masterpiece of Indian cuisine. The attention to detail, the presentation, and the authentic flavors made each dining experience unforgettable."
+                                    </p>
+                                    <motion.button 
+                                        className="bg-white text-slate-900 px-4 py-2 rounded-full hover:bg-slate-100 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm cursor-pointer"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.6, delay: 0.3 }}
+                                        viewport={{ once: true }}
+                                        whileHover={{ scale: 1.05 }}
+                                    >
+                                        Read More
+                                    </motion.button>
                                 </div>
                             </div>
                         </motion.div>
 
                         {/* Story 4 */}
                         <motion.div 
-                            className="group"
-                            initial={{ opacity: 0, y: 50 }}
+                            className="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer"
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.4 }}
                             viewport={{ once: true }}
+                            whileHover={{ y: -5 }}
                         >
-                            <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
-                                <div className="relative h-80">
-                                    <img 
-                                        src={NIK01582} 
-                                        alt="Nature connection" 
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                        <h4 className="text-xl font-bold mb-2 font-serif">"Nature's Embrace"</h4>
-                                        <p className="text-sm opacity-90 mb-3">
-                                            "Walking through the Himalayan trails, I discovered my connection to the earth 
-                                            and found my true purpose."
-                                        </p>
-                                        <div className="flex items-center">
-                                            <div className="w-8 h-8 bg-white/20 rounded-full mr-3 flex items-center justify-center">
-                                                <span className="text-white text-sm font-bold">D</span>
-                                            </div>
-                                            <span className="text-sm font-medium">David Kim</span>
-                                        </div>
-                                    </div>
+                            <div className="relative h-64">
+                                <img 
+                                    src={NIK01616} 
+                                    alt="Fresh organic vegetables" 
+                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                    <h4 className="text-xl font-bold mb-2">Farm Fresh</h4>
+                                    <p className="text-sm mb-4 opacity-90">
+                                        "Harvesting fresh vegetables from our organic garden and using them in our meals created a connection to food I never experienced before."
+                                    </p>
+                                    <motion.button 
+                                        className="bg-white text-slate-900 px-4 py-2 rounded-full hover:bg-slate-100 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm cursor-pointer"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.6, delay: 0.3 }}
+                                        viewport={{ once: true }}
+                                        whileHover={{ scale: 1.05 }}
+                                    >
+                                        Read More
+                                    </motion.button>
                                 </div>
                             </div>
                         </motion.div>
 
                         {/* Story 5 */}
                         <motion.div 
-                            className="group"
-                            initial={{ opacity: 0, y: 50 }}
+                            className="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer"
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.5 }}
                             viewport={{ once: true }}
+                            whileHover={{ y: -5 }}
                         >
-                            <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
-                                <div className="relative h-80">
-                                    <img 
-                                        src={NIK01630} 
-                                        alt="Mindful living" 
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                        <h4 className="text-xl font-bold mb-2 font-serif">"Mindful Living"</h4>
-                                        <p className="text-sm opacity-90 mb-3">
-                                            "Learning to live mindfully changed everything. I now carry the peace of Farmyadri 
-                                            wherever I go."
-                                        </p>
-                                        <div className="flex items-center">
-                                            <div className="w-8 h-8 bg-white/20 rounded-full mr-3 flex items-center justify-center">
-                                                <span className="text-white text-sm font-bold">L</span>
-                                            </div>
-                                            <span className="text-sm font-medium">Lisa Wang</span>
-                                        </div>
-                                    </div>
+                            <div className="relative h-64">
+                                <img 
+                                    src={NIK01630} 
+                                    alt="Paneer curry dish" 
+                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                    <h4 className="text-xl font-bold mb-2">Paneer Delight</h4>
+                                    <p className="text-sm mb-4 opacity-90">
+                                        "The homemade paneer curry was absolutely divine. The creamy texture and aromatic spices created a dish that was both comforting and exotic."
+                                    </p>
+                                    <motion.button 
+                                        className="bg-white text-slate-900 px-4 py-2 rounded-full hover:bg-slate-100 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm cursor-pointer"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.6, delay: 0.3 }}
+                                        viewport={{ once: true }}
+                                        whileHover={{ scale: 1.05 }}
+                                    >
+                                        Read More
+                                    </motion.button>
                                 </div>
                             </div>
                         </motion.div>
 
                         {/* Story 6 */}
                         <motion.div 
-                            className="group"
-                            initial={{ opacity: 0, y: 50 }}
+                            className="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer"
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.6 }}
                             viewport={{ once: true }}
+                            whileHover={{ y: -5 }}
                         >
-                            <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
-                                <div className="relative h-80">
-                                    <img 
-                                        src={NIK01715} 
-                                        alt="Community connection" 
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                        <h4 className="text-xl font-bold mb-2 font-serif">"Community Spirit"</h4>
-                                        <p className="text-sm opacity-90 mb-3">
-                                            "The connections I made here are lifelong. We shared stories, laughter, and 
-                                            the journey of transformation together."
-                                        </p>
-                                        <div className="flex items-center">
-                                            <div className="w-8 h-8 bg-white/20 rounded-full mr-3 flex items-center justify-center">
-                                                <span className="text-white text-sm font-bold">E</span>
-                                            </div>
-                                            <span className="text-sm font-medium">Emma Rodriguez</span>
-                                        </div>
-                                    </div>
+                            <div className="relative h-64">
+                                <img 
+                                    src={NIK01715} 
+                                    alt="Indian spices and herbs" 
+                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                    <h4 className="text-xl font-bold mb-2">Aromatic Spices</h4>
+                                    <p className="text-sm mb-4 opacity-90">
+                                        "The blend of traditional Indian spices created such rich, complex flavors. Each meal was a journey through the diverse culinary landscape of India."
+                                    </p>
+                                    <motion.button 
+                                        className="bg-white text-slate-900 px-4 py-2 rounded-full hover:bg-slate-100 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm cursor-pointer"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.6, delay: 0.3 }}
+                                        viewport={{ once: true }}
+                                        whileHover={{ scale: 1.05 }}
+                                    >
+                                        Read More
+                                    </motion.button>
                                 </div>
                             </div>
                         </motion.div>
                     </div>
 
-                    {/* Call to Action */}
+                    {/* CTA */}
                     <motion.div 
-                        className="text-center mt-16"
-                        initial={{ opacity: 0, y: 30 }}
+                        className="text-center mt-12 sm:mt-16"
+                        initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.7 }}
+                        transition={{ duration: 0.6, delay: 0.7 }}
                         viewport={{ once: true }}
                     >
-                        <p className="text-lg text-slate-700 mb-6 font-serif">
-                            Ready to write your own transformative story?
-                        </p>
                         <motion.button 
-                            className="mt-4 bg-slate-900 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg self-start text-sm sm:text-base cursor-pointer"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.3 }}
-                            viewport={{ once: true }}
+                            className="bg-slate-900 text-white px-8 py-4 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-lg cursor-pointer"
                             whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
                         >
-                            Read More
+                            Begin Your Journey
                         </motion.button>
                     </motion.div>
                 </div>
