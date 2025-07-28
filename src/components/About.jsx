@@ -29,6 +29,11 @@ export default function About(){
                     </p>
                 </motion.div>
             </section>
+
+            {/* Our Mission */}
+            <section>
+                
+            </section>
         </div>
     )
 }
