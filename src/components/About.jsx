@@ -29,7 +29,7 @@ export default function About(){
         const interval = setInterval(() => {
             setCurrentImageIndex((prevIndex) => prevIndex === storyImages.length - 1 ? 0: prevIndex + 1)
         }, 5000)
-    }, [storyImages])
+    }, [storyImages.length])
 
     return <div className="min-h-screen">
 
