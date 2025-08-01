@@ -2,6 +2,10 @@
 import { motion } from "framer-motion";
 import bg from "../assets/bg.jpg";
 import { useEffect, useState } from "react";
+import cr1 from "../assets/cr1.jpg";
+import cr2 from "../assets/cr2.jpg";
+import cr3 from "../assets/cr3.jpg";
+import cr4 from "../assets/cr4.jpg";
 
 export default function About(){
 
@@ -69,8 +73,14 @@ export default function About(){
                 className="absolute inset-0"
                 initial = {{opacity:0}}
                 animate = {{opacity: currentImageIndex === index ? 1 : 0, scale: currentImageIndex === index ? 1 : 1.1}}
-                >
+                transition = {{duration: 2, ease: 'easeInOut'}}
+                style = {{
+                    backgroundImage: `url${Image.url}`,
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat"
+                }}
 
+                >
                 </motion.div>
             ))}
         </section>
