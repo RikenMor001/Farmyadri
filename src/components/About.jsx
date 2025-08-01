@@ -44,11 +44,9 @@ export default function About(){
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            backgroundBlendMode: 'overlay',
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
         }}
         >
-            <div className="absolute inset-0 bg-black/50"/>
+            <div className="absolute inset-0 bg-black/30"/>
             <motion.div 
                 initial = {{opacity: 0, y: 50}}
                 animate = {{opacity: 1, y: 0}}
