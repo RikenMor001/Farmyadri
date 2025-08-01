@@ -1,13 +1,13 @@
 
 import { motion } from "framer-motion";
 import bg from "../assets/bg.jpg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function About(){
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    const stroyTime = [{
+    const storyImages = [{
         url: cr1,
         title: "Wild deer",
         subtitle: "Where wildlife roams free"
@@ -24,6 +24,12 @@ export default function About(){
         title: "Golden Meadows",
         subtitle: "Sunset over the rolling hills"
     }]
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) => prevIndex === storyImages.length - 1 ? 0: prevIndex + 1)
+        }, 5000)
+    }, [storyImages])
 
     return <div className="min-h-screen">
 
