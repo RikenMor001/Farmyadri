@@ -67,22 +67,29 @@ export default function About(){
 
         {/* Our Story Section */}
         <section className="relative h-screen flex  items-center justify-center font-serif overflow-hidden">
-            {storyImages.map((img, index) => (
+        {storyImages.map((image, index) => (
                 <motion.div
-                key = {index}
-                className="absolute inset-0"
-                initial = {{opacity:0}}
-                animate = {{opacity: currentImageIndex === index ? 1 : 0, scale: currentImageIndex === index ? 1 : 1.1}}
-                transition = {{duration: 2, ease: 'easeInOut'}}
-                style = {{
-                    backgroundImage: `url${Image.url}`,
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat"
-                }}
-
+                    key={index}
+                    className="absolute inset-0"
+                    initial={{ opacity: 0 }}
+                    animate={{ 
+                        opacity: currentImageIndex === index ? 1 : 0,
+                        scale: currentImageIndex === index ? 1 : 1.1
+                    }}
+                    transition={{ 
+                        duration: 2,
+                        ease: "easeInOut"
+                    }}
+                    style={{
+                        backgroundImage: `url(${image.url})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                    }}
                 >
+                    <div className="absolute inset-0 bg-black/40"></div>
                 </motion.div>
-            ))}
+                ))}
         </section>
     </div>
 }
