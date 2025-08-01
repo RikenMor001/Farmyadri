@@ -1,7 +1,30 @@
+
 import { motion } from "framer-motion";
 import bg from "../assets/bg.jpg";
+import { useState } from "react";
 
 export default function About(){
+
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    const stroyTime = [{
+        url: cr1,
+        title: "Wild deer",
+        subtitle: "Where wildlife roams free"
+    }, {
+        url: cr2,
+        title: "Mountain waterfall",
+        subtitle: "Crystal clear water falls from the mountain"
+    }, {
+        url: cr3,
+        title: "Ancient forest",
+        subtitle: "Towering trees reaching for the sky"
+    }, {
+        url: cr4,
+        title: "Golden Meadows",
+        subtitle: "Sunset over the rolling hills"
+    }]
+
     return <div className="min-h-screen">
 
         {/* Hero Section */}
@@ -33,5 +56,8 @@ export default function About(){
         </section>
 
         {/* Our Story Section */}
+        <section>
+
+        </section>
     </div>
 }
