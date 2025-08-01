@@ -62,8 +62,17 @@ export default function About(){
         </section>
 
         {/* Our Story Section */}
-        <section>
+        <section className="relative h-screen flex  items-center justify-center font-serif overflow-hidden">
+            {storyImages.map((img, index) => (
+                <motion.div
+                key = {index}
+                className="absolute inset-0"
+                initial = {{opacity:0}}
+                animate = {{opacity: currentImageIndex === index ? 1 : 0, scale: currentImageIndex === index ? 1 : 1.1}}
+                >
 
+                </motion.div>
+            ))}
         </section>
     </div>
 }
