@@ -24,7 +24,7 @@ export default function NavBar(){
     const navItems = [
         { name: "Home", href: "/", action: scrollToTop, isLink: true },
         { name: "About Us", href: "/about", action: () => closeSidebar(), isLink: true },
-        { name: "Gallery", href: "#gallery", action: () => closeSidebar(), isLink: false },
+        { name: "Gallery", href: "/gallery", action: () => closeSidebar(), isLink: true },
         { name: "Wellness Program", href: "#wellness", action: () => closeSidebar(), isLink: false },
         { name: "Accommodation", href: "#accommodation", action: () => closeSidebar(), isLink: false },
         { name: "Contact Us", href: "#contact", action: () => closeSidebar(), isLink: false }
