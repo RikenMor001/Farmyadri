@@ -54,7 +54,7 @@
                     }}
                 >
                     {/* Background Overlay */}
-                    <div className="absolute inset-0 bg-black/50"></div>
+                    <div className="absolute inset-0 bg-black/30"></div>
                     
                     <motion.div 
                         className="text-center z-10 px-4 max-w-5xl mx-auto"
