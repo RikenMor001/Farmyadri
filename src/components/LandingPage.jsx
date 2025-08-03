@@ -14,7 +14,7 @@ export default function LandingPage(){
             {/* Hero Section */}
             <section 
                 className="relative flex flex-col justify-center items-center h-screen font-serif"
-                style={{
+                style={{ 
                     backgroundImage: `url(${bg})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
