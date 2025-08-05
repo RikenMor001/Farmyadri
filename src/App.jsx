@@ -4,6 +4,8 @@ import LandingPage from "./components/LandingPage"
 import About from "./components/About"
 import Gallery from "./components/Gallery"
 import ContactUs from "./components/ContactUs"
+import WellnessProgram from "./components/WellnessProgram"
+import Accomodation from "./components/Accomodation"
 
 function App() { 
   return (
@@ -15,6 +17,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact-us" element = {<ContactUs/>}/>
+          <Route path="/wellness-program" element = {<WellnessProgram/>}/>
+          <Route path="/accomodation" element = {<Accomodation/>}/>
         </Routes>
       </div>
     </Router>
