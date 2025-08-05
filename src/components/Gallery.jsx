@@ -197,7 +197,7 @@ export default function Gallery(){
                     </motion.div>
                     
                     {/* First Row - 4 images */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-7xl mx-auto mb-6 sm:mb-8">
                         {galleryImages.slice(0, 4).map((image, index) => (
                             <motion.div 
                                 key={index}
@@ -208,7 +208,7 @@ export default function Gallery(){
                                 viewport={{ once: true }}
                                 whileHover={{ y: -5 }}
                             >
-                                <div className="relative h-80">
+                                <div className="relative h-64 sm:h-72 md:h-80">
                                     <img 
                                         src={image.src} 
                                         alt={image.alt} 
@@ -222,7 +222,7 @@ export default function Gallery(){
                     </div>
 
                     {/* Second Row - 4 images */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-7xl mx-auto mb-6 sm:mb-8">
                         {galleryImages.slice(4, 8).map((image, index) => (
                             <motion.div 
                                 key={index + 4}
@@ -233,7 +233,7 @@ export default function Gallery(){
                                 viewport={{ once: true }}
                                 whileHover={{ y: -5 }}
                             >
-                                <div className="relative h-80">
+                                <div className="relative h-64 sm:h-72 md:h-80">
                                     <img 
                                         src={image.src} 
                                         alt={image.alt} 
@@ -247,7 +247,7 @@ export default function Gallery(){
                     </div>
 
                     {/* Third Row - 4 images */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-7xl mx-auto mb-6 sm:mb-8">
                         {galleryImages.slice(8, 12).map((image, index) => (
                             <motion.div 
                                 key={index + 8}
@@ -258,7 +258,7 @@ export default function Gallery(){
                                 viewport={{ once: true }}
                                 whileHover={{ y: -5 }}
                             >
-                                <div className="relative h-80">
+                                <div className="relative h-64 sm:h-72 md:h-80">
                                     <img 
                                         src={image.src} 
                                         alt={image.alt} 
@@ -281,7 +281,7 @@ export default function Gallery(){
                             viewport={{ once: true }}
                             whileHover={{ y: -5 }}
                         >
-                            <div className="relative h-80">
+                            <div className="relative h-64 sm:h-72 md:h-80">
                                 <img 
                                     src={galleryImages[12].src} 
                                     alt={galleryImages[12].alt} 
