@@ -43,7 +43,7 @@ export default function ContactUs(){
                     </h1>
                     <div className='border-b-2 border-slate-400 w-1/2 mt-2'/>
                     <p className='text-lg text-center text-slate-700 font-serif font-light mt-4'>
-                        Questions about booking a stay at Farmyadri Resort? Our team is always available to answer any  questions or concerns you may have—big or small. Let us help plan your return to the wild.
+                        Questions about booking a stay at Farmyadri Resort? Our team is always available <br/> to answer any  questions or concerns you may have—big or small. <br/> Let us help plan your return to the wild.
                     </p>
                 </div>
             </div>
