@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 
 export default function ContactUs(){
     return <div className="min-h-screen">
+        {/* Hero Section */}
         <section className="py-15 relative"
         style={{
             backgroundImage: `url(${contactus})`,
@@ -29,6 +30,21 @@ export default function ContactUs(){
                             Get In Touch With Us
                         </p>
                     </motion.div>
+                </div>
+            </div>
+        </section>
+
+        {/* Contact Form */}
+        <section className='py-15 bg-gradient-to-br from-amber-50 to-stone-100'>
+            <div className='container mx-auto px-4 '>
+                <div className='flex flex-col items-center justify-center'>
+                    <h1 className='text-3xl font-serif tracking-wider text-slate-700 mb-2'>
+                        Reach Out to Our Team
+                    </h1>
+                    <div className='border-b-2 border-slate-400 w-1/2 mt-2'/>
+                    <p className='text-lg text-center text-slate-700 font-serif font-light mt-4'>
+                        Questions about booking a stay at Farmyadri Resort? Our team is always available to answer any  questions or concerns you may have—big or small. Let us help plan your return to the wild.
+                    </p>
                 </div>
             </div>
         </section>
