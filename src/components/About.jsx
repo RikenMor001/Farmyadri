@@ -1,6 +1,6 @@
     import { motion } from "framer-motion";
     import { useState, useEffect } from "react";
-    import bg from "../assets/bg.jpg"
+    import aboutBg from "../assets/NIK01593.jpg"
     import cr1 from "../assets/cr1.jpg"
     import cr2 from "../assets/cr2.jpg"
     import cr3 from "../assets/cr3.jpg"
@@ -51,7 +51,7 @@
                     <motion.div 
                         className="absolute inset-0"
                         style={{
-                            backgroundImage: `url(${bg})`,
+                            backgroundImage: `url(${aboutBg})`,
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
                             backgroundRepeat: 'no-repeat',
