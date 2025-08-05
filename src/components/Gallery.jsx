@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { memo, useMemo } from "react"
 import galleryBg from "../assets/philo2.jpg"
 import ga1 from "../assets/gallery/ga1.jpg"
 import ga2 from "../assets/gallery/ga2.jpg"
@@ -14,8 +15,8 @@ import ga11 from "../assets/gallery/ga11.jpg"
 import ga12 from "../assets/gallery/ga12.jpg"
 import ga13 from "../assets/gallery/ga13.jpg"
 
-export default function Gallery(){
-    const galleryImages = [
+const Gallery = memo(() => {
+    const galleryImages = useMemo(() => [
         {
             src: ga1,
             alt: "Mountain Vista"
@@ -68,7 +69,7 @@ export default function Gallery(){
             src: ga13,
             alt: "Mountain Retreat"
         }
-    ];
+    ], [])
 
     return (
         <div className="min-h-screen">
@@ -476,4 +477,6 @@ export default function Gallery(){
             </footer>
         </div>
     )
-} 
+})
+
+export default Gallery 
