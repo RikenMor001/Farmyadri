@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 export default function NavBar(){
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+    const location = useLocation()
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen)
@@ -29,6 +30,24 @@ export default function NavBar(){
         { name: "Accommodation", href: "/accommodation", action: () => closeSidebar(), isLink: true },
         { name: "Contact Us", href: "/contact-us", action: () => closeSidebar(), isLink: true }
     ]
+
+    // Function to check if a nav item is active
+    const isActive = (href) => {
+        if (href === "/") {
+            return location.pathname === "/"
+        }
+        return location.pathname === href
+    }
+
+    // Function to get nav item styling
+    const getNavItemStyle = (href) => {
+        const active = isActive(href)
+        return `transition-all duration-300 cursor-pointer ${
+            active 
+                ? "text-slate-900 font-bold border-b-2 border-slate-900 pb-1" 
+                : "text-slate-700 hover:text-slate-950"
+        }`
+    }
 
     return (
         <>
@@ -99,7 +118,7 @@ export default function NavBar(){
                             <Link 
                                 key={item.name}
                                 to={item.href}
-                                className="hover:text-slate-950 transition-all duration-300 text-slate-700 cursor-pointer"
+                                className={getNavItemStyle(item.href)}
                                 onClick={item.action}
                             >
                                 {item.name}
@@ -107,7 +126,7 @@ export default function NavBar(){
                         ) : (
                             <div 
                                 key={item.name}
-                                className="hover:text-slate-950 transition-all duration-300 text-slate-700 cursor-pointer"
+                                className={getNavItemStyle(item.href)}
                                 onClick={item.action}
                             >
                                 {item.name}
@@ -212,14 +231,22 @@ export default function NavBar(){
                                         {item.isLink ? (
                                             <Link 
                                                 to={item.href}
-                                                className="text-lg font-medium text-slate-700 hover:text-slate-900 transition-colors duration-300 cursor-pointer py-3 border-b border-gray-100 block"
+                                                className={`text-lg font-medium transition-colors duration-300 cursor-pointer py-3 border-b border-gray-100 block ${
+                                                    isActive(item.href)
+                                                        ? "text-slate-900 font-bold border-l-4 border-slate-900 pl-3"
+                                                        : "text-slate-700 hover:text-slate-900"
+                                                }`}
                                                 onClick={item.action}
                                             >
                                                 {item.name}
                                             </Link>
                                         ) : (
                                             <div 
-                                                className="text-lg font-medium text-slate-700 hover:text-slate-900 transition-colors duration-300 cursor-pointer py-3 border-b border-gray-100"
+                                                className={`text-lg font-medium transition-colors duration-300 cursor-pointer py-3 border-b border-gray-100 ${
+                                                    isActive(item.href)
+                                                        ? "text-slate-900 font-bold border-l-4 border-slate-900 pl-3"
+                                                        : "text-slate-700 hover:text-slate-900"
+                                                }`}
                                                 onClick={item.action}
                                             >
                                                 {item.name}
