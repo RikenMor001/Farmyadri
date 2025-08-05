@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { memo, useMemo } from "react"
+import { Link } from "react-router-dom"
 import galleryBg from "../assets/philo2.jpg"
 import ga1 from "../assets/gallery/ga1.jpg"
 import ga2 from "../assets/gallery/ga2.jpg"
@@ -143,12 +144,16 @@ const Gallery = memo(() => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                 >
-                    <button className="bg-slate-950 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-sm sm:text-base md:text-lg font-medium hover:scale-105 shadow-lg border border-white w-full sm:w-auto">
-                        View All Photos
-                    </button>
-                    <button className="bg-slate-950 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-sm sm:text-base md:text-lg font-medium hover:scale-105 shadow-lg border border-white w-full sm:w-auto">
-                        Book Your Stay
-                    </button>
+                    <Link to="/accommodation">
+                        <button className="bg-slate-950 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-sm sm:text-base md:text-lg font-medium hover:scale-105 shadow-lg border border-white w-full sm:w-auto">
+                            View All Photos
+                        </button>
+                    </Link>
+                    <Link to="/accomodation">
+                        <button className="bg-slate-950 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-sm sm:text-base md:text-lg font-medium hover:scale-105 shadow-lg border border-white w-full sm:w-auto">
+                            Book Your Stay
+                        </button>
+                    </Link>
                 </motion.div>
                 
                 {/* Scroll Indicator */}
@@ -310,7 +315,9 @@ const Gallery = memo(() => {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            Book Your Stay
+                            <Link to="/accomodation" className="text-white">
+                                Book Your Stay
+                            </Link>
                         </motion.button>
                     </motion.div>
                 </div>
