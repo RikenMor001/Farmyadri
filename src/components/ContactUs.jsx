@@ -3,15 +3,29 @@ import { motion } from 'framer-motion'
 
 export default function ContactUs(){
     return <div className="min-h-screen">
-        {/* Hero Section */}
-        <section className="py-15 relative"
-        style={{
-            backgroundImage: `url(${contactus})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-        }}
+        <section className="py-20 relative overflow-hidden"
         >
+            {/* Animated Background Image */}
+            <motion.div 
+                className="absolute inset-0"
+                style={{
+                    backgroundImage: `url(${contactus})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
+                }}
+                animate={{
+                    scale: [1, 1.1, 1],
+                    x: [0, -20, 0],
+                    y: [0, -10, 0]
+                }}
+                transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                }}
+            />
+            
             {/* Background Overlay */}
             <div className="absolute inset-0 bg-black/30"></div>
             
@@ -45,6 +59,9 @@ export default function ContactUs(){
                     <p className='text-lg text-center text-slate-700 font-serif font-light mt-4'>
                         Questions about booking a stay at Farmyadri Resort? Our team is always available <br/> to answer any  questions or concerns you may have—big or small. <br/> Let us help plan your return to the wild.
                     </p>
+                    <div>
+                        
+                    </div>
                 </div>
             </div>
         </section>
