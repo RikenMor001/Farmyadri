@@ -197,11 +197,16 @@ const Accomodation = memo(() => {
     const handleBooking = (accommodation) => {
         setSelectedAccommodation(accommodation)
         
-        // Calculate nights and total amount
-        const checkIn = new Date(selectedDates.checkIn)
-        const checkOut = new Date(selectedDates.checkOut)
-        const nights = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24))
-        const totalAmount = nights * accommodation.price
+        // Calculate nights and total amount (default to 1 night if no dates selected)
+        let nights = 1
+        let totalAmount = accommodation.price
+        
+        if (selectedDates.checkIn && selectedDates.checkOut) {
+            const checkIn = new Date(selectedDates.checkIn)
+            const checkOut = new Date(selectedDates.checkOut)
+            nights = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24))
+            totalAmount = nights * accommodation.price
+        }
         
         setBookingData(prev => ({
             ...prev,
@@ -212,33 +217,33 @@ const Accomodation = memo(() => {
         setIsBookingModalOpen(true)
     }
 
-    const calculateTotalPrice = () => {
-        if (!selectedAccommodation || !selectedDates.checkIn || !selectedDates.checkOut) return 0
-        
-        const checkIn = new Date(selectedDates.checkIn)
-        const checkOut = new Date(selectedDates.checkOut)
-        const nights = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24))
-        
-        if (nights <= 0) return 0
-        
-        const basePrice = nights * selectedAccommodation.price
-        const serviceFee = Math.round(basePrice * 0.1)
-        const taxes = Math.round(basePrice * 0.18)
-        
-        return basePrice + serviceFee + taxes
-    }
-
-    const calculateNights = () => {
-        if (!selectedDates.checkIn || !selectedDates.checkOut) return 0
-        
-        const checkIn = new Date(selectedDates.checkIn)
-        const checkOut = new Date(selectedDates.checkOut)
-        return Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24))
-    }
-
     const closeBookingModal = () => {
         setIsBookingModalOpen(false)
         setSelectedAccommodation(null)
+    }
+
+    const updatePricing = (checkIn, checkOut) => {
+        if (checkIn && checkOut) {
+            const checkInDate = new Date(checkIn)
+            const checkOutDate = new Date(checkOut)
+            const nights = Math.ceil((checkOutDate - checkInDate) / (1000 * 60 * 60 * 24))
+            const totalAmount = nights * selectedAccommodation.price
+            
+            setBookingData(prev => ({
+                ...prev,
+                totalAmount,
+                nights
+            }))
+        }
+    }
+
+    const handleDateChange = (type, value) => {
+        const newDates = { ...selectedDates, [type]: value }
+        setSelectedDates(newDates)
+        
+        if (selectedAccommodation) {
+            updatePricing(newDates.checkIn, newDates.checkOut)
+        }
     }
 
     const handleBookingSubmit = (e) => {
@@ -317,7 +322,7 @@ const Accomodation = memo(() => {
                                 <input
                                     type="date"
                                     value={selectedDates.checkIn}
-                                    onChange={(e) => setSelectedDates({...selectedDates, checkIn: e.target.value})}
+                                    onChange={(e) => handleDateChange('checkIn', e.target.value)}
                                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all duration-300"
                                 />
                             </div>
@@ -328,7 +333,7 @@ const Accomodation = memo(() => {
                                 <input
                                     type="date"
                                     value={selectedDates.checkOut}
-                                    onChange={(e) => setSelectedDates({...selectedDates, checkOut: e.target.value})}
+                                    onChange={(e) => handleDateChange('checkOut', e.target.value)}
                                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all duration-300"
                                 />
                             </div>
@@ -349,7 +354,7 @@ const Accomodation = memo(() => {
                             
                             {/* Search Button */}
                             <div className="flex items-end">
-                                <button className="w-full bg-slate-900 text-white py-3 px-6 rounded-lg hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg">
+                                <button className="w-full bg-slate-900 text-white py-3 px-6 rounded-lg hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg hover:cursor-pointer">
                                     Search
                                 </button>
                             </div>
@@ -456,7 +461,7 @@ const Accomodation = memo(() => {
                                         </div>
                                         <motion.button
                                             onClick={() => handleBooking(accommodation)}
-                                            className="bg-slate-900 text-white px-6 py-3 rounded-lg hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg"
+                                            className="bg-slate-900 text-white px-6 py-3 rounded-lg hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg hover:cursor-pointer"
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 0.95 }}
                                         >
@@ -649,7 +654,7 @@ const Accomodation = memo(() => {
                                 </div>
                                 <button 
                                     onClick={closeBookingModal}
-                                    className="text-gray-400 hover:text-gray-600 text-2xl font-bold"
+                                    className="text-gray-400 hover:text-gray-600 text-2xl font-bold hover:cursor-pointer"
                                 >
                                     ×
                                 </button>
@@ -733,7 +738,7 @@ const Accomodation = memo(() => {
                                                     <input
                                                         type="date"
                                                         value={selectedDates.checkIn}
-                                                        onChange={(e) => setSelectedDates({...selectedDates, checkIn: e.target.value})}
+                                                        onChange={(e) => handleDateChange('checkIn', e.target.value)}
                                                         className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent"
                                                         required
                                                     />
@@ -743,7 +748,7 @@ const Accomodation = memo(() => {
                                                     <input
                                                         type="date"
                                                         value={selectedDates.checkOut}
-                                                        onChange={(e) => setSelectedDates({...selectedDates, checkOut: e.target.value})}
+                                                        onChange={(e) => handleDateChange('checkOut', e.target.value)}
                                                         className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent"
                                                         required
                                                     />
@@ -902,23 +907,32 @@ const Accomodation = memo(() => {
                                             <h4 className="font-semibold text-slate-900 mb-3">Price Breakdown</h4>
                                             <div className="space-y-2">
                                                 <div className="flex justify-between">
-                                                    <span className="text-slate-600">₹{selectedAccommodation.price} × {bookingData.nights} nights</span>
+                                                    <span className="text-slate-600">Base Price (per night)</span>
+                                                    <span>₹{selectedAccommodation.price}</span>
+                                                </div>
+                                                <div className="flex justify-between">
+                                                    <span className="text-slate-600">₹{selectedAccommodation.price} × {bookingData.nights} night{bookingData.nights > 1 ? 's' : ''}</span>
                                                     <span>₹{selectedAccommodation.price * bookingData.nights}</span>
                                                 </div>
                                                 <div className="flex justify-between">
-                                                    <span className="text-slate-600">Service fee</span>
+                                                    <span className="text-slate-600">Service fee (10%)</span>
                                                     <span>₹{Math.round(selectedAccommodation.price * bookingData.nights * 0.1)}</span>
                                                 </div>
                                                 <div className="flex justify-between">
-                                                    <span className="text-slate-600">Taxes</span>
+                                                    <span className="text-slate-600">Taxes (18%)</span>
                                                     <span>₹{Math.round(selectedAccommodation.price * bookingData.nights * 0.18)}</span>
                                                 </div>
                                                 <div className="border-t border-slate-300 pt-2">
                                                     <div className="flex justify-between font-bold text-lg">
-                                                        <span>Total</span>
+                                                        <span>Total Estimated</span>
                                                         <span>₹{bookingData.totalAmount + Math.round(selectedAccommodation.price * bookingData.nights * 0.28)}</span>
                                                     </div>
                                                 </div>
+                                                {(!selectedDates.checkIn || !selectedDates.checkOut) && (
+                                                    <div className="mt-2 text-xs text-amber-600 bg-amber-50 p-2 rounded">
+                                                        💡 Select your dates above to see the exact total for your stay
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
 
@@ -937,7 +951,7 @@ const Accomodation = memo(() => {
                                         {/* Submit Button */}
                                         <button
                                             type="submit"
-                                            className="w-full bg-slate-900 text-white py-4 px-6 rounded-lg hover:bg-slate-700 transition-all duration-300 font-medium text-lg"
+                                            className="w-full bg-slate-900 text-white py-4 px-6 rounded-lg hover:bg-slate-700 transition-all duration-300 font-medium text-lg hover:cursor-pointer"
                                         >
                                             Confirm Booking - ₹{bookingData.totalAmount + Math.round(selectedAccommodation.price * bookingData.nights * 0.28)}
                                         </button>
@@ -948,7 +962,7 @@ const Accomodation = memo(() => {
                     </motion.div>
                 </div>
             )}
-        </div>
+    </div>
     )
 })
 
