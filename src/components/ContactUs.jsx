@@ -21,12 +21,12 @@ const ContactUs = memo(() => {
                     backgroundRepeat: 'no-repeat'
                 }}
                 animate={{
-                    scale: [1, 1.1, 1],
-                    x: [0, -20, 0],
-                    y: [0, -10, 0]
+                    scale: [1, 1.05, 1],
+                    x: [0, -10, 0],
+                    y: [0, -5, 0]
                 }}
                 transition={{
-                    duration: 20,
+                    duration: 15,
                     repeat: Infinity,
                     ease: "easeInOut"
                 }}
