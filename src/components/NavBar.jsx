@@ -25,8 +25,8 @@ export default function NavBar(){
         { name: "Home", href: "/", action: scrollToTop, isLink: true },
         { name: "About Us", href: "/about", action: () => closeSidebar(), isLink: true },
         { name: "Gallery", href: "/gallery", action: () => closeSidebar(), isLink: true },
-        { name: "Wellness Program", href: "#wellness", action: () => closeSidebar(), isLink: false },
-        { name: "Accommodation", href: "#accommodation", action: () => closeSidebar(), isLink: false },
+        { name: "Wellness Program", href: "/wellness-program", action: () => closeSidebar(), isLink: true },
+        { name: "Accommodation", href: "/accommodation", action: () => closeSidebar(), isLink: true },
         { name: "Contact Us", href: "/contact-us", action: () => closeSidebar(), isLink: true }
     ]
 
