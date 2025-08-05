@@ -1,15 +1,10 @@
 import { motion } from "framer-motion"
-import farmImage from "../assets/farm.jpg"
+import { memo } from "react"
 import bg from "../assets/bg.jpg"
-import philo2 from "../assets/philo2.jpg"
-import NIK01823 from "../assets/NIK01823-Edit.jpg"
-import NIK01582 from "../assets/NIK01582.jpg"
-import NIK01616 from "../assets/NIK01616.jpg"
-import NIK01630 from "../assets/NIK01630.jpg"
-import NIK01715 from "../assets/NIK01715.jpg"
+import farmImage from "../assets/farm.jpg"
 import ga5 from "../assets/gallery/ga5.jpg"
 
-export default function LandingPage(){
+const LandingPage = memo(() => {
     return (
         <div className="min-h-screen">
             {/* Preload critical images */}
@@ -1093,4 +1088,6 @@ export default function LandingPage(){
              </footer>
          </div>
      )
- }
+ })
+
+export default LandingPage
