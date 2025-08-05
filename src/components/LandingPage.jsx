@@ -7,6 +7,7 @@ import NIK01582 from "../assets/NIK01582.jpg"
 import NIK01616 from "../assets/NIK01616.jpg"
 import NIK01630 from "../assets/NIK01630.jpg"
 import NIK01715 from "../assets/NIK01715.jpg"
+import ga5 from "../assets/gallery/ga5.jpg"
 
 export default function LandingPage(){
     return (
@@ -704,7 +705,7 @@ export default function LandingPage(){
                         >
                             <div className="relative h-64">
                                 <img 
-                                    src={NIK01582} 
+                                    src={ga5} 
                                     alt="Traditional Indian curry" 
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                 />
