@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import bg from "../assets/bg.jpg"
+import galleryBg from "../assets/philo2.jpg"
 import ga1 from "../assets/gallery/ga1.jpg"
 import ga2 from "../assets/gallery/ga2.jpg"
 import ga3 from "../assets/gallery/ga3.jpg"
@@ -80,7 +80,7 @@ export default function Gallery(){
                 <motion.div 
                     className="absolute inset-0"
                     style={{ 
-                        backgroundImage: `url(${bg})`,
+                        backgroundImage: `url(${galleryBg})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
