@@ -130,9 +130,12 @@ const NavBar = memo(() => {
                             </div>
                         )
                     ))}
-                    <button className="bg-slate-900 text-white px-4 py-2 rounded-full hover:bg-slate-800 transition-all duration-300 hover:cursor-pointer">
+                    <Link 
+                        to="/accomodation"
+                        className="bg-slate-900 text-white px-4 py-2 rounded-full hover:bg-slate-800 transition-all duration-300 hover:cursor-pointer"
+                    >
                         Book Now
-                    </button>
+                    </Link>
                 </div>
 
                 {/* Mobile Hamburger Menu */}
@@ -260,12 +263,13 @@ const NavBar = memo(() => {
                                 transition={{ delay: 0.6 }}
                                 className="mt-8"
                             >
-                                <button 
+                                <Link 
+                                    to="/accomodation"
                                     className="w-full bg-slate-900 text-white px-6 py-3 rounded-full hover:bg-slate-800 transition-all duration-300 font-medium"
                                     onClick={closeSidebar}
                                 >
                                     Book Now
-                                </button>
+                                </Link>
                             </motion.div>
 
                             {/* Contact Info in Sidebar */}
