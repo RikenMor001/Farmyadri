@@ -105,12 +105,12 @@ const Gallery = memo(() => {
                         backgroundRepeat: 'no-repeat',
                     }}
                     animate={{
-                        scale: [1, 1.1, 1],
-                        x: [0, -20, 0],
-                        y: [0, -10, 0]
+                        scale: [1, 1.05, 1],
+                        x: [0, -10, 0],
+                        y: [0, -5, 0]
                     }}
                     transition={{
-                        duration: 20,
+                        duration: 15,
                         repeat: Infinity,
                         ease: "easeInOut"
                     }}
@@ -123,7 +123,7 @@ const Gallery = memo(() => {
                     className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-center tracking-wider text-white z-10 px-4"
                     initial={{ opacity: 0, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
                 > 
                     Gallery
                 </motion.div>
@@ -132,7 +132,7 @@ const Gallery = memo(() => {
                     className="text-base sm:text-lg md:text-xl lg:text-2xl text-center tracking-wider text-white mt-4 sm:mt-6 md:mt-8 max-w-4xl px-4 z-10"
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2, delay: 0.3 }}
+                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 >
                     "Capturing moments of serenity and beauty in nature's embrace"
                 </motion.div>
@@ -141,7 +141,7 @@ const Gallery = memo(() => {
                     className="flex flex-col sm:flex-row justify-center items-center mt-6 sm:mt-8 md:mt-10 gap-3 sm:gap-4 z-10 px-4"
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2, delay: 0.6 }}
+                    transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                 >
                     <button className="bg-slate-950 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-sm sm:text-base md:text-lg font-medium hover:scale-105 shadow-lg border border-white w-full sm:w-auto">
                         View All Photos
@@ -205,15 +205,15 @@ const Gallery = memo(() => {
                                 className="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
-                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.05 }}
+                                viewport={{ once: true, margin: "-50px" }}
                                 whileHover={{ y: -5 }}
                             >
                                 <div className="relative h-64 sm:h-72 md:h-80">
                                     <img 
                                         src={image.src} 
                                         alt={image.alt} 
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                         loading="lazy"
                                         decoding="async"
                                     />
@@ -230,15 +230,15 @@ const Gallery = memo(() => {
                                 className="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: (index + 4) * 0.1 }}
-                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: (index + 4) * 0.05 }}
+                                viewport={{ once: true, margin: "-50px" }}
                                 whileHover={{ y: -5 }}
                             >
                                 <div className="relative h-64 sm:h-72 md:h-80">
                                     <img 
                                         src={image.src} 
                                         alt={image.alt} 
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                         loading="lazy"
                                         decoding="async"
                                     />
@@ -255,15 +255,15 @@ const Gallery = memo(() => {
                                 className="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: (index + 8) * 0.1 }}
-                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: (index + 8) * 0.05 }}
+                                viewport={{ once: true, margin: "-50px" }}
                                 whileHover={{ y: -5 }}
                             >
                                 <div className="relative h-64 sm:h-72 md:h-80">
                                     <img 
                                         src={image.src} 
                                         alt={image.alt} 
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                         loading="lazy"
                                         decoding="async"
                                     />
@@ -278,15 +278,15 @@ const Gallery = memo(() => {
                             className="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer w-full md:w-1/2 lg:w-1/3"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 12 * 0.1 }}
-                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.6 }}
+                            viewport={{ once: true, margin: "-50px" }}
                             whileHover={{ y: -5 }}
                         >
                             <div className="relative h-64 sm:h-72 md:h-80">
                                 <img 
                                     src={galleryImages[12].src} 
                                     alt={galleryImages[12].alt} 
-                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                     loading="lazy"
                                     decoding="async"
                                 />
