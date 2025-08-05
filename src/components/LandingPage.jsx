@@ -296,11 +296,11 @@ const LandingPage = memo(() => {
                                         <img 
                                             src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
                                             alt="Organic farm garden" 
-                                            className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                                            className="w-full h-64 sm:h-72 md:h-80 object-cover group-hover:scale-110 transition-transform duration-700"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                            <p className="italic text-lg leading-relaxed">
+                                        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
+                                            <p className="italic text-sm sm:text-base md:text-lg leading-relaxed">
                                                 "From seed to table, every step is a lesson in patience, care, 
                                                 and the beautiful cycle of life that sustains us all."
                                             </p>
@@ -346,11 +346,11 @@ const LandingPage = memo(() => {
                                         <img 
                                             src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
                                             alt="Himalayan mountain trails" 
-                                            className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                                            className="w-full h-64 sm:h-72 md:h-80 object-cover group-hover:scale-110 transition-transform duration-700"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                            <p className="italic text-lg leading-relaxed">
+                                        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
+                                            <p className="italic text-sm sm:text-base md:text-lg leading-relaxed">
                                                 "In the embrace of these ancient mountains, we find perspective, 
                                                 peace, and a reminder of our place in the grand tapestry of life."
                                             </p>
@@ -662,10 +662,10 @@ const LandingPage = memo(() => {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-4">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 mb-4">
                             Transformative Stories
                         </h2>
-                        <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+                        <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
                             Real experiences from our guests who found peace, healing, and transformation in nature's embrace.
                         </p>
                     </motion.div>
@@ -693,13 +693,13 @@ const LandingPage = memo(() => {
                                         transition={{ duration: 0.8, delay: 0.3 }}
                                         viewport={{ once: true }}
                                     >
-                                        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+                                        <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4">
                                             Finding Peace in the Mountains
                                         </h3>
-                                        <p className="text-lg sm:text-xl leading-relaxed mb-6 max-w-3xl">
+                                        <p className="text-sm sm:text-base lg:text-lg leading-relaxed mb-6 max-w-3xl">
                                             "After months of stress and burnout, I found myself at Farm Yadri. The moment I stepped onto the property, surrounded by the majestic Himalayas, I felt an immediate sense of calm. The daily yoga sessions at sunrise, the organic farm-to-table meals, and the guided meditation walks transformed not just my vacation, but my entire perspective on life."
                                         </p>
-                                        <p className="text-lg opacity-90">
+                                        <p className="text-sm sm:text-base opacity-90">
                                             - Sarah M., Corporate Executive
                                         </p>
                                     </motion.div>
@@ -726,21 +726,11 @@ const LandingPage = memo(() => {
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                    <h4 className="text-xl font-bold mb-2">Traditional Curry</h4>
-                                    <p className="text-sm mb-4 opacity-90">
+                                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
+                                    <h4 className="text-lg sm:text-xl font-bold mb-2">Traditional Curry</h4>
+                                    <p className="text-xs sm:text-sm opacity-90">
                                         "The authentic Indian curry prepared with fresh spices and organic vegetables was a revelation. Each bite transported me to the heart of traditional Indian cuisine."
                                     </p>
-                                    <motion.button 
-                                        className="bg-white text-slate-900 px-4 py-2 rounded-full hover:bg-slate-100 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm cursor-pointer"
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.6, delay: 0.3 }}
-                                        viewport={{ once: true }}
-                                        whileHover={{ scale: 1.05 }}
-                                    >
-                                        Read More
-                                    </motion.button>
                                 </div>
                             </div>
                         </motion.div>
@@ -761,21 +751,11 @@ const LandingPage = memo(() => {
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                    <h4 className="text-xl font-bold mb-2">Spice Garden</h4>
-                                    <p className="text-sm mb-4 opacity-90">
+                                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
+                                    <h4 className="text-lg sm:text-xl font-bold mb-2">Spice Garden</h4>
+                                    <p className="text-xs sm:text-sm opacity-90">
                                         "Learning about traditional Indian spices and their healing properties was fascinating. The aromas from our spice garden filled every meal with authenticity."
                                     </p>
-                                    <motion.button 
-                                        className="bg-white text-slate-900 px-4 py-2 rounded-full hover:bg-slate-100 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm cursor-pointer"
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.6, delay: 0.3 }}
-                                        viewport={{ once: true }}
-                                        whileHover={{ scale: 1.05 }}
-                                    >
-                                        Read More
-                                    </motion.button>
                                 </div>
                             </div>
                         </motion.div>
@@ -796,21 +776,11 @@ const LandingPage = memo(() => {
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                    <h4 className="text-xl font-bold mb-2">Dining Excellence</h4>
-                                    <p className="text-sm mb-4 opacity-90">
+                                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
+                                    <h4 className="text-lg sm:text-xl font-bold mb-2">Dining Excellence</h4>
+                                    <p className="text-xs sm:text-sm opacity-90">
                                         "Every meal was a masterpiece of Indian cuisine. The attention to detail, the presentation, and the authentic flavors made each dining experience unforgettable."
                                     </p>
-                                    <motion.button 
-                                        className="bg-white text-slate-900 px-4 py-2 rounded-full hover:bg-slate-100 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm cursor-pointer"
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.6, delay: 0.3 }}
-                                        viewport={{ once: true }}
-                                        whileHover={{ scale: 1.05 }}
-                                    >
-                                        Read More
-                                    </motion.button>
                                 </div>
                             </div>
                         </motion.div>
@@ -831,21 +801,11 @@ const LandingPage = memo(() => {
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                    <h4 className="text-xl font-bold mb-2">Farm Fresh</h4>
-                                    <p className="text-sm mb-4 opacity-90">
+                                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
+                                    <h4 className="text-lg sm:text-xl font-bold mb-2">Farm Fresh</h4>
+                                    <p className="text-xs sm:text-sm opacity-90">
                                         "Harvesting fresh vegetables from our organic garden and using them in our meals created a connection to food I never experienced before."
                                     </p>
-                                    <motion.button 
-                                        className="bg-white text-slate-900 px-4 py-2 rounded-full hover:bg-slate-100 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm cursor-pointer"
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.6, delay: 0.3 }}
-                                        viewport={{ once: true }}
-                                        whileHover={{ scale: 1.05 }}
-                                    >
-                                        Read More
-                                    </motion.button>
                                 </div>
                             </div>
                         </motion.div>
@@ -866,21 +826,11 @@ const LandingPage = memo(() => {
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                    <h4 className="text-xl font-bold mb-2">Paneer Delight</h4>
-                                    <p className="text-sm mb-4 opacity-90">
+                                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
+                                    <h4 className="text-lg sm:text-xl font-bold mb-2">Paneer Delight</h4>
+                                    <p className="text-xs sm:text-sm opacity-90">
                                         "The homemade paneer curry was absolutely divine. The creamy texture and aromatic spices created a dish that was both comforting and exotic."
                                     </p>
-                                    <motion.button 
-                                        className="bg-white text-slate-900 px-4 py-2 rounded-full hover:bg-slate-100 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm cursor-pointer"
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.6, delay: 0.3 }}
-                                        viewport={{ once: true }}
-                                        whileHover={{ scale: 1.05 }}
-                                    >
-                                        Read More
-                                    </motion.button>
                                 </div>
                             </div>
                         </motion.div>
@@ -901,21 +851,11 @@ const LandingPage = memo(() => {
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                    <h4 className="text-xl font-bold mb-2">Aromatic Spices</h4>
-                                    <p className="text-sm mb-4 opacity-90">
+                                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
+                                    <h4 className="text-lg sm:text-xl font-bold mb-2">Aromatic Spices</h4>
+                                    <p className="text-xs sm:text-sm opacity-90">
                                         "The blend of traditional Indian spices created such rich, complex flavors. Each meal was a journey through the diverse culinary landscape of India."
                                     </p>
-                                    <motion.button 
-                                        className="bg-white text-slate-900 px-4 py-2 rounded-full hover:bg-slate-100 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm cursor-pointer"
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.6, delay: 0.3 }}
-                                        viewport={{ once: true }}
-                                        whileHover={{ scale: 1.05 }}
-                                    >
-                                        Read More
-                                    </motion.button>
                                 </div>
                             </div>
                         </motion.div>
