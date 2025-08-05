@@ -1,5 +1,5 @@
     import { motion } from "framer-motion";
-    import { useState, useEffect } from "react";
+    import { useState, useEffect, memo } from "react";
     import aboutBg from "../assets/NIK01593.jpg"
     import cr1 from "../assets/cr1.jpg"
     import cr2 from "../assets/cr2.jpg"
@@ -66,12 +66,12 @@
                             backgroundRepeat: 'no-repeat',
                         }}
                         animate={{
-                            scale: [1, 1.1, 1],
-                            x: [0, -20, 0],
-                            y: [0, -10, 0]
+                            scale: [1, 1.05, 1],
+                            x: [0, -10, 0],
+                            y: [0, -5, 0]
                         }}
                         transition={{
-                            duration: 20,
+                            duration: 15,
                             repeat: Infinity,
                             ease: "easeInOut"
                         }}
