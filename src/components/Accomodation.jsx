@@ -212,6 +212,30 @@ const Accomodation = memo(() => {
         setIsBookingModalOpen(true)
     }
 
+    const calculateTotalPrice = () => {
+        if (!selectedAccommodation || !selectedDates.checkIn || !selectedDates.checkOut) return 0
+        
+        const checkIn = new Date(selectedDates.checkIn)
+        const checkOut = new Date(selectedDates.checkOut)
+        const nights = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24))
+        
+        if (nights <= 0) return 0
+        
+        const basePrice = nights * selectedAccommodation.price
+        const serviceFee = Math.round(basePrice * 0.1)
+        const taxes = Math.round(basePrice * 0.18)
+        
+        return basePrice + serviceFee + taxes
+    }
+
+    const calculateNights = () => {
+        if (!selectedDates.checkIn || !selectedDates.checkOut) return 0
+        
+        const checkIn = new Date(selectedDates.checkIn)
+        const checkOut = new Date(selectedDates.checkOut)
+        return Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24))
+    }
+
     const closeBookingModal = () => {
         setIsBookingModalOpen(false)
         setSelectedAccommodation(null)
