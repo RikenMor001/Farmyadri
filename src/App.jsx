@@ -7,7 +7,6 @@ const LandingPage = lazy(() => import("./components/LandingPage"))
 const About = lazy(() => import("./components/About"))
 const Gallery = lazy(() => import("./components/Gallery"))
 const ContactUs = lazy(() => import("./components/ContactUs"))
-const WellnessProgram = lazy(() => import("./components/WellnessProgram"))
 const Accomodation = lazy(() => import("./components/Accomodation"))
 
 // Loading component
@@ -31,7 +30,6 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact-us" element={<ContactUs/>}/>
-            <Route path="/wellness-program" element={<WellnessProgram/>}/>
             <Route path="/accomodation" element={<Accomodation/>}/>
           </Routes>
         </Suspense>
