@@ -12,6 +12,12 @@ import ga5 from "../assets/gallery/ga5.jpg"
 export default function LandingPage(){
     return (
         <div className="min-h-screen">
+            {/* Preload critical images */}
+            <div style={{ display: 'none' }}>
+                <img src={bg} alt="preload" />
+                <img src={farmImage} alt="preload" />
+            </div>
+
             {/* Hero Section */}
             <section 
                 className="relative flex flex-col justify-center items-center h-screen font-serif overflow-hidden"
@@ -122,6 +128,8 @@ export default function LandingPage(){
                                     alt="FarmYadri organic farm" 
                                     className="rounded-2xl shadow-2xl max-w-full h-auto object-cover px-4 lg:px-0"
                                     style={{ maxHeight: '400px', minHeight: '300px' }}
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </motion.div>
                         </div>
