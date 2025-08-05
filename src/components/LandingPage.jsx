@@ -13,14 +13,29 @@ export default function LandingPage(){
         <div className="min-h-screen">
             {/* Hero Section */}
             <section 
-                className="relative flex flex-col justify-center items-center h-screen font-serif"
-                style={{ 
-                    backgroundImage: `url(${bg})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                }}
+                className="relative flex flex-col justify-center items-center h-screen font-serif overflow-hidden"
             >
+                {/* Animated Background Image */}
+                <motion.div 
+                    className="absolute inset-0"
+                    style={{ 
+                        backgroundImage: `url(${bg})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                    }}
+                    animate={{
+                        scale: [1, 1.1, 1],
+                        x: [0, -20, 0],
+                        y: [0, -10, 0]
+                    }}
+                    transition={{
+                        duration: 20,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                />
+                
                 {/* Background Overlay */}
                 <div className="absolute inset-0 bg-black/30"></div>
                 
