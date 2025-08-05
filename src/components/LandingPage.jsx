@@ -3,6 +3,12 @@ import { memo } from "react"
 import bg from "../assets/bg.jpg"
 import farmImage from "../assets/farm.jpg"
 import ga5 from "../assets/gallery/ga5.jpg"
+import philo2 from "../assets/philo2.jpg"
+import NIK01823 from "../assets/NIK01823-Edit.jpg"
+import NIK01582 from "../assets/NIK01582.jpg"
+import NIK01616 from "../assets/NIK01616.jpg"
+import NIK01630 from "../assets/NIK01630.jpg"
+import NIK01715 from "../assets/NIK01715.jpg"
 
 const LandingPage = memo(() => {
     return (
@@ -11,6 +17,13 @@ const LandingPage = memo(() => {
             <div style={{ display: 'none' }}>
                 <img src={bg} alt="preload" />
                 <img src={farmImage} alt="preload" />
+                <img src={philo2} alt="preload" />
+                <img src={NIK01823} alt="preload" />
+                <img src={NIK01582} alt="preload" />
+                <img src={NIK01616} alt="preload" />
+                <img src={NIK01630} alt="preload" />
+                <img src={NIK01715} alt="preload" />
+                <img src={ga5} alt="preload" />
             </div>
 
             {/* Hero Section */}
@@ -27,12 +40,12 @@ const LandingPage = memo(() => {
                         backgroundRepeat: 'no-repeat',
                     }}
                     animate={{
-                        scale: [1, 1.1, 1],
-                        x: [0, -20, 0],
-                        y: [0, -10, 0]
+                        scale: [1, 1.05, 1],
+                        x: [0, -10, 0],
+                        y: [0, -5, 0]
                     }}
                     transition={{
-                        duration: 20,
+                        duration: 15,
                         repeat: Infinity,
                         ease: "easeInOut"
                     }}
