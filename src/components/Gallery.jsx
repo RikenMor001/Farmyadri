@@ -72,6 +72,24 @@ export default function Gallery(){
 
     return (
         <div className="min-h-screen">
+            {/* Preload critical images */}
+            <div style={{ display: 'none' }}>
+                <img src={galleryBg} alt="preload" />
+                <img src={ga1} alt="preload" />
+                <img src={ga2} alt="preload" />
+                <img src={ga3} alt="preload" />
+                <img src={ga4} alt="preload" />
+                <img src={ga5} alt="preload" />
+                <img src={ga6} alt="preload" />
+                <img src={ga7} alt="preload" />
+                <img src={ga8} alt="preload" />
+                <img src={ga9} alt="preload" />
+                <img src={ga10} alt="preload" />
+                <img src={ga11} alt="preload" />
+                <img src={ga12} alt="preload" />
+                <img src={ga13} alt="preload" />
+            </div>
+
             {/* Hero Section */}
             <section 
                 className="relative flex flex-col justify-center items-center h-screen font-serif overflow-hidden"
@@ -195,6 +213,8 @@ export default function Gallery(){
                                         src={image.src} 
                                         alt={image.alt} 
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                        loading="lazy"
+                                        decoding="async"
                                     />
                                 </div>
                             </motion.div>
@@ -218,6 +238,8 @@ export default function Gallery(){
                                         src={image.src} 
                                         alt={image.alt} 
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                        loading="lazy"
+                                        decoding="async"
                                     />
                                 </div>
                             </motion.div>
@@ -241,6 +263,8 @@ export default function Gallery(){
                                         src={image.src} 
                                         alt={image.alt} 
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                        loading="lazy"
+                                        decoding="async"
                                     />
                                 </div>
                             </motion.div>
@@ -262,6 +286,8 @@ export default function Gallery(){
                                     src={galleryImages[12].src} 
                                     alt={galleryImages[12].alt} 
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                         </motion.div>
