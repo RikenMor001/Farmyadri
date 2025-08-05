@@ -87,7 +87,9 @@ export default function NavBar(){
             {/* Main Navbar */}
             <div className="navbar-container flex justify-between items-center px-4 py-3 border-b-2 border-gray-200 shadow-lg fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-sm w-full max-w-full overflow-hidden" style={{ top: '36px' }}>
                 <div className="text-xl sm:text-2xl font-bold tracking-wider hover:text-slate-950 transition-all duration-300 text-slate-700 cursor-pointer hover:scale-105 flex-shrink-0">
-                    Farm Yadri
+                    <button onClick={scrollToTop}>
+                        Farm Yadri
+                    </button>
                 </div>
                 
                 {/* Desktop Navigation */}
