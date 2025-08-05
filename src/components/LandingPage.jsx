@@ -79,7 +79,7 @@ const LandingPage = memo(() => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2, delay: 0.6 }}
                 >
-                    <Link to="/accommodation">
+                    <Link to="/accomodation">
                         <button className="bg-slate-950 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-base sm:text-lg font-medium hover:scale-105 shadow-lg border border-white w-full sm:w-auto">
                             Book Your Stay
                         </button>
