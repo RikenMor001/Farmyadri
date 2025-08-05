@@ -27,7 +27,7 @@ export default function NavBar(){
         { name: "Gallery", href: "/gallery", action: () => closeSidebar(), isLink: true },
         { name: "Wellness Program", href: "#wellness", action: () => closeSidebar(), isLink: false },
         { name: "Accommodation", href: "#accommodation", action: () => closeSidebar(), isLink: false },
-        { name: "Contact Us", href: "#contact", action: () => closeSidebar(), isLink: false }
+        { name: "Contact Us", href: "/contact-us", action: () => closeSidebar(), isLink: true }
     ]
 
     return (
