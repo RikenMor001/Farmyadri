@@ -44,6 +44,15 @@
 
         return (
             <div className="min-h-screen">
+                {/* Preload critical images */}
+                <div style={{ display: 'none' }}>
+                    <img src={aboutBg} alt="preload" />
+                    <img src={cr1} alt="preload" />
+                    <img src={cr2} alt="preload" />
+                    <img src={cr3} alt="preload" />
+                    <img src={cr4} alt="preload" />
+                </div>
+
                 {/* Hero Section */}
                 <section className="relative h-screen flex items-center justify-center font-serif overflow-hidden"
                 >
