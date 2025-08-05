@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { memo } from "react"
+import { Link } from "react-router-dom"
 import bg from "../assets/bg.jpg"
 import farmImage from "../assets/farm.jpg"
 import ga5 from "../assets/gallery/ga5.jpg"
@@ -78,9 +79,11 @@ const LandingPage = memo(() => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2, delay: 0.6 }}
                 >
-                    <button className="bg-slate-950 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-base sm:text-lg font-medium hover:scale-105 shadow-lg border border-white w-full sm:w-auto">
-                        Book Your Stay
-                    </button>
+                    <Link to="/accommodation">
+                        <button className="bg-slate-950 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-base sm:text-lg font-medium hover:scale-105 shadow-lg border border-white w-full sm:w-auto">
+                            Book Your Stay
+                        </button>
+                    </Link>
                     <button className="bg-slate-950 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-base sm:text-lg font-medium hover:scale-105 shadow-lg border border-white w-full sm:w-auto">
                         Explore Services
                     </button>
@@ -646,7 +649,9 @@ const LandingPage = memo(() => {
                              whileHover={{ scale: 1.05 }}
                              whileTap={{ scale: 0.95 }}
                          >
-                             Book Your Stay
+                             <Link to="/accomodation" className="text-white">
+                                 Book Your Stay
+                             </Link>
                          </motion.button>
                      </motion.div>
                  </div>
