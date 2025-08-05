@@ -6,7 +6,7 @@
     import cr3 from "../assets/cr3.jpg"
     import cr4 from "../assets/cr4.jpg"
 
-    export default function About(){
+    const About = memo(() => {
         const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
         const storyImages = [
@@ -710,4 +710,6 @@
                  </footer>
             </div>
         )
-    }
+    })
+
+    export default About
