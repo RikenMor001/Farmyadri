@@ -1,26 +1,23 @@
-import { useState } from "react"
+import { useState, useCallback, memo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Link, useLocation } from "react-router-dom"
 
-export default function NavBar(){
+const NavBar = memo(() => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
     const location = useLocation()
 
-    const toggleSidebar = () => {
+    // Memoized event handlers
+    const toggleSidebar = useCallback(() => {
         setIsSidebarOpen(!isSidebarOpen)
-    }
+    }, [isSidebarOpen])
 
-    const closeSidebar = () => {
+    const closeSidebar = useCallback(() => {
         setIsSidebarOpen(false)
-    }
+    }, [])
 
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        })
-        closeSidebar()
-    }
+    const scrollToTop = useCallback(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, [])
 
     const navItems = [
         { name: "Home", href: "/", action: scrollToTop, isLink: true },
@@ -297,4 +294,6 @@ export default function NavBar(){
             </AnimatePresence>
         </>
     )
-}
+})
+
+export default NavBar
