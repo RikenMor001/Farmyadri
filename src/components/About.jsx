@@ -86,10 +86,10 @@
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1.2 }}
                     >
-                        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-wider">
+                        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-8 tracking-wider">
                             About Farmyadri
                         </h1>
-                        <p className="text-xl sm:text-2xl md:text-3xl text-white max-w-4xl mx-auto leading-relaxed font-light">
+                        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white max-w-4xl mx-auto leading-relaxed font-light px-4">
                             Where ancient wisdom meets modern wellness in the heart of the Himalayas
                         </p>
                     </motion.div>
