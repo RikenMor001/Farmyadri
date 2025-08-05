@@ -3,6 +3,11 @@ import { motion } from 'framer-motion'
 
 export default function ContactUs(){
     return <div className="min-h-screen">
+        {/* Preload critical images */}
+        <div style={{ display: 'none' }}>
+            <img src={contactus} alt="preload" />
+        </div>
+
         <section className="py-20 relative overflow-hidden"
         >
             {/* Animated Background Image */}
