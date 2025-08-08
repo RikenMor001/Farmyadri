@@ -130,24 +130,24 @@ import { Link } from "react-router-dom";
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.5 }}
-                            className="mb-8"
+                            className="mb-4 sm:mb-8"
                         >
-                            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-wider">
+                            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold mb-3 sm:mb-6 tracking-wider px-2">
                                 {storyImages[currentImageIndex].title}
                             </h2>
-                            <p className="text-xl sm:text-2xl md:text-3xl font-light max-w-4xl mx-auto leading-relaxed">
+                            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light max-w-4xl mx-auto leading-relaxed px-2">
                                 {storyImages[currentImageIndex].subtitle}
                             </p>
                         </motion.div>
 
                         {/* Story Content */}
                         <motion.div 
-                            className="max-w-4xl mx-auto bg-black/30 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
+                            className="max-w-4xl mx-auto bg-black/30 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/20"
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 1 }}
                         >
-                            <div className="space-y-6 text-lg leading-relaxed">
+                            <div className="space-y-3 sm:space-y-4 md:space-y-6 text-sm sm:text-base md:text-lg leading-relaxed">
                                 <p>
                                     Farmyadri began as a vision in the heart of the Himalayas, where the ancient wisdom of Ayurveda meets the pristine beauty of nature. Our founders, inspired by the transformative power of these sacred mountains, envisioned a sanctuary where modern seekers could reconnect with their authentic selves.
                                 </p>
@@ -162,7 +162,7 @@ import { Link } from "react-router-dom";
 
                         {/* Image Indicators */}
                         <motion.div 
-                            className="flex justify-center space-x-3 mt-8"
+                            className="flex justify-center space-x-2 sm:space-x-3 mt-4 sm:mt-6 md:mt-8"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 1, delay: 1.5 }}
@@ -171,11 +171,12 @@ import { Link } from "react-router-dom";
                                 <button
                                     key={index}
                                     onClick={() => setCurrentImageIndex(index)}
-                                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 touch-manipulation ${
                                         currentImageIndex === index 
                                             ? 'bg-white scale-125' 
                                             : 'bg-white/50 hover:bg-white/75'
                                     }`}
+                                    aria-label={`Go to slide ${index + 1}`}
                                 />
                             ))}
                         </motion.div>
@@ -183,23 +184,25 @@ import { Link } from "react-router-dom";
 
                     {/* Navigation Arrows */}
                     <motion.button
-                        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 text-white hover:text-amber-400 transition-colors duration-300"
+                        className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-20 text-white hover:text-amber-400 transition-colors duration-300 p-2 touch-manipulation"
                         onClick={() => setCurrentImageIndex(prev => prev === 0 ? storyImages.length - 1 : prev - 1)}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
+                        aria-label="Previous slide"
                     >
-                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                         </svg>
                     </motion.button>
 
                     <motion.button
-                        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 text-white hover:text-amber-400 transition-colors duration-300"
+                        className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-20 text-white hover:text-amber-400 transition-colors duration-300 p-2 touch-manipulation"
                         onClick={() => setCurrentImageIndex(prev => prev === storyImages.length - 1 ? 0 : prev + 1)}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
+                        aria-label="Next slide"
                     >
-                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                     </motion.button>
