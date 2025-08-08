@@ -314,7 +314,7 @@ const LandingPage = memo(() => {
                                         <img 
                                             src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
                                             alt="Organic farm garden" 
-                                            className="w-full h-64 sm:h-72 md:h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                                            className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                                         <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
@@ -364,7 +364,7 @@ const LandingPage = memo(() => {
                                         <img 
                                             src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
                                             alt="Himalayan mountain trails" 
-                                            className="w-full h-64 sm:h-72 md:h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                                            className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                                         <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
