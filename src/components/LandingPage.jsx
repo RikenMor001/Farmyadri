@@ -317,8 +317,8 @@ const LandingPage = memo(() => {
                                             className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                                        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
-                                            <p className="italic text-sm sm:text-base md:text-lg leading-relaxed">
+                                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                            <p className="italic text-lg leading-relaxed">
                                                 "From seed to table, every step is a lesson in patience, care, 
                                                 and the beautiful cycle of life that sustains us all."
                                             </p>
@@ -367,8 +367,8 @@ const LandingPage = memo(() => {
                                             className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                                        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
-                                            <p className="italic text-sm sm:text-base md:text-lg leading-relaxed">
+                                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                            <p className="italic text-lg leading-relaxed">
                                                 "In the embrace of these ancient mountains, we find perspective, 
                                                 peace, and a reminder of our place in the grand tapestry of life."
                                             </p>
