@@ -5,6 +5,7 @@
     import cr2 from "../assets/cr2.jpg"
     import cr3 from "../assets/cr3.jpg"
     import cr4 from "../assets/cr4.jpg"
+import { Link } from "react-router-dom";
 
     const About = memo(() => {
         const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -543,14 +544,16 @@
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                Book Your Transformative Experience
+                                <Link to="/accomodation">
+                                    Book Your Transformative Experience
+                                </Link>
                             </motion.button>
                         </motion.div>
                     </div>
                 </section>
 
                 {/* Footer */}
-                <footer className="bg-black text-white py-20">
+               <footer className="bg-black text-white py-20">
                  <div className="container mx-auto px-6">
                      <motion.div 
                          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-7xl mx-auto"
