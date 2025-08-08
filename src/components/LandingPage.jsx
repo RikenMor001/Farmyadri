@@ -938,12 +938,11 @@ const LandingPage = memo(() => {
                          >
                              <h4 className="text-lg font-semibold mb-4 text-white border-b border-gray-700 pb-2">Quick Links</h4>
                              <div className="space-y-3">
-                                 <a href="#" className="block text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm">Home</a>
-                                 <a href="#" className="block text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm">About Us</a>
-                                 <a href="#" className="block text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm">Services</a>
-                                 <a href="#" className="block text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm">Bookings</a>
-                                 <a href="#" className="block text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm">Contact</a>
-                                 <a href="#" className="block text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm">FAQ</a>
+                                 <a href="/" className="block text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm">Home</a>
+                                 <a href="/about" className="block text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm">About Us</a>
+                                 <a href="/gallery" className="block text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm">Gallery</a>
+                                 <a href="/accomodation" className="block text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm">Accomodation</a>
+                                 <a href="/contact-us" className="block text-gray-300 hover:text-white transition-colors duration-300 font-medium text-sm">Contact</a>
                              </div>
                          </motion.div>
 
