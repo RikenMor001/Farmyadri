@@ -84,7 +84,9 @@ const LandingPage = memo(() => {
                             Book Your Stay
                         </button>
                     </Link>
-                    <button className="bg-slate-950 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-base sm:text-lg font-medium hover:scale-105 shadow-lg border border-white w-full sm:w-auto">
+                    <button className="bg-slate-950 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-base sm:text-lg font-medium hover:scale-105 shadow-lg border border-white w-full sm:w-auto" onClick={() => {
+                        window.location.href = "/about";
+                    }}>
                         Explore Services
                     </button>
                 </motion.div>
@@ -379,7 +381,9 @@ const LandingPage = memo(() => {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                Book Your Wellness Journey
+                                <Link to="/accomodation">
+                                    Book Your Wellness Journey
+                                </Link>
                             </motion.button>
                         </motion.div>
                     </div>
@@ -865,23 +869,6 @@ const LandingPage = memo(() => {
                             </div>
                         </motion.div>
                     </div>
-
-                    {/* CTA */}
-                    <motion.div 
-                        className="text-center mt-12 sm:mt-16"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.7 }}
-                        viewport={{ once: true }}
-                    >
-                        <motion.button 
-                            className="bg-slate-900 text-white px-8 py-4 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-lg cursor-pointer"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            Begin Your Journey
-                        </motion.button>
-                    </motion.div>
                 </div>
             </section>
 
