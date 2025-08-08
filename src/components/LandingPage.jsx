@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { memo } from "react"
+import { memo, useState } from "react"
 import { Link } from "react-router-dom"
 import bg from "../assets/bg.jpg"
 import farmImage from "../assets/farm.jpg"
@@ -12,6 +12,16 @@ import NIK01630 from "../assets/NIK01630.jpg"
 import NIK01715 from "../assets/NIK01715.jpg"
 
 const LandingPage = memo(() => {
+    const [showPopup, setShowPopup] = useState(false)
+
+    const openPopup = () => {
+        setShowPopup(true)
+    }
+
+    const closePopup = () => {
+        setShowPopup(false)
+    }
+
     return (
         <div className="min-h-screen">
             {/* Preload critical images */}
@@ -124,7 +134,10 @@ const LandingPage = memo(() => {
                                 
                                 <p>From farm-to-table meals made with freshly harvested, organic produce to guided nature walks and yoga sessions at sunrise, every moment at Farmyadri is a step toward holistic wellness. We also offer immersive workshops and retreats that help you reconnect with your inner self, learn sustainable living practices, and embrace the healing rhythms of the natural world.</p>
                                 
-                                <button className="mt-6 sm:mt-8 bg-slate-900 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg self-start text-sm sm:text-base cursor-pointer">
+                                <button 
+                                    onClick={openPopup}
+                                    className="mt-6 sm:mt-8 bg-slate-900 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg self-start text-sm sm:text-base cursor-pointer"
+                                >
                                     Learn More About Us
                                 </button>
                             </div>
@@ -872,7 +885,142 @@ const LandingPage = memo(() => {
                 </div>
             </section>
 
-             {/* Footer */}
+             {/* Popup Modal */}
+            {showPopup && (
+                <div 
+                    className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-2 sm:p-4"
+                    onClick={(e) => {
+                        if (e.target === e.currentTarget) {
+                            closePopup()
+                        }
+                    }}
+                >
+                    <motion.div 
+                        className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto"
+                        initial={{ opacity: 0, scale: 0.8, y: 50 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.8, y: 50 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        {/* Header */}
+                        <div className="relative p-4 sm:p-6 border-b border-gray-200">
+                            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 font-serif pr-12">About Farm Yadri</h2>
+                            <button 
+                                onClick={closePopup}
+                                className="absolute top-3 sm:top-4 right-3 sm:right-4 text-gray-500 hover:text-gray-700 transition-colors duration-200 p-2 touch-manipulation"
+                                aria-label="Close popup"
+                            >
+                                <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        {/* Content */}
+                        <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
+                            {/* Introduction */}
+                            <div>
+                                <h3 className="text-lg sm:text-xl font-semibold text-slate-800 mb-2 sm:mb-3 font-serif">Our Story</h3>
+                                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                                    Farm Yadri is a 100% organic farm and wellness resort nestled in the heart of the Himalayas. 
+                                    Founded with a vision to create a sanctuary where people can reconnect with nature, themselves, 
+                                    and the ancient wisdom of Ayurveda, we offer a transformative experience that goes beyond 
+                                    traditional hospitality.
+                                </p>
+                            </div>
+
+                            {/* Mission */}
+                            <div>
+                                <h3 className="text-lg sm:text-xl font-semibold text-slate-800 mb-2 sm:mb-3 font-serif">Our Mission</h3>
+                                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                                    We believe in the power of nature to heal and transform. Our mission is to provide a 
+                                    holistic wellness experience that combines traditional Ayurvedic practices with modern 
+                                    comfort, creating a space where guests can find peace, rejuvenation, and a deeper 
+                                    connection to the natural world.
+                                </p>
+                            </div>
+
+                            {/* What We Offer */}
+                            <div>
+                                <h3 className="text-lg sm:text-xl font-semibold text-slate-800 mb-3 sm:mb-4 font-serif">What We Offer</h3>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                                    <div className="bg-amber-50 p-3 sm:p-4 rounded-lg">
+                                        <h4 className="font-semibold text-slate-800 mb-1 sm:mb-2 text-sm sm:text-base">🌿 Organic Farming</h4>
+                                        <p className="text-xs sm:text-sm text-slate-600">100% organic produce grown on our own farm</p>
+                                    </div>
+                                    <div className="bg-amber-50 p-3 sm:p-4 rounded-lg">
+                                        <h4 className="font-semibold text-slate-800 mb-1 sm:mb-2 text-sm sm:text-base">🧘 Wellness Programs</h4>
+                                        <p className="text-xs sm:text-sm text-slate-600">Ayurvedic therapies and yoga sessions</p>
+                                    </div>
+                                    <div className="bg-amber-50 p-3 sm:p-4 rounded-lg">
+                                        <h4 className="font-semibold text-slate-800 mb-1 sm:mb-2 text-sm sm:text-base">🏔️ Mountain Views</h4>
+                                        <p className="text-xs sm:text-sm text-slate-600">Breathtaking Himalayan landscapes</p>
+                                    </div>
+                                    <div className="bg-amber-50 p-3 sm:p-4 rounded-lg">
+                                        <h4 className="font-semibold text-slate-800 mb-1 sm:mb-2 text-sm sm:text-base">🍽️ Farm-to-Table</h4>
+                                        <p className="text-xs sm:text-sm text-slate-600">Fresh, organic meals from our gardens</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Values */}
+                            <div>
+                                <h3 className="text-lg sm:text-xl font-semibold text-slate-800 mb-2 sm:mb-3 font-serif">Our Values</h3>
+                                <div className="space-y-2 sm:space-y-3">
+                                    <div className="flex items-start">
+                                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                        <p className="text-sm sm:text-base text-slate-600">Sustainability and environmental consciousness</p>
+                                    </div>
+                                    <div className="flex items-start">
+                                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                        <p className="text-sm sm:text-base text-slate-600">Authentic Ayurvedic practices and traditional wisdom</p>
+                                    </div>
+                                    <div className="flex items-start">
+                                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                        <p className="text-sm sm:text-base text-slate-600">Community and cultural preservation</p>
+                                    </div>
+                                    <div className="flex items-start">
+                                        <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                        <p className="text-sm sm:text-base text-slate-600">Holistic wellness and personal transformation</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Contact Info */}
+                            <div className="bg-slate-50 p-3 sm:p-4 rounded-lg">
+                                <h3 className="text-base sm:text-lg font-semibold text-slate-800 mb-2 font-serif">Get in Touch</h3>
+                                <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-slate-600">
+                                    <p><strong>Email:</strong> rasneet65@gmail.com</p>
+                                    <p><strong>Location:</strong> Lal Bahadur Shastri Marg, Mumbai, Maharashtra</p>
+                                    <p><strong>Contact:</strong> Rushneet Singh</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Footer */}
+                        <div className="p-4 sm:p-6 border-t border-gray-200 bg-gray-50 rounded-b-2xl">
+                            <div className="flex flex-col sm:flex-row gap-3">
+                                <button 
+                                    onClick={closePopup}
+                                    className="flex-1 bg-slate-600 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium touch-manipulation text-sm sm:text-base"
+                                >
+                                    Close
+                                </button>
+                                <Link to="/about" className="flex-1">
+                                    <button 
+                                        onClick={closePopup}
+                                        className="w-full bg-slate-900 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:cursor-pointer touch-manipulation text-sm sm:text-base"
+                                    >
+                                        Learn More
+                                    </button>
+                                </Link>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
+            )}
+
+            {/* Footer */}
              <footer className="bg-black text-white py-20">
                  <div className="container mx-auto px-6">
                      <motion.div 
