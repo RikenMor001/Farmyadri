@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { memo, useMemo } from "react"
+import { memo, useMemo, useRef } from "react"
 import { Link } from "react-router-dom"
 import galleryBg from "../assets/philo2.jpg"
 import ga1 from "../assets/gallery/ga1.jpg"
@@ -17,6 +17,8 @@ import ga12 from "../assets/gallery/ga12.jpg"
 import ga13 from "../assets/gallery/ga13.jpg"
 
 const Gallery = memo(() => {
+    const photoCollectionRef = useRef(null)
+    
     const galleryImages = useMemo(() => [
         {
             src: ga1,
@@ -71,6 +73,13 @@ const Gallery = memo(() => {
             alt: "Mountain Retreat"
         }
     ], [])
+
+    const scrollToPhotoCollection = () => {
+        photoCollectionRef.current?.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        })
+    }
 
     return (
         <div className="min-h-screen">
@@ -144,11 +153,12 @@ const Gallery = memo(() => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                 >
-                    <Link to="/accomodation">
-                        <button className="bg-slate-950 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-sm sm:text-base md:text-lg font-medium hover:scale-105 shadow-lg border border-white w-full sm:w-auto">
-                            View All Photos
-                        </button>
-                    </Link>
+                    <button 
+                        onClick={scrollToPhotoCollection}
+                        className="bg-slate-950 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-sm sm:text-base md:text-lg font-medium hover:scale-105 shadow-lg border border-white w-full sm:w-auto"
+                    >
+                        View All Photos
+                    </button>
                     <Link to="/accomodation">
                         <button className="bg-slate-950 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-sm sm:text-base md:text-lg font-medium hover:scale-105 shadow-lg border border-white w-full sm:w-auto">
                             Book Your Stay
@@ -189,7 +199,7 @@ const Gallery = memo(() => {
             </section>
 
             {/* Main Gallery Grid */}
-            <section className="py-20 bg-gradient-to-br from-amber-50 to-stone-100">
+            <section ref={photoCollectionRef} className="py-20 bg-gradient-to-br from-amber-50 to-stone-100">
                 <div className="container mx-auto px-4">
                     <motion.div 
                         className="text-center mb-16"
