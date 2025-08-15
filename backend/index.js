@@ -67,6 +67,33 @@ app.post("api/v1/auth/signin", async (req, res) => {
             email: email
         }
     })
+
+    if (!user){
+        res.status(402).json({
+            message: "User not found, please signup"
+        })
+        return;
+    }
+
+    const isPasswordCorrect = await bcrypt.compare(password, user.password);
+    if (isPasswordCorrect){
+        const token = jwt.sign({
+            _id: user.id,
+            name: user.name,
+            email: user.email
+        }, process.env.JWT_SECRET, {
+            expiresIn: "1h"
+        })
+        res.status(200).json({
+            message: "User signed in successfully",
+            user: user,
+            token: token
+        })
+    } else {
+        res.status(401).json({
+            message: "Invalid credentials"
+        })
+    }
 })
 
 app.listen(port, () => {
