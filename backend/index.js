@@ -60,6 +60,15 @@ app.post("/api/v1/auth/signup", async (req, res) => {
     
 });
 
+app.post("api/v1/auth/signin", async (req, res) => {
+    const { email, password } = req.body;
+    const user = await prisma.user.findUnique({
+        where: {
+            email: email
+        }
+    })
+})
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
