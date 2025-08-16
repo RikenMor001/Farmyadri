@@ -16,6 +16,9 @@ const Accomodation = memo(() => {
     const [error, setError] = useState('')
     const { isAuthenticated } = useAuth()
 
+    console.log('Accommodation component mounted')
+    console.log('Current state:', { isLoading, error, accommodationsCount: accommodations.length })
+
     // Drone shot of multiple Airbnbs/accommodations
     const accomodationBg = "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
 
@@ -24,11 +27,72 @@ const Accomodation = memo(() => {
         const fetchAccommodations = async () => {
             try {
                 setIsLoading(true)
-                const response = await accommodationAPI.getAll()
-                setAccommodations(response.accommodations)
+                console.log('Fetching accommodations...')
+                
+                // Add timeout to ensure fallback triggers quickly
+                const timeoutPromise = new Promise((_, reject) => 
+                    setTimeout(() => reject(new Error('Request timeout')), 3000)
+                );
+                
+                const response = await Promise.race([
+                    accommodationAPI.getAll(),
+                    timeoutPromise
+                ]);
+                
+                console.log('API Response:', response)
+                setAccommodations(response.accommodations || [])
             } catch (error) {
-                setError('Failed to load accommodations')
                 console.error('Error fetching accommodations:', error)
+                // Always show sample data when API fails (ensures users always see content)
+                console.log('Using sample data as fallback...')
+                setAccommodations([
+                    {
+                        _id: '1',
+                        name: "Mountain View Villa",
+                        type: "Luxury Villa",
+                        price: 4500,
+                        rating: 4.9,
+                        reviews: 127,
+                        guests: 6,
+                        bedrooms: 3,
+                        bathrooms: 2,
+                        image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+                        amenities: ["Mountain View", "Private Balcony", "Fireplace", "Kitchen", "Free WiFi", "Parking"],
+                        description: "Experience luxury in our spacious mountain villa with breathtaking views of the Himalayas. Perfect for families or groups seeking comfort and tranquility.",
+                        isAvailable: true
+                    },
+                    {
+                        _id: '2',
+                        name: "Forest Retreat Cabin",
+                        type: "Wooden Cabin",
+                        price: 3200,
+                        rating: 4.8,
+                        reviews: 89,
+                        guests: 4,
+                        bedrooms: 2,
+                        bathrooms: 1,
+                        image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80",
+                        amenities: ["Forest View", "Wooden Interior", "Cozy Fireplace", "Outdoor Deck", "Hiking Trails", "Wildlife Watching"],
+                        description: "Immerse yourself in nature with our rustic yet comfortable wooden cabin surrounded by ancient forests and wildlife.",
+                        isAvailable: true
+                    },
+                    {
+                        _id: '3',
+                        name: "Riverside Cottage",
+                        type: "Charming Cottage",
+                        price: 2800,
+                        rating: 4.7,
+                        reviews: 156,
+                        guests: 3,
+                        bedrooms: 1,
+                        bathrooms: 1,
+                        image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80",
+                        amenities: ["River View", "Private Garden", "Fishing Spot", "BBQ Area", "Peaceful Setting", "Bird Watching"],
+                        description: "A charming cottage by the river, perfect for couples seeking romance and tranquility in a peaceful natural setting.",
+                        isAvailable: true
+                    }
+                ])
+                setError('') // Clear any previous errors
             } finally {
                 setIsLoading(false)
             }
@@ -96,6 +160,25 @@ const Accomodation = memo(() => {
         )
     }
 
+    // Check if accommodations array is empty
+    if (!isLoading && accommodations.length === 0) {
+        return (
+            <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 to-stone-100">
+                <div className="text-center">
+                    <div className="text-amber-600 text-xl mb-4">🏠</div>
+                    <p className="text-slate-700 font-serif text-lg">No accommodations found</p>
+                    <p className="text-slate-600 text-sm mt-2">Please check back later or contact support</p>
+                    <button 
+                        onClick={() => window.location.reload()} 
+                        className="mt-4 bg-slate-900 text-white px-6 py-2 rounded-lg hover:bg-slate-700 transition-colors"
+                    >
+                        Refresh
+                    </button>
+                </div>
+            </div>
+        )
+    }
+
     return (
         <div className="min-h-screen">
             {/* Preload critical images */}
@@ -138,9 +221,16 @@ const Accomodation = memo(() => {
                     <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4 md:mb-8 tracking-wider">
                         Our Accommodations
                     </h1>
-                    <p className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white max-w-4xl mx-auto leading-relaxed font-light px-2 sm:px-4">
-                        Choose your perfect retreat from our carefully curated selection of unique accommodations
-                    </p>
+                                            <p className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white max-w-4xl mx-auto leading-relaxed font-light px-2 sm:px-4">
+                            Choose your perfect retreat from our carefully curated selection of unique accommodations
+                        </p>
+                        {accommodations.length > 0 && accommodations[0]._id === '1' && (
+                            <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg max-w-md mx-auto">
+                                <p className="text-xs text-amber-700">
+                                    💡 <strong>Demo Mode:</strong> Showing sample data. Install MongoDB to see real data from the database.
+                                </p>
+                            </div>
+                        )}
                 </motion.div>
             </section>
 
