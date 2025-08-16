@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 
     const About = memo(() => {
         const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
         const storyImages = [
             {
                 url: cr1,
