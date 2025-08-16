@@ -1,6 +1,8 @@
 import { motion } from "framer-motion"
 import { memo, useState } from "react"
 import { Link } from "react-router-dom"
+import { useAuth } from "../context/AuthContext"
+import BookingFlow from "./BookingFlow"
 import bg from "../assets/bg.jpg"
 import farmImage from "../assets/farm.jpg"
 import ga5 from "../assets/gallery/ga5.jpg"
@@ -13,6 +15,8 @@ import NIK01715 from "../assets/NIK01715.jpg"
 
 const LandingPage = memo(() => {
     const [showPopup, setShowPopup] = useState(false)
+    const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
+    const { isAuthenticated } = useAuth()
 
     const openPopup = () => {
         setShowPopup(true)
@@ -20,6 +24,42 @@ const LandingPage = memo(() => {
 
     const closePopup = () => {
         setShowPopup(false)
+    }
+
+    const handleBookYourStay = () => {
+        if (isAuthenticated) {
+            // If user is authenticated, show a simple booking prompt
+            // For now, redirect to accommodation page
+            window.location.href = "/accomodation"
+        } else {
+            // If user is not authenticated, show the booking flow with auth
+            setIsBookingModalOpen(true)
+        }
+    }
+
+    const closeBookingModal = () => {
+        setIsBookingModalOpen(false)
+    }
+
+    const handleBookingSuccess = () => {
+        alert('Welcome to Farm Yadri! You can now book your stay.')
+        closeBookingModal()
+    }
+
+    // Sample accommodation for the landing page booking flow
+    const sampleAccommodation = {
+        _id: 'landing-page-sample',
+        name: 'Farm Yadri Experience',
+        type: 'Wellness Retreat',
+        price: 5000,
+        description: 'Experience the perfect blend of luxury and nature at our wellness resort.',
+        image: bg,
+        amenities: ['Wellness Programs', 'Nature Walks', 'Organic Meals', 'Meditation Spaces'],
+        guests: 2,
+        bedrooms: 1,
+        bathrooms: 1,
+        rating: 4.9,
+        reviews: 150
     }
 
     return (
@@ -89,11 +129,12 @@ const LandingPage = memo(() => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2, delay: 0.6 }}
                 >
-                    <Link to="/accomodation">
-                        <button className="bg-slate-950 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-base sm:text-lg font-medium hover:scale-105 shadow-lg border border-white w-full sm:w-auto">
-                            Book Your Stay
-                        </button>
-                    </Link>
+                    <button 
+                        onClick={handleBookYourStay}
+                        className="bg-slate-950 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-base sm:text-lg font-medium hover:scale-105 shadow-lg border border-white w-full sm:w-auto"
+                    >
+                        Book Your Stay
+                    </button>
                     <button className="bg-slate-950 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 cursor-pointer text-base sm:text-lg font-medium hover:scale-105 shadow-lg border border-white w-full sm:w-auto" onClick={() => {
                         window.location.href = "/about";
                     }}>
@@ -1018,6 +1059,15 @@ const LandingPage = memo(() => {
                         </div>
                     </motion.div>
                 </div>
+            )}
+
+            {/* Booking Flow Modal */}
+            {isBookingModalOpen && (
+                <BookingFlow
+                    accommodation={sampleAccommodation}
+                    onClose={closeBookingModal}
+                    onBookingSuccess={handleBookingSuccess}
+                />
             )}
 
             {/* Footer */}
