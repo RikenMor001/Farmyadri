@@ -1,220 +1,50 @@
 import { motion } from "framer-motion"
-import { memo, useState } from "react"
+import { memo, useState, useEffect } from "react"
+import { accommodationAPI, formatPrice } from "../services/api"
+import { useAuth } from "../context/AuthContext"
+import BookingFlow from "./BookingFlow"
+import PaymentModal from "./PaymentModal"
 
 const Accomodation = memo(() => {
     const [selectedDates, setSelectedDates] = useState({ checkIn: '', checkOut: '' })
     const [selectedGuests, setSelectedGuests] = useState(2)
     const [selectedAccommodation, setSelectedAccommodation] = useState(null)
     const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
-    const [bookingData, setBookingData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        specialRequests: '',
-        paymentMethod: 'card',
-        cardNumber: '',
-        expiryDate: '',
-        cvv: '',
-        totalAmount: 0,
-        nights: 0
-    })
+    const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false)
+    const [accommodations, setAccommodations] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
+    const [error, setError] = useState('')
+    const { isAuthenticated } = useAuth()
 
     // Drone shot of multiple Airbnbs/accommodations
     const accomodationBg = "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
 
-    const accommodations = [
-        {
-            id: 1,
-            name: "Mountain View Villa",
-            type: "Luxury Villa",
-            price: 4500,
-            rating: 4.9,
-            reviews: 127,
-            guests: 6,
-            bedrooms: 3,
-            bathrooms: 2,
-            image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-            amenities: ["Mountain View", "Private Balcony", "Fireplace", "Kitchen", "Free WiFi", "Parking"],
-            description: "Experience luxury in our spacious mountain villa with breathtaking views of the Himalayas. Perfect for families or groups seeking comfort and tranquility."
-        },
-        {
-            id: 2,
-            name: "Forest Retreat Cabin",
-            type: "Wooden Cabin",
-            price: 3200,
-            rating: 4.8,
-            reviews: 89,
-            guests: 4,
-            bedrooms: 2,
-            bathrooms: 1,
-            image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80",
-            amenities: ["Forest View", "Wooden Interior", "Cozy Fireplace", "Outdoor Deck", "Hiking Trails", "Wildlife Watching"],
-            description: "Immerse yourself in nature with our rustic yet comfortable wooden cabin surrounded by ancient forests and wildlife."
-        },
-        {
-            id: 3,
-            name: "Riverside Cottage",
-            type: "Charming Cottage",
-            price: 2800,
-            rating: 4.7,
-            reviews: 156,
-            guests: 3,
-            bedrooms: 1,
-            bathrooms: 1,
-            image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80",
-            amenities: ["River View", "Private Garden", "Fishing Spot", "BBQ Area", "Peaceful Setting", "Bird Watching"],
-            description: "A charming cottage by the river, perfect for couples seeking romance and tranquility in a peaceful natural setting."
-        },
-        {
-            id: 4,
-            name: "Hilltop Bungalow",
-            type: "Modern Bungalow",
-            price: 3800,
-            rating: 4.9,
-            reviews: 203,
-            guests: 5,
-            bedrooms: 2,
-            bathrooms: 2,
-            image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80",
-            amenities: ["Panoramic Views", "Modern Design", "Large Windows", "Outdoor Terrace", "Mountain Biking", "Stargazing"],
-            description: "Modern comfort meets natural beauty in our hilltop bungalow with panoramic views of the entire valley."
-        },
-        {
-            id: 5,
-            name: "Treehouse Lodge",
-            type: "Unique Treehouse",
-            price: 2600,
-            rating: 4.6,
-            reviews: 78,
-            guests: 2,
-            bedrooms: 1,
-            bathrooms: 1,
-            image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
-            amenities: ["Treehouse Experience", "Canopy Views", "Rope Bridge", "Nature Sounds", "Unique Stay", "Adventure"],
-            description: "Experience the magic of sleeping among the trees in our unique treehouse, perfect for adventurous souls."
-        },
-        {
-            id: 6,
-            name: "Luxury Tent Suite",
-            type: "Glamping Tent",
-            price: 2200,
-            rating: 4.5,
-            reviews: 94,
-            guests: 2,
-            bedrooms: 1,
-            bathrooms: 1,
-            image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-            amenities: ["Luxury Camping", "Starry Nights", "Campfire", "Outdoor Shower", "Nature Immersion", "Romantic"],
-            description: "Glamping at its finest with luxury amenities while staying connected to nature under the starlit sky."
-        },
-        {
-            id: 7,
-            name: "Heritage Stone House",
-            type: "Historic Stone Villa",
-            price: 5200,
-            rating: 4.9,
-            reviews: 167,
-            guests: 8,
-            bedrooms: 4,
-            bathrooms: 3,
-            image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2075&q=80",
-            amenities: ["Historic Architecture", "Stone Walls", "Large Garden", "Traditional Kitchen", "Wine Cellar", "Library"],
-            description: "Step back in time with our beautifully restored heritage stone house, featuring original architecture and modern comforts."
-        },
-        {
-            id: 8,
-            name: "Alpine Chalet",
-            type: "Swiss-Style Chalet",
-            price: 4800,
-            rating: 4.8,
-            reviews: 134,
-            guests: 6,
-            bedrooms: 3,
-            bathrooms: 2,
-            image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80",
-            amenities: ["Alpine Views", "Wooden Beams", "Ski Storage", "Hot Tub", "Mountain Views", "Cozy Interior"],
-            description: "Experience the charm of the Alps in our authentic Swiss-style chalet with stunning mountain vistas and cozy interiors."
-        },
-        {
-            id: 9,
-            name: "Desert Oasis Villa",
-            type: "Luxury Desert Villa",
-            price: 3900,
-            rating: 4.7,
-            reviews: 98,
-            guests: 4,
-            bedrooms: 2,
-            bathrooms: 2,
-            image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-            amenities: ["Desert Views", "Private Pool", "Outdoor Lounge", "Desert Tours", "Stargazing Deck", "Spa Access"],
-            description: "Escape to our luxurious desert villa offering privacy, stunning desert landscapes, and ultimate relaxation."
-        },
-        {
-            id: 10,
-            name: "Coastal Beach House",
-            type: "Beachfront Villa",
-            price: 5500,
-            rating: 4.9,
-            reviews: 245,
-            guests: 6,
-            bedrooms: 3,
-            bathrooms: 3,
-            image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-            amenities: ["Beach Access", "Ocean Views", "Private Beach", "Water Sports", "Sunset Deck", "Beach Equipment"],
-            description: "Wake up to the sound of waves in our stunning beachfront villa with direct access to pristine beaches."
-        },
-        {
-            id: 11,
-            name: "Zen Meditation Hut",
-            type: "Minimalist Retreat",
-            price: 1800,
-            rating: 4.6,
-            reviews: 67,
-            guests: 2,
-            bedrooms: 1,
-            bathrooms: 1,
-            image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
-            amenities: ["Meditation Space", "Zen Garden", "Silent Environment", "Yoga Deck", "Tea Ceremony", "Mindfulness"],
-            description: "Find inner peace in our minimalist zen hut designed for meditation, yoga, and spiritual retreats."
-        },
-        {
-            id: 12,
-            name: "Floating Houseboat",
-            type: "Luxury Houseboat",
-            price: 4200,
-            rating: 4.8,
-            reviews: 112,
-            guests: 4,
-            bedrooms: 2,
-            bathrooms: 2,
-            image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80",
-            amenities: ["Water Views", "Fishing Deck", "Boat Tours", "Water Activities", "Panoramic Windows", "Floating Experience"],
-            description: "Experience life on water in our luxurious houseboat with stunning lake views and unique floating accommodation."
+    // Fetch accommodations from API
+    useEffect(() => {
+        const fetchAccommodations = async () => {
+            try {
+                setIsLoading(true)
+                const response = await accommodationAPI.getAll()
+                setAccommodations(response.accommodations)
+            } catch (error) {
+                setError('Failed to load accommodations')
+                console.error('Error fetching accommodations:', error)
+            } finally {
+                setIsLoading(false)
+            }
         }
-    ]
+
+        fetchAccommodations()
+    }, [])
 
     const handleBooking = (accommodation) => {
         setSelectedAccommodation(accommodation)
-        
-        // Calculate nights and total amount (default to 1 night if no dates selected)
-        let nights = 1
-        let totalAmount = accommodation.price
-        
-        if (selectedDates.checkIn && selectedDates.checkOut) {
-            const checkIn = new Date(selectedDates.checkIn)
-            const checkOut = new Date(selectedDates.checkOut)
-            nights = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24))
-            totalAmount = nights * accommodation.price
-        }
-        
-        setBookingData(prev => ({
-            ...prev,
-            totalAmount,
-            nights
-        }))
-        
         setIsBookingModalOpen(true)
+    }
+
+    const handleDirectPayment = (accommodation) => {
+        setSelectedAccommodation(accommodation)
+        setIsPaymentModalOpen(true)
     }
 
     const closeBookingModal = () => {
@@ -222,35 +52,48 @@ const Accomodation = memo(() => {
         setSelectedAccommodation(null)
     }
 
-    const updatePricing = (checkIn, checkOut) => {
-        if (checkIn && checkOut) {
-            const checkInDate = new Date(checkIn)
-            const checkOutDate = new Date(checkOut)
-            const nights = Math.ceil((checkOutDate - checkInDate) / (1000 * 60 * 60 * 24))
-            const totalAmount = nights * selectedAccommodation.price
-            
-            setBookingData(prev => ({
-                ...prev,
-                totalAmount,
-                nights
-            }))
-        }
+    const closePaymentModal = () => {
+        setIsPaymentModalOpen(false)
+        setSelectedAccommodation(null)
     }
 
     const handleDateChange = (type, value) => {
         const newDates = { ...selectedDates, [type]: value }
         setSelectedDates(newDates)
-        
-        if (selectedAccommodation) {
-            updatePricing(newDates.checkIn, newDates.checkOut)
-        }
     }
 
-    const handleBookingSubmit = (e) => {
-        e.preventDefault()
-        // Here you would typically send the booking data to your backend
-        alert(`Booking confirmed for ${selectedAccommodation.name}! Check your email for confirmation.`)
+    const handleBookingSuccess = () => {
+        // Handle successful booking (e.g., show success message, redirect, etc.)
+        alert('Booking successful! Check your email for confirmation.')
         closeBookingModal()
+    }
+
+    if (isLoading) {
+        return (
+            <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 to-stone-100">
+                <div className="text-center">
+                    <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-slate-900 mx-auto mb-4"></div>
+                    <p className="text-slate-700 font-serif text-lg">Loading accommodations...</p>
+                </div>
+            </div>
+        )
+    }
+
+    if (error) {
+        return (
+            <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 to-stone-100">
+                <div className="text-center">
+                    <div className="text-red-600 text-xl mb-4">⚠️</div>
+                    <p className="text-slate-700 font-serif text-lg">{error}</p>
+                    <button 
+                        onClick={() => window.location.reload()} 
+                        className="mt-4 bg-slate-900 text-white px-6 py-2 rounded-lg hover:bg-slate-700 transition-colors"
+                    >
+                        Try Again
+                    </button>
+                </div>
+            </div>
+        )
     }
 
     return (
@@ -292,30 +135,30 @@ const Accomodation = memo(() => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2 }}
                 >
-                    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-8 tracking-wider">
+                    <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4 md:mb-8 tracking-wider">
                         Our Accommodations
                     </h1>
-                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white max-w-4xl mx-auto leading-relaxed font-light px-4">
+                    <p className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white max-w-4xl mx-auto leading-relaxed font-light px-2 sm:px-4">
                         Choose your perfect retreat from our carefully curated selection of unique accommodations
                     </p>
                 </motion.div>
             </section>
 
             {/* Booking Search Section */}
-            <section className="bg-gradient-to-br from-amber-50 to-stone-100 py-16">
+            <section className="bg-gradient-to-br from-amber-50 to-stone-100 py-12 sm:py-16">
                 <div className="container mx-auto px-4">
                     <motion.div 
-                        className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8"
+                        className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-6 sm:p-8"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 text-center font-serif">
+                        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-4 sm:mb-6 text-center font-serif">
                             Find Your Perfect Stay
                         </h2>
                         
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                             {/* Check-in Date */}
                             <div>
                                 <label className="block text-sm font-medium text-slate-700 mb-2">Check-in</label>
@@ -353,8 +196,8 @@ const Accomodation = memo(() => {
                             </div>
                             
                             {/* Search Button */}
-                            <div className="flex items-end">
-                                <button className="w-full bg-slate-900 text-white py-3 px-6 rounded-lg hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg hover:cursor-pointer">
+                            <div className="flex items-end sm:col-span-2 lg:col-span-1">
+                                <button className="w-full bg-slate-900 text-white py-3 px-4 sm:px-6 rounded-lg hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg hover:cursor-pointer text-sm sm:text-base">
                                     Search
                                 </button>
                             </div>
@@ -364,27 +207,27 @@ const Accomodation = memo(() => {
             </section>
 
             {/* Accommodations Grid */}
-            <section className="py-20 bg-gradient-to-br from-amber-50 to-stone-100">
+            <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-amber-50 to-stone-100">
                 <div className="container mx-auto px-4">
                     <motion.div 
-                        className="text-center mb-16"
+                        className="text-center mb-8 sm:mb-12 md:mb-16"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 font-serif px-4">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 sm:mb-4 md:mb-6 font-serif px-4">
                             Choose Your Perfect Retreat
                         </h2>
-                        <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto px-4">
+                        <p className="text-sm sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto px-4">
                             From luxury villas to cozy treehouses, find the accommodation that speaks to your soul
                         </p>
                     </motion.div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
                         {accommodations.map((accommodation, index) => (
                             <motion.div 
-                                key={accommodation.id}
+                                key={accommodation._id}
                                 className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -402,29 +245,29 @@ const Accomodation = memo(() => {
                                         decoding="async"
                                     />
                                     <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-semibold text-slate-900">
-                                        ₹{accommodation.price}/night
+                                        {formatPrice(accommodation.price)}/night
                                     </div>
                                 </div>
                                 
                                 {/* Content */}
-                                <div className="p-6">
+                                <div className="p-4 sm:p-6">
                                     {/* Header */}
                                     <div className="flex justify-between items-start mb-3">
-                                        <div>
-                                            <h3 className="text-xl font-bold text-slate-900 mb-1">{accommodation.name}</h3>
-                                            <p className="text-slate-600 text-sm">{accommodation.type}</p>
+                                        <div className="flex-1 pr-2">
+                                            <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-1">{accommodation.name}</h3>
+                                            <p className="text-slate-600 text-xs sm:text-sm">{accommodation.type}</p>
                                         </div>
-                                        <div className="flex items-center">
+                                        <div className="flex items-center flex-shrink-0">
                                             <span className="text-yellow-500 mr-1">★</span>
-                                            <span className="text-sm font-semibold">{accommodation.rating}</span>
-                                            <span className="text-slate-500 text-sm ml-1">({accommodation.reviews})</span>
+                                            <span className="text-xs sm:text-sm font-semibold">{accommodation.rating}</span>
+                                            <span className="text-slate-500 text-xs sm:text-sm ml-1">({accommodation.reviews})</span>
                                         </div>
                                     </div>
                                     
                                     {/* Details */}
-                                    <div className="flex items-center text-sm text-slate-600 mb-4">
-                                        <span className="mr-4">{accommodation.guests} guests</span>
-                                        <span className="mr-4">{accommodation.bedrooms} bedroom{accommodation.bedrooms > 1 ? 's' : ''}</span>
+                                    <div className="flex flex-wrap items-center text-xs sm:text-sm text-slate-600 mb-4 gap-2 sm:gap-4">
+                                        <span>{accommodation.guests} guests</span>
+                                        <span>{accommodation.bedrooms} bedroom{accommodation.bedrooms > 1 ? 's' : ''}</span>
                                         <span>{accommodation.bathrooms} bathroom{accommodation.bathrooms > 1 ? 's' : ''}</span>
                                     </div>
                                     
@@ -435,18 +278,18 @@ const Accomodation = memo(() => {
                                     
                                     {/* Amenities */}
                                     <div className="mb-6">
-                                        <h4 className="font-semibold text-slate-900 mb-2">Amenities</h4>
-                                        <div className="flex flex-wrap gap-2">
+                                        <h4 className="font-semibold text-slate-900 mb-2 text-sm sm:text-base">Amenities</h4>
+                                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
                                             {accommodation.amenities.slice(0, 4).map((amenity, idx) => (
                                                 <span 
                                                     key={idx}
-                                                    className="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium"
+                                                    className="bg-slate-100 text-slate-700 px-2 sm:px-3 py-1 rounded-full text-xs font-medium"
                                                 >
                                                     {amenity}
                                                 </span>
                                             ))}
                                             {accommodation.amenities.length > 4 && (
-                                                <span className="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium">
+                                                <span className="bg-slate-100 text-slate-700 px-2 sm:px-3 py-1 rounded-full text-xs font-medium">
                                                     +{accommodation.amenities.length - 4} more
                                                 </span>
                                             )}
@@ -454,14 +297,14 @@ const Accomodation = memo(() => {
                                     </div>
                                     
                                     {/* Price and Book Button */}
-                                    <div className="flex justify-between items-center">
+                                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
                                         <div>
-                                            <span className="text-2xl font-bold text-slate-900">₹{accommodation.price}</span>
-                                            <span className="text-slate-600 text-sm"> / night</span>
+                                            <span className="text-xl sm:text-2xl font-bold text-slate-900">{formatPrice(accommodation.price)}</span>
+                                            <span className="text-slate-600 text-xs sm:text-sm"> / night</span>
                                         </div>
                                         <motion.button
-                                            onClick={() => handleBooking(accommodation)}
-                                            className="bg-slate-900 text-white px-6 py-3 rounded-lg hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg hover:cursor-pointer"
+                                            onClick={() => handleDirectPayment(accommodation)}
+                                            className="w-full sm:w-auto bg-slate-900 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg hover:cursor-pointer text-sm sm:text-base"
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 0.95 }}
                                         >
@@ -476,10 +319,10 @@ const Accomodation = memo(() => {
             </section>
 
             {/* Footer */}
-            <footer className="bg-black text-white py-20">
-                 <div className="container mx-auto px-6">
+            <footer className="bg-black text-white py-12 sm:py-16 md:py-20">
+                 <div className="container mx-auto px-4 sm:px-6">
                      <motion.div 
-                         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-7xl mx-auto"
+                         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6 md:gap-8 max-w-7xl mx-auto"
                          initial={{ opacity: 0, y: 50 }}
                          whileInView={{ opacity: 1, y: 0 }}
                          transition={{ duration: 0.8 }}
@@ -621,347 +464,36 @@ const Accomodation = memo(() => {
 
                      {/* Bottom Border */}
                      <motion.div 
-                         className="border-t border-gray-800 mt-12 pt-8 text-center"
+                         className="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center"
                          initial={{ opacity: 0 }}
                          whileInView={{ opacity: 1 }}
                          transition={{ duration: 0.8, delay: 0.8 }}
                          viewport={{ once: true }}
                      >
-                         <p className="text-gray-400 text-sm">
+                         <p className="text-gray-400 text-xs sm:text-sm">
                              © 2025 Farm Yadri. All rights reserved. | Designed with ❤️ for wellness
                          </p>
                      </motion.div> 
                  </div>
              </footer>
 
-            {/* Booking Modal */}
+            {/* Booking Flow Modal */}
             {isBookingModalOpen && selectedAccommodation && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-                    <motion.div 
-                        className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.9 }}
-                        transition={{ duration: 0.3 }}
-                    >
-                        {/* Modal Header */}
-                        <div className="sticky top-0 bg-white border-b border-gray-200 p-6 rounded-t-2xl">
-                            <div className="flex justify-between items-start">
-                                <div>
-                                    <h2 className="text-2xl font-bold text-slate-900 mb-2">{selectedAccommodation.name}</h2>
-                                    <p className="text-slate-600">{selectedAccommodation.type}</p>
-                                </div>
-                                <button 
-                                    onClick={closeBookingModal}
-                                    className="text-gray-400 hover:text-gray-600 text-2xl font-bold hover:cursor-pointer"
-                                >
-                                    ×
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* Modal Content */}
-                        <div className="p-6">
-                            <form onSubmit={handleBookingSubmit}>
-                                {/* Property Details Section */}
-                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-                                    {/* Left Column - Property Info */}
-                                    <div>
-                                        <h3 className="text-xl font-bold text-slate-900 mb-4">Property Details</h3>
-                                        
-                                        {/* Property Image */}
-                                        <div className="relative h-48 rounded-xl overflow-hidden mb-4">
-                                            <img 
-                                                src={selectedAccommodation.image} 
-                                                alt={selectedAccommodation.name}
-                                                className="w-full h-full object-cover"
-                                            />
-                                            <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-semibold text-slate-900">
-                                                ₹{selectedAccommodation.price}/night
-                                            </div>
-                                        </div>
-
-                                        {/* Property Details */}
-                                        <div className="space-y-3">
-                                            <div className="flex justify-between">
-                                                <span className="text-slate-600">Rating:</span>
-                                                <span className="font-semibold">★ {selectedAccommodation.rating} ({selectedAccommodation.reviews} reviews)</span>
-                                            </div>
-                                            <div className="flex justify-between">
-                                                <span className="text-slate-600">Guests:</span>
-                                                <span className="font-semibold">{selectedAccommodation.guests} guests</span>
-                                            </div>
-                                            <div className="flex justify-between">
-                                                <span className="text-slate-600">Bedrooms:</span>
-                                                <span className="font-semibold">{selectedAccommodation.bedrooms}</span>
-                                            </div>
-                                            <div className="flex justify-between">
-                                                <span className="text-slate-600">Bathrooms:</span>
-                                                <span className="font-semibold">{selectedAccommodation.bathrooms}</span>
-                                            </div>
-                                        </div>
-
-                                        {/* Amenities */}
-                                        <div className="mt-6">
-                                            <h4 className="font-semibold text-slate-900 mb-3">Amenities</h4>
-                                            <div className="flex flex-wrap gap-2">
-                                                {selectedAccommodation.amenities.map((amenity, idx) => (
-                                                    <span 
-                                                        key={idx}
-                                                        className="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-sm"
-                                                    >
-                                                        {amenity}
-                                                    </span>
-                                                ))}
-                                            </div>
-                                        </div>
-
-                                        {/* Description */}
-                                        <div className="mt-6">
-                                            <h4 className="font-semibold text-slate-900 mb-2">Description</h4>
-                                            <p className="text-slate-600 text-sm leading-relaxed">
-                                                {selectedAccommodation.description}
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    {/* Right Column - Booking Form */}
-                                    <div>
-                                        <h3 className="text-xl font-bold text-slate-900 mb-4">Booking Details</h3>
-                                        
-                                        {/* Dates and Guests */}
-                                        <div className="space-y-4 mb-6">
-                                            <div className="grid grid-cols-2 gap-4">
-                                                <div>
-                                                    <label className="block text-sm font-medium text-slate-700 mb-2">Check-in</label>
-                                                    <input
-                                                        type="date"
-                                                        value={selectedDates.checkIn}
-                                                        onChange={(e) => handleDateChange('checkIn', e.target.value)}
-                                                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent"
-                                                        required
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <label className="block text-sm font-medium text-slate-700 mb-2">Check-out</label>
-                                                    <input
-                                                        type="date"
-                                                        value={selectedDates.checkOut}
-                                                        onChange={(e) => handleDateChange('checkOut', e.target.value)}
-                                                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent"
-                                                        required
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <label className="block text-sm font-medium text-slate-700 mb-2">Guests</label>
-                                                <select
-                                                    value={selectedGuests}
-                                                    onChange={(e) => setSelectedGuests(parseInt(e.target.value))}
-                                                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent"
-                                                >
-                                                    {[1,2,3,4,5,6,7,8].map(num => (
-                                                        <option key={num} value={num}>{num} {num === 1 ? 'Guest' : 'Guests'}</option>
-                                                    ))}
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        {/* Guest Information */}
-                                        <div className="space-y-4 mb-6">
-                                            <h4 className="font-semibold text-slate-900">Guest Information</h4>
-                                            <div className="grid grid-cols-2 gap-4">
-                                                <div>
-                                                    <label className="block text-sm font-medium text-slate-700 mb-2">First Name</label>
-                                                    <input
-                                                        type="text"
-                                                        value={bookingData.firstName}
-                                                        onChange={(e) => setBookingData({...bookingData, firstName: e.target.value})}
-                                                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent"
-                                                        required
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <label className="block text-sm font-medium text-slate-700 mb-2">Last Name</label>
-                                                    <input
-                                                        type="text"
-                                                        value={bookingData.lastName}
-                                                        onChange={(e) => setBookingData({...bookingData, lastName: e.target.value})}
-                                                        className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent"
-                                                        required
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <label className="block text-sm font-medium text-slate-700 mb-2">Email</label>
-                                                <input
-                                                    type="email"
-                                                    value={bookingData.email}
-                                                    onChange={(e) => setBookingData({...bookingData, email: e.target.value})}
-                                                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent"
-                                                    required
-                                                />
-                                            </div>
-                                            <div>
-                                                <label className="block text-sm font-medium text-slate-700 mb-2">Phone</label>
-                                                <input
-                                                    type="tel"
-                                                    value={bookingData.phone}
-                                                    onChange={(e) => setBookingData({...bookingData, phone: e.target.value})}
-                                                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent"
-                                                    required
-                                                />
-                                            </div>
-                                            <div>
-                                                <label className="block text-sm font-medium text-slate-700 mb-2">Special Requests</label>
-                                                <textarea
-                                                    value={bookingData.specialRequests}
-                                                    onChange={(e) => setBookingData({...bookingData, specialRequests: e.target.value})}
-                                                    className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent"
-                                                    rows="3"
-                                                    placeholder="Any special requests or requirements..."
-                                                />
-                                            </div>
-                                        </div>
-
-                                        {/* Payment Method */}
-                                        <div className="space-y-4 mb-6">
-                                            <h4 className="font-semibold text-slate-900">Payment Method</h4>
-                                            <div className="space-y-3">
-                                                <label className="flex items-center">
-                                                    <input
-                                                        type="radio"
-                                                        name="paymentMethod"
-                                                        value="card"
-                                                        checked={bookingData.paymentMethod === 'card'}
-                                                        onChange={(e) => setBookingData({...bookingData, paymentMethod: e.target.value})}
-                                                        className="mr-2"
-                                                    />
-                                                    Credit/Debit Card
-                                                </label>
-                                                <label className="flex items-center">
-                                                    <input
-                                                        type="radio"
-                                                        name="paymentMethod"
-                                                        value="upi"
-                                                        checked={bookingData.paymentMethod === 'upi'}
-                                                        onChange={(e) => setBookingData({...bookingData, paymentMethod: e.target.value})}
-                                                        className="mr-2"
-                                                    />
-                                                    UPI
-                                                </label>
-                                                <label className="flex items-center">
-                                                    <input
-                                                        type="radio"
-                                                        name="paymentMethod"
-                                                        value="netbanking"
-                                                        checked={bookingData.paymentMethod === 'netbanking'}
-                                                        onChange={(e) => setBookingData({...bookingData, paymentMethod: e.target.value})}
-                                                        className="mr-2"
-                                                    />
-                                                    Net Banking
-                                                </label>
-                                            </div>
-
-                                            {bookingData.paymentMethod === 'card' && (
-                                                <div className="space-y-3">
-                                                    <div>
-                                                        <label className="block text-sm font-medium text-slate-700 mb-2">Card Number</label>
-                                                        <input
-                                                            type="text"
-                                                            value={bookingData.cardNumber}
-                                                            onChange={(e) => setBookingData({...bookingData, cardNumber: e.target.value})}
-                                                            className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent"
-                                                            placeholder="1234 5678 9012 3456"
-                                                        />
-                                                    </div>
-                                                    <div className="grid grid-cols-2 gap-4">
-                                                        <div>
-                                                            <label className="block text-sm font-medium text-slate-700 mb-2">Expiry Date</label>
-                                                            <input
-                                                                type="text"
-                                                                value={bookingData.expiryDate}
-                                                                onChange={(e) => setBookingData({...bookingData, expiryDate: e.target.value})}
-                                                                className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent"
-                                                                placeholder="MM/YY"
-                                                            />
-                                                        </div>
-                                                        <div>
-                                                            <label className="block text-sm font-medium text-slate-700 mb-2">CVV</label>
-                                                            <input
-                                                                type="text"
-                                                                value={bookingData.cvv}
-                                                                onChange={(e) => setBookingData({...bookingData, cvv: e.target.value})}
-                                                                className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent"
-                                                                placeholder="123"
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            )}
-                                        </div>
-
-                                        {/* Price Breakdown */}
-                                        <div className="bg-slate-50 rounded-lg p-4 mb-6">
-                                            <h4 className="font-semibold text-slate-900 mb-3">Price Breakdown</h4>
-                                            <div className="space-y-2">
-                                                <div className="flex justify-between">
-                                                    <span className="text-slate-600">Base Price (per night)</span>
-                                                    <span>₹{selectedAccommodation.price}</span>
-                                                </div>
-                                                <div className="flex justify-between">
-                                                    <span className="text-slate-600">₹{selectedAccommodation.price} × {bookingData.nights} night{bookingData.nights > 1 ? 's' : ''}</span>
-                                                    <span>₹{selectedAccommodation.price * bookingData.nights}</span>
-                                                </div>
-                                                <div className="flex justify-between">
-                                                    <span className="text-slate-600">Service fee (10%)</span>
-                                                    <span>₹{Math.round(selectedAccommodation.price * bookingData.nights * 0.1)}</span>
-                                                </div>
-                                                <div className="flex justify-between">
-                                                    <span className="text-slate-600">Taxes (18%)</span>
-                                                    <span>₹{Math.round(selectedAccommodation.price * bookingData.nights * 0.18)}</span>
-                                                </div>
-                                                <div className="border-t border-slate-300 pt-2">
-                                                    <div className="flex justify-between font-bold text-lg">
-                                                        <span>Total Estimated</span>
-                                                        <span>₹{bookingData.totalAmount + Math.round(selectedAccommodation.price * bookingData.nights * 0.28)}</span>
-                                                    </div>
-                                                </div>
-                                                {(!selectedDates.checkIn || !selectedDates.checkOut) && (
-                                                    <div className="mt-2 text-xs text-amber-600 bg-amber-50 p-2 rounded">
-                                                        💡 Select your dates above to see the exact total for your stay
-                                                    </div>
-                                                )}
-                                            </div>
-                                        </div>
-
-                                        {/* Booking Policies */}
-                                        <div className="bg-amber-50 rounded-lg p-4 mb-6">
-                                            <h4 className="font-semibold text-slate-900 mb-2">Booking Policies</h4>
-                                            <ul className="text-sm text-slate-600 space-y-1">
-                                                <li>• Free cancellation up to 24 hours before check-in</li>
-                                                <li>• No smoking policy</li>
-                                                <li>• Check-in: 2:00 PM, Check-out: 11:00 AM</li>
-                                                <li>• Pets not allowed</li>
-                                                <li>• Maximum occupancy: {selectedAccommodation.guests} guests</li>
-                                            </ul>
-                                        </div>
-
-                                        {/* Submit Button */}
-                                        <button
-                                            type="submit"
-                                            className="w-full bg-slate-900 text-white py-4 px-6 rounded-lg hover:bg-slate-700 transition-all duration-300 font-medium text-lg hover:cursor-pointer"
-                                        >
-                                            Confirm Booking - ₹{bookingData.totalAmount + Math.round(selectedAccommodation.price * bookingData.nights * 0.28)}
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </motion.div>
-                </div>
+                <BookingFlow
+                    accommodation={selectedAccommodation}
+                    onClose={closeBookingModal}
+                    onBookingSuccess={handleBookingSuccess}
+                />
             )}
-    </div>
+
+            {/* Payment Modal */}
+            {isPaymentModalOpen && selectedAccommodation && (
+                <PaymentModal
+                    accommodation={selectedAccommodation}
+                    onClose={closePaymentModal}
+                />
+            )}
+        </div>
     )
 })
 
