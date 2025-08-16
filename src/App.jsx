@@ -1,7 +1,8 @@
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { Suspense, lazy } from "react"
+import { AuthProvider } from "./context/AuthContext"
 import NavBar from "./components/NavBar"
+import WhatsAppButton from "./components/WhatsAppButton"
 
 // Lazy load components for better performance
 const LandingPage = lazy(() => import("./components/LandingPage"))
@@ -22,20 +23,23 @@ const LoadingSpinner = () => (
 
 function App() { 
   return (
-    <Router>
-      <div>
-        <NavBar/>
-        <Suspense fallback={<LoadingSpinner />}>
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/contact-us" element={<ContactUs/>}/>
-            <Route path="/accomodation" element={<Accomodation/>}/>
-          </Routes>
-        </Suspense>
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <div>
+          <NavBar/>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/contact-us" element={<ContactUs/>}/>
+              <Route path="/accomodation" element={<Accomodation/>}/>
+            </Routes>
+          </Suspense>
+          <WhatsAppButton />
+        </div>
+      </Router>
+    </AuthProvider>
   )
 }
 
