@@ -21,12 +21,15 @@ const getAuthHeaders = () => {
 // Helper function to check if backend is accessible
 const checkBackendHealth = async () => {
   try {
+    console.log('Checking backend health...');
     const response = await fetch(`${API_BASE_URL.replace('/api', '')}/api/health`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     });
+    console.log('Health check response:', response.status);
     return response.ok;
   } catch (error) {
+    console.error('Health check error:', error);
     return false;
   }
 };
@@ -122,6 +125,7 @@ export const accommodationAPI = {
       if (filters.available !== undefined) queryParams.append('available', filters.available);
 
       const url = `${API_BASE_URL}/accommodations${queryParams.toString() ? `?${queryParams.toString()}` : ''}`;
+      console.log('Fetching from URL:', url);
       
       const response = await fetch(url, {
         method: 'GET',
@@ -129,8 +133,10 @@ export const accommodationAPI = {
           'Content-Type': 'application/json',
         },
       });
+      console.log('Response status:', response.status);
       return handleResponse(response);
     } catch (error) {
+      console.error('API Error:', error);
       if (error.message.includes('Failed to fetch')) {
         throw new Error('Cannot connect to the server. Please check if the backend is running on port 3000.');
       }
