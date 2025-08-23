@@ -5,6 +5,8 @@ Get Farm Yadri running on your machine in minutes.
 ## 📋 Prerequisites
 
 - **Node.js** (v16+) - [Download](https://nodejs.org/)
+- **MongoDB** (v4.4+) - [Download](https://www.mongodb.com/try/download/community)
+- **Git** - [Download](https://git-scm.com/)
 
 ## ⚡ Setup Steps
 
@@ -21,6 +23,8 @@ cd backend && npm install && cd ..
 Create `backend/.env`:
 ```env
 PORT=3000
+MONGODB_URI=mongodb://Your_URL
+JWT_SECRET=your-secret-key
 ```
 
 ### 3. Start MongoDB
