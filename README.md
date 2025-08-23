@@ -21,8 +21,6 @@ cd backend && npm install && cd ..
 Create `backend/.env`:
 ```env
 PORT=3000
-MONGODB_URI=mongodb://localhost:27017/farmyadri
-JWT_SECRET=your_secret_key_here
 ```
 
 ### 3. Start MongoDB
