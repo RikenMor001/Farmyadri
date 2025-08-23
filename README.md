@@ -1,12 +1,70 @@
-# React + Vite
+# 🚀 Farm Yadri - Quick Setup
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Get Farm Yadri running on your machine in minutes.
 
-Currently, two official plugins are available:
+## 📋 Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Node.js** (v16+) - [Download](https://nodejs.org/)
+- **MongoDB** (v4.4+) - [Download](https://www.mongodb.com/try/download/community)
+- **Git** - [Download](https://git-scm.com/)
 
-## Expanding the ESLint configuration
+## ⚡ Setup Steps
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Install Dependencies
+```bash
+# Frontend
+npm install
+
+# Backend
+cd backend && npm install && cd ..
+```
+
+### 2. Configure Environment
+Create `backend/.env`:
+```env
+PORT=3000
+MONGODB_URI=mongodb://localhost:27017/farmyadri
+JWT_SECRET=your_secret_key_here
+```
+
+### 3. Start MongoDB
+```bash
+# Start MongoDB service
+mongod
+```
+
+### 4. Run the App
+```bash
+# Terminal 1 - Backend
+cd backend && npm run dev
+
+# Terminal 2 - Frontend
+npm run dev
+```
+
+## 🌐 Access
+- **Frontend:** http://localhost:5173
+- **Backend:** http://localhost:3000
+
+## 🔧 Quick Fixes
+
+**Port in use?**
+```bash
+# Kill process on port 3000
+lsof -i :3000 | grep LISTEN | awk '{print $2}' | xargs kill -9
+```
+
+**MongoDB not connecting?**
+```bash
+# Start MongoDB
+mongod
+```
+
+**Dependencies issues?**
+```bash
+rm -rf node_modules package-lock.json && npm install
+```
+
+---
+
+**🎉 That's it! Your Farm Yadri app should be running now.**
