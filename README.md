@@ -5,8 +5,6 @@ Get Farm Yadri running on your machine in minutes.
 ## 📋 Prerequisites
 
 - **Node.js** (v16+) - [Download](https://nodejs.org/)
-- **MongoDB** (v4.4+) - [Download](https://www.mongodb.com/try/download/community)
-- **Git** - [Download](https://git-scm.com/)
 
 ## ⚡ Setup Steps
 
