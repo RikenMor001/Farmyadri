@@ -1031,7 +1031,7 @@ const LandingPage = memo(() => {
                             <div className="bg-slate-50 p-3 sm:p-4 rounded-lg">
                                 <h3 className="text-base sm:text-lg font-semibold text-slate-800 mb-2 font-serif">Get in Touch</h3>
                                 <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-slate-600">
-                                    <p><strong>Email:</strong> rasneet65@gmail.com</p>
+                                    <p><strong>Email:</strong> farmyadri@gmail.com</p>
                                     <p><strong>Location:</strong> Lal Bahadur Shastri Marg, Mumbai, Maharashtra</p>
                                     <p><strong>Contact:</strong> Rushneet Singh</p>
                                 </div>
@@ -1093,7 +1093,7 @@ const LandingPage = memo(() => {
                              </p>
                              <div className="flex space-x-2 sm:space-x-3">
                                  <a 
-                                     href="mailto:rasneet65@gmail.com"
+                                     href="mailto:farmyadri@gmail.com"
                                      className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300 cursor-pointer"
                                      title="Email us"
                                  >
@@ -1159,10 +1159,10 @@ const LandingPage = memo(() => {
                                  </div>
                                  <div className="bg-gray-900 p-3 rounded-lg">
                                      <a 
-                                         href="mailto:rasneet65@gmail.com" 
+                                         href="mailto:farmyadri@gmail.com" 
                                          className="text-blue-400 hover:text-blue-300 transition-colors duration-300 font-medium text-sm"
                                      >
-                                         rasneet65@gmail.com
+                                         farmyadri@gmail.com
                                      </a>
                                  </div>
                                  <div className="bg-gray-900 p-3 rounded-lg">
