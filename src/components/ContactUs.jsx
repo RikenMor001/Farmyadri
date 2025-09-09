@@ -85,8 +85,8 @@ const ContactUs = memo(() => {
                                         </div>
                                         <div>
                                             <h4 className="text-lg font-semibold text-slate-900 mb-1">Email</h4>
-                                            <a href="mailto:rasneet65@gmail.com" className="text-slate-600 hover:text-slate-900 transition-colors duration-300">
-                                                rasneet65@gmail.com
+                                            <a href="mailto:farmyadri@gmail.com" className="text-slate-600 hover:text-slate-900 transition-colors duration-300">
+                                                farmyadri@gmail.com
                                             </a>
                                         </div>
                                     </div>
@@ -261,7 +261,7 @@ const ContactUs = memo(() => {
                              </p>
                              <div className="flex space-x-2 sm:space-x-3">
                                  <a 
-                                     href="mailto:rasneet65@gmail.com"
+                                     href="mailto:farmyadri@gmail.com"
                                      className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300 cursor-pointer"
                                      title="Email us"
                                  >
@@ -327,10 +327,10 @@ const ContactUs = memo(() => {
                                  </div>
                                  <div className="bg-gray-900 p-3 rounded-lg">
                                      <a 
-                                         href="mailto:rasneet65@gmail.com" 
-                                         className="text-blue-400 hover:text-blue-300 transition-colors duration-300 font-medium text-sm"
-                                     >
-                                         rasneet65@gmail.com
+                                        href="mailto:farmyadri@gmail.com" 
+                                        className="text-blue-400 hover:text-blue-300 transition-colors duration-300 font-medium text-sm"
+                                    >
+                                        farmyadri@gmail.com
                                      </a>
                                  </div>
                                  <div className="bg-gray-900 p-3 rounded-lg">
