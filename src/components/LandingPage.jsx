@@ -1103,7 +1103,7 @@ const LandingPage = memo(() => {
                                      </svg>
                                  </a>
                                  <a 
-                                     href="https://www.instagram.com/farmyadri?igsh=eXg1Ymk0aHd5emht"
+                                     href="https://www.instagram.com/farmyadristays?igsh=MW1nY25oNzRubTFwYQ%3D%3D&utm_source=qr"
                                      target="_blank"
                                      rel="noopener noreferrer"
                                      className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 rounded-full flex items-center justify-center hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 transition-all duration-300 cursor-pointer"
@@ -1169,10 +1169,16 @@ const LandingPage = memo(() => {
                                      <div className="text-gray-300 text-xs space-y-1">
                                          <p className="flex items-center">
                                              <span className="mr-1">📍</span>
-                                             Lal Bahadur Shastri Marg
+                                             Dhamangoan Plot
                                          </p>
-                                         <p className="ml-4">Mumbai, 400083</p>
-                                         <p className="ml-4">Maharashtra, India</p>
+                                         <p className="ml-4">Gat No. 829</p>
+                                         <p className="ml-4">Ghoti Sinner State Highway</p>
+                                         <p className="ml-4">Post. Dhamangoan</p>
+                                         <p className="ml-4">Taluka. Igatpuri</p>
+                                         <p className="ml-4">Zilla. Nashik</p>
+                                         <p className="ml-4">State. Maharashtra</p>
+                                         <p className="ml-4">Nandi Hills</p>
+                                         <p className="ml-4">Pin Code. 422403</p>
                                      </div>
                                  </div>
                              </div>
@@ -1188,7 +1194,7 @@ const LandingPage = memo(() => {
                              <h4 className="text-lg font-semibold mb-4 text-white border-b border-gray-700 pb-2">Our Location</h4>
                              <div className="bg-gray-900 p-3 rounded-lg">
                                  <iframe 
-                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.5!2d72.8777!3d19.0760!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sLal%20Bahadur%20Shastri%20Marg%2C%20Mumbai%2C%20Maharashtra%20400083!5e0!3m2!1sen!2sin!4v1234567890&markers=color:red%7Clabel:F%7C19.0760,72.8777"
+                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.5!2d73.5626!3d19.6952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdd0b5c5c5c5c5c%3A0x5da4ed8f8d648c69!2sDhamangoan%2C%20Maharashtra%20422403!5e0!3m2!1sen!2sin!4v1234567890&markers=color:red%7Clabel:F%7C19.6952,73.5626"
                                      width="100%" 
                                      height="120" 
                                      style={{ border: 0 }} 
@@ -1196,13 +1202,13 @@ const LandingPage = memo(() => {
                                      loading="lazy" 
                                      referrerPolicy="no-referrer-when-downgrade"
                                      className="rounded-lg"
-                                     title="Farm Yadri Location - Lal Bahadur Shastri Marg, Mumbai"
+                                     title="Farm Yadri Location - Dhamangoan, Nashik, Maharashtra"
                                  ></iframe>
                                  <div className="mt-2 text-gray-300 text-xs">
                                      <p className="font-medium text-white mb-1">📍 Farm Yadri</p>
-                                     <p>Mumbai, Maharashtra</p>
+                                     <p>Dhamangoan, Nashik, Maharashtra</p>
                                      <a 
-                                         href="https://www.google.com/maps?q=Lal+Bahadur+Shastri+Marg,+Mumbai,+400083,+Maharashtra,+India"
+                                         href="https://www.google.com/maps?q=Dhamangoan+Plot,+Gat+No.+829,+Ghoti+Sinner+State+Highway,+Post.+Dhamangoan,+Taluka.+Igatpuri,+Zilla.+Nashik,+State.+Maharashtra,+Nandi+Hills,+Pin+Code.+422403"
                                          target="_blank"
                                          rel="noopener noreferrer"
                                          className="inline-block mt-2 bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1 rounded transition-colors duration-300"
