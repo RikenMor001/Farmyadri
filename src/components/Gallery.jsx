@@ -356,7 +356,7 @@ const Gallery = memo(() => {
                              </p>
                              <div className="flex space-x-2 sm:space-x-3">
                                  <a 
-                                     href="mailto:rasneet65@gmail.com"
+                                     href="mailto:farmyadri@gmail.com"
                                      className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300 cursor-pointer"
                                      title="Email us"
                                  >
@@ -422,10 +422,10 @@ const Gallery = memo(() => {
                                  </div>
                                  <div className="bg-gray-900 p-3 rounded-lg">
                                      <a 
-                                         href="mailto:rasneet65@gmail.com" 
+                                         href="mailto:farmyadri@gmail.com" 
                                          className="text-blue-400 hover:text-blue-300 transition-colors duration-300 font-medium text-sm"
                                      >
-                                         rasneet65@gmail.com
+                                         farmyadri@gmail.com
                                      </a>
                                  </div>
                                  <div className="bg-gray-900 p-3 rounded-lg">
