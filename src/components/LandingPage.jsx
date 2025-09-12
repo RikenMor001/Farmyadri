@@ -177,7 +177,7 @@ const LandingPage = memo(() => {
                                 
                                 <button 
                                     onClick={openPopup}
-                                    className="mt-6 sm:mt-8 bg-slate-900 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg self-start text-sm sm:text-base cursor-pointer"
+                                    className="mt-6 sm:mt-8 bg-slate-900 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg self-start text-sm sm:text-base cursor-pointer border border-white"
                                 >
                                     Learn More About Us
                                 </button>
@@ -431,7 +431,7 @@ const LandingPage = memo(() => {
                                 Ready to experience these wellness services?
                             </p>
                             <motion.button 
-                                className="bg-slate-900 text-white px-8 py-4 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-lg cursor-pointer"
+                                className="bg-slate-900 text-white px-8 py-4 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-lg cursor-pointer border border-white"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
@@ -703,7 +703,7 @@ const LandingPage = memo(() => {
                              Ready to experience the magic of Farmyadri?
                          </p>
                          <motion.button 
-                             className="bg-slate-900 text-white px-8 py-4 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-lg cursor-pointer"
+                             className="bg-slate-900 text-white px-8 py-4 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-lg cursor-pointer border border-white"
                              whileHover={{ scale: 1.05 }}
                              whileTap={{ scale: 0.95 }}
                          >
@@ -1043,14 +1043,14 @@ const LandingPage = memo(() => {
                             <div className="flex flex-col sm:flex-row gap-3">
                                 <button 
                                     onClick={closePopup}
-                                    className="flex-1 bg-slate-600 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium touch-manipulation text-sm sm:text-base"
+                                    className="flex-1 bg-slate-600 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium touch-manipulation text-sm sm:text-base border border-white"
                                 >
                                     Close
                                 </button>
                                 <Link to="/about" className="flex-1">
                                     <button 
                                         onClick={closePopup}
-                                        className="w-full bg-slate-900 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:cursor-pointer touch-manipulation text-sm sm:text-base"
+                                        className="w-full bg-slate-900 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-full hover:bg-slate-700 transition-all duration-300 font-medium hover:cursor-pointer touch-manipulation text-sm sm:text-base border border-white"
                                     >
                                         Learn More
                                     </button>
