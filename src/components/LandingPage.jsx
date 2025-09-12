@@ -106,7 +106,7 @@ const LandingPage = memo(() => {
                 <div className="absolute inset-0 bg-black/30"></div>
                 
                 <motion.div 
-                    className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-center tracking-wider text-white z-10 px-4"
+                    className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-center tracking-wider text-lime-500 z-10 px-4"
                     initial={{ opacity: 0, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1.2 }}
@@ -155,7 +155,7 @@ const LandingPage = memo(() => {
             </section>
 
             {/* Story Section */}
-            <section className="bg-gradient-to-br from-amber-50 to-stone-100 py-16">
+            <section className="bg-gradient-to-br from-emerald-700 to-emerald-800 py-16">
                 <div className="container mx-auto px-4 py-12">
                     <motion.div 
                         className="flex flex-col items-center justify-center"
@@ -164,9 +164,9 @@ const LandingPage = memo(() => {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-slate-900 mb-6 sm:mb-8 font-serif px-4">Nature On Your View</h2>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-lime-500 mb-6 sm:mb-8 font-serif px-4">Nature On Your View</h2>
                         <div className="flex flex-col lg:flex-row items-start gap-8 sm:gap-12 max-w-7xl px-4">
-                            <div className="text-base sm:text-lg md:text-xl text-left tracking-wider text-slate-900 font-serif flex-1 pl-0 lg:pl-12 leading-relaxed space-y-4 sm:space-y-6">
+                            <div className="text-base sm:text-lg md:text-xl text-left tracking-wider text-white font-serif flex-1 pl-0 lg:pl-12 leading-relaxed space-y-4 sm:space-y-6">
                                 <p>At Farmyadri, we believe in the power of nature to heal and transform. Our journey began with a vision to create a space where people can reconnect with themselves, nature, and the ancient wisdom of Ayurveda.</p>
                                 
                                 <p>Farmyadri is a 100% organic farm located in the heart of the Himalayas. It is a place where you can escape the hustle and bustle of city life and reconnect with nature.</p>
@@ -205,7 +205,7 @@ const LandingPage = memo(() => {
             </section>
 
             {/* Services Section */}
-            <section className="bg-gradient-to-br from-amber-50 to-stone-100 py-20">
+            <section className="bg-gradient-to-br from-emerald-700 to-emerald-800 py-20">
                 <div className="container mx-auto px-4">
                     <motion.div 
                         className="text-center mb-16"
@@ -214,8 +214,8 @@ const LandingPage = memo(() => {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 font-serif px-4">Our Wellness Services</h2>
-                        <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto px-4">Experience holistic wellness through our carefully curated programs designed to nourish your mind, body, and soul.</p>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-lime-500 mb-4 sm:mb-6 font-serif px-4">Our Wellness Services</h2>
+                        <p className="text-lg sm:text-xl text-white max-w-3xl mx-auto px-4">Experience holistic wellness through our carefully curated programs designed to nourish your mind, body, and soul.</p>
                     </motion.div>
                     
                     <div className="max-w-6xl mx-auto">
@@ -229,8 +229,8 @@ const LandingPage = memo(() => {
                         >
                             <div className="flex flex-col lg:flex-row items-center gap-12">
                                 <div className="lg:w-1/2">
-                                    <h3 className="text-3xl font-bold text-slate-900 mb-4 font-serif">Ayurvedic Therapies</h3>
-                                    <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                                    <h3 className="text-3xl font-bold text-lime-500 mb-4 font-serif">Ayurvedic Therapies</h3>
+                                    <p className="text-lg text-white leading-relaxed mb-6">
                                         Experience the ancient wisdom of Ayurveda with our traditional healing treatments. 
                                         Using natural herbs, oils, and time-tested techniques, our therapies provide complete 
                                         rejuvenation for your mind, body, and spirit.
@@ -238,15 +238,15 @@ const LandingPage = memo(() => {
                                     <div className="space-y-3">
                                         <div className="flex items-center">
                                             <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                                            <span className="text-slate-700">Abhyanga - Traditional oil massage</span>
+                                            <span className="text-white">Abhyanga - Traditional oil massage</span>
                                         </div>
                                         <div className="flex items-center">
                                             <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                                            <span className="text-slate-700">Shirodhara - Oil therapy for mind</span>
+                                            <span className="text-white">Shirodhara - Oil therapy for mind</span>
                                         </div>
                                         <div className="flex items-center">
                                             <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                                            <span className="text-slate-700">Panchakarma - Detoxification</span>
+                                            <span className="text-white">Panchakarma - Detoxification</span>
                                         </div>
                                     </div>
                                 </div>
@@ -279,24 +279,24 @@ const LandingPage = memo(() => {
                         >
                             <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
                                 <div className="lg:w-1/2">
-                                    <h3 className="text-3xl font-bold text-slate-900 mb-4 font-serif">Yoga & Meditation</h3>
-                                    <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                                    <h3 className="text-3xl font-bold text-lime-500 mb-4 font-serif">Yoga & Meditation</h3>
+                                    <p className="text-lg text-white leading-relaxed mb-6">
                                         Begin each day with the rising sun and the gentle guidance of our experienced teachers. 
                                         Our yoga and meditation sessions are held in serene natural settings, allowing you to 
                                         connect deeply with your inner self and the world around you.
                                     </p>
                                     <div className="space-y-3">
                                         <div className="flex items-center">
-                                            <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                                            <span className="text-slate-700">Sunrise Hatha Yoga</span>
+                                            <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                            <span className="text-white">Sunrise Hatha Yoga</span>
                                         </div>
                                         <div className="flex items-center">
-                                            <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                                            <span className="text-slate-700">Mindfulness Meditation</span>
+                                            <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                            <span className="text-white">Mindfulness Meditation</span>
                                         </div>
                                         <div className="flex items-center">
-                                            <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                                            <span className="text-slate-700">Pranayama Breathing</span>
+                                            <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                            <span className="text-white">Pranayama Breathing</span>
                                         </div>
                                     </div>
                                 </div>
@@ -329,24 +329,24 @@ const LandingPage = memo(() => {
                         >
                             <div className="flex flex-col lg:flex-row items-center gap-12">
                                 <div className="lg:w-1/2">
-                                    <h3 className="text-3xl font-bold text-slate-900 mb-4 font-serif">Organic Farm Experience</h3>
-                                    <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                                    <h3 className="text-3xl font-bold text-lime-500 mb-4 font-serif">Organic Farm Experience</h3>
+                                    <p className="text-lg text-white leading-relaxed mb-6">
                                         Walk through our lush organic gardens and learn the art of sustainable farming. 
                                         Experience the joy of harvesting fresh herbs and vegetables, and understand the 
                                         deep connection between the food we eat and our overall well-being.
                                     </p>
                                     <div className="space-y-3">
                                         <div className="flex items-center">
-                                            <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                                            <span className="text-slate-700">Guided farm tours</span>
+                                            <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                            <span className="text-white">Guided farm tours</span>
                                         </div>
                                         <div className="flex items-center">
-                                            <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                                            <span className="text-slate-700">Herb garden workshops</span>
+                                            <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                            <span className="text-white">Herb garden workshops</span>
                                         </div>
                                         <div className="flex items-center">
-                                            <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                                            <span className="text-slate-700">Sustainable practices</span>
+                                            <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                            <span className="text-white">Sustainable practices</span>
                                         </div>
                                     </div>
                                 </div>
@@ -379,24 +379,24 @@ const LandingPage = memo(() => {
                         >
                             <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
                                 <div className="lg:w-1/2">
-                                    <h3 className="text-3xl font-bold text-slate-900 mb-4 font-serif">Nature Walks</h3>
-                                    <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                                    <h3 className="text-3xl font-bold text-lime-500 mb-4 font-serif">Nature Walks</h3>
+                                    <p className="text-lg text-white leading-relaxed mb-6">
                                         Explore the pristine Himalayan landscape with our experienced guides. 
                                         Each walk is a journey of discovery, where you'll learn about local flora, 
                                         fauna, and the ancient wisdom embedded in these sacred mountains.
                                     </p>
                                     <div className="space-y-3">
                                         <div className="flex items-center">
-                                            <div className="w-2 h-2 bg-slate-500 rounded-full mr-3"></div>
-                                            <span className="text-slate-700">Guided mountain trails</span>
+                                            <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                            <span className="text-white">Guided mountain trails</span>
                                         </div>
                                         <div className="flex items-center">
-                                            <div className="w-2 h-2 bg-slate-500 rounded-full mr-3"></div>
-                                            <span className="text-slate-700">Bird watching sessions</span>
+                                            <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                            <span className="text-white">Bird watching sessions</span>
                                         </div>
                                         <div className="flex items-center">
-                                            <div className="w-2 h-2 bg-slate-500 rounded-full mr-3"></div>
-                                            <span className="text-slate-700">Sunset viewpoints</span>
+                                            <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                            <span className="text-white">Sunset viewpoints</span>
                                         </div>
                                     </div>
                                 </div>
@@ -427,7 +427,7 @@ const LandingPage = memo(() => {
                             transition={{ duration: 0.8, delay: 0.5 }}
                             viewport={{ once: true }}
                         >
-                            <p className="text-lg text-slate-700 mb-6 font-serif">
+                            <p className="text-lg text-lime-500 mb-6 font-serif">
                                 Ready to experience these wellness services?
                             </p>
                             <motion.button 
@@ -445,7 +445,7 @@ const LandingPage = memo(() => {
             </section>
 
             {/* Our Philosophy */}
-            <section className="bg-gradient-to-br from-amber-50 to-stone-100 py-16"
+            <section className="bg-gradient-to-br from-emerald-700 to-emerald-800 py-16"
                 style={{
                     backgroundImage: `url(${philo2})`,
                     backgroundSize: 'cover',
@@ -463,8 +463,8 @@ const LandingPage = memo(() => {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 font-serif px-4">Our Philosophy</h2>
-                        <p className="text-lg sm:text-xl text-white max-w-3xl mx-auto italic font-serif font-semibold text-center mb-4 px-4">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-lime-500 mb-4 sm:mb-6 font-serif px-4">Our Philosophy</h2>
+                        <p className="text-lg sm:text-xl text-lime-500 max-w-3xl mx-auto italic font-serif font-semibold text-center mb-4 px-4">
                             "Nature is not a place to visit. It is home. And in its embrace, we find our true selves."
                         </p>
                         <p className="text-base sm:text-xl text-white max-w-3xl mx-auto mt-4 font-serif font-light text-center mb-8 sm:mb-12 px-4"> 
@@ -475,7 +475,7 @@ const LandingPage = memo(() => {
             </section>
 
              {/* Experience Our Resort */}
-             <section className="bg-gradient-to-br from-amber-50 to-stone-100 py-20">
+             <section className="bg-gradient-to-br from-emerald-700 to-emerald-800 py-20">
                  <div className="container mx-auto px-4">
                      <motion.div 
                          className="text-center mb-16"
@@ -484,8 +484,8 @@ const LandingPage = memo(() => {
                          transition={{ duration: 0.8 }}
                          viewport={{ once: true }}
                      >
-                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 font-serif px-4">Experience Our Resort</h2>
-                         <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-serif font-light mb-8 sm:mb-12 px-4">
+                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-lime-500 mb-4 sm:mb-6 font-serif px-4">Experience Our Resort</h2>
+                         <p className="text-lg sm:text-xl text-white max-w-3xl mx-auto font-serif font-light mb-8 sm:mb-12 px-4">
                              Immerse yourself in the natural beauty and tranquility of our Himalayan retreat.
                          </p>
                      </motion.div>
@@ -699,7 +699,7 @@ const LandingPage = memo(() => {
                          transition={{ duration: 0.8, delay: 0.7 }}
                          viewport={{ once: true }}
                      >
-                         <p className="text-lg text-slate-700 mb-6 font-serif">
+                         <p className="text-lg text-lime-500 mb-6 font-serif">
                              Ready to experience the magic of Farmyadri?
                          </p>
                          <motion.button 
@@ -716,7 +716,7 @@ const LandingPage = memo(() => {
              </section>
 
              {/* Transformative Stories - New Enhanced Version */}
-             <section className="py-16 sm:py-20 bg-gradient-to-br from-amber-50 to-stone-100">
+             <section className="py-16 sm:py-20 bg-gradient-to-br from-emerald-700 to-emerald-800">
                 <div className="container mx-auto px-4">
                     <motion.div 
                         className="text-center mb-12 sm:mb-16"
@@ -725,10 +725,10 @@ const LandingPage = memo(() => {
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 mb-4">
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-lime-500 mb-4">
                             Transformative Stories
                         </h2>
-                        <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
+                        <p className="text-base sm:text-lg text-white max-w-3xl mx-auto">
                             Real experiences from our guests who found peace, healing, and transformation in nature's embrace.
                         </p>
                     </motion.div>
@@ -945,7 +945,7 @@ const LandingPage = memo(() => {
                     >
                         {/* Header */}
                         <div className="relative p-4 sm:p-6 border-b border-gray-200">
-                            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 font-serif pr-12">About Farm Yadri</h2>
+                            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white font-serif pr-12">About Farm Yadri</h2>
                             <button 
                                 onClick={closePopup}
                                 className="absolute top-3 sm:top-4 right-3 sm:right-4 text-gray-500 hover:text-gray-700 transition-colors duration-200 p-2 touch-manipulation"
@@ -961,8 +961,8 @@ const LandingPage = memo(() => {
                         <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
                             {/* Introduction */}
                             <div>
-                                <h3 className="text-lg sm:text-xl font-semibold text-slate-800 mb-2 sm:mb-3 font-serif">Our Story</h3>
-                                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3 font-serif">Our Story</h3>
+                                <p className="text-sm sm:text-base text-white leading-relaxed">
                                     Farm Yadri is a 100% organic farm and wellness resort nestled in the heart of the Himalayas. 
                                     Founded with a vision to create a sanctuary where people can reconnect with nature, themselves, 
                                     and the ancient wisdom of Ayurveda, we offer a transformative experience that goes beyond 
@@ -972,8 +972,8 @@ const LandingPage = memo(() => {
 
                             {/* Mission */}
                             <div>
-                                <h3 className="text-lg sm:text-xl font-semibold text-slate-800 mb-2 sm:mb-3 font-serif">Our Mission</h3>
-                                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3 font-serif">Our Mission</h3>
+                                <p className="text-sm sm:text-base text-white leading-relaxed">
                                     We believe in the power of nature to heal and transform. Our mission is to provide a 
                                     holistic wellness experience that combines traditional Ayurvedic practices with modern 
                                     comfort, creating a space where guests can find peace, rejuvenation, and a deeper 
@@ -983,54 +983,54 @@ const LandingPage = memo(() => {
 
                             {/* What We Offer */}
                             <div>
-                                <h3 className="text-lg sm:text-xl font-semibold text-slate-800 mb-3 sm:mb-4 font-serif">What We Offer</h3>
+                                <h3 className="text-lg sm:text-xl font-semibold text-white mb-3 sm:mb-4 font-serif">What We Offer</h3>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                                    <div className="bg-amber-50 p-3 sm:p-4 rounded-lg">
-                                        <h4 className="font-semibold text-slate-800 mb-1 sm:mb-2 text-sm sm:text-base">🌿 Organic Farming</h4>
-                                        <p className="text-xs sm:text-sm text-slate-600">100% organic produce grown on our own farm</p>
+                                    <div className="bg-emerald-700 p-3 sm:p-4 rounded-lg">
+                                        <h4 className="font-semibold text-white mb-1 sm:mb-2 text-sm sm:text-base">🌿 Organic Farming</h4>
+                                        <p className="text-xs sm:text-sm text-white">100% organic produce grown on our own farm</p>
                                     </div>
-                                    <div className="bg-amber-50 p-3 sm:p-4 rounded-lg">
-                                        <h4 className="font-semibold text-slate-800 mb-1 sm:mb-2 text-sm sm:text-base">🧘 Wellness Programs</h4>
-                                        <p className="text-xs sm:text-sm text-slate-600">Ayurvedic therapies and yoga sessions</p>
+                                    <div className="bg-emerald-700 p-3 sm:p-4 rounded-lg">
+                                        <h4 className="font-semibold text-white mb-1 sm:mb-2 text-sm sm:text-base">🧘 Wellness Programs</h4>
+                                        <p className="text-xs sm:text-sm text-white">Ayurvedic therapies and yoga sessions</p>
                                     </div>
-                                    <div className="bg-amber-50 p-3 sm:p-4 rounded-lg">
-                                        <h4 className="font-semibold text-slate-800 mb-1 sm:mb-2 text-sm sm:text-base">🏔️ Mountain Views</h4>
-                                        <p className="text-xs sm:text-sm text-slate-600">Breathtaking Himalayan landscapes</p>
+                                    <div className="bg-emerald-700 p-3 sm:p-4 rounded-lg">
+                                        <h4 className="font-semibold text-white mb-1 sm:mb-2 text-sm sm:text-base">🏔️ Mountain Views</h4>
+                                        <p className="text-xs sm:text-sm text-white">Breathtaking Himalayan landscapes</p>
                                     </div>
-                                    <div className="bg-amber-50 p-3 sm:p-4 rounded-lg">
-                                        <h4 className="font-semibold text-slate-800 mb-1 sm:mb-2 text-sm sm:text-base">🍽️ Farm-to-Table</h4>
-                                        <p className="text-xs sm:text-sm text-slate-600">Fresh, organic meals from our gardens</p>
+                                    <div className="bg-emerald-700 p-3 sm:p-4 rounded-lg">
+                                        <h4 className="font-semibold text-white mb-1 sm:mb-2 text-sm sm:text-base">🍽️ Farm-to-Table</h4>
+                                        <p className="text-xs sm:text-sm text-white">Fresh, organic meals from our gardens</p>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Values */}
                             <div>
-                                <h3 className="text-lg sm:text-xl font-semibold text-slate-800 mb-2 sm:mb-3 font-serif">Our Values</h3>
+                                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3 font-serif">Our Values</h3>
                                 <div className="space-y-2 sm:space-y-3">
                                     <div className="flex items-start">
                                         <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                        <p className="text-sm sm:text-base text-slate-600">Sustainability and environmental consciousness</p>
+                                        <p className="text-sm sm:text-base text-white">Sustainability and environmental consciousness</p>
                                     </div>
                                     <div className="flex items-start">
                                         <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                        <p className="text-sm sm:text-base text-slate-600">Authentic Ayurvedic practices and traditional wisdom</p>
+                                        <p className="text-sm sm:text-base text-white">Authentic Ayurvedic practices and traditional wisdom</p>
                                     </div>
                                     <div className="flex items-start">
                                         <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                        <p className="text-sm sm:text-base text-slate-600">Community and cultural preservation</p>
+                                        <p className="text-sm sm:text-base text-white">Community and cultural preservation</p>
                                     </div>
                                     <div className="flex items-start">
                                         <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                        <p className="text-sm sm:text-base text-slate-600">Holistic wellness and personal transformation</p>
+                                        <p className="text-sm sm:text-base text-white">Holistic wellness and personal transformation</p>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Contact Info */}
                             <div className="bg-slate-50 p-3 sm:p-4 rounded-lg">
-                                <h3 className="text-base sm:text-lg font-semibold text-slate-800 mb-2 font-serif">Get in Touch</h3>
-                                <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-slate-600">
+                                <h3 className="text-base sm:text-lg font-semibold text-white mb-2 font-serif">Get in Touch</h3>
+                                <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-white">
                                     <p><strong>Email:</strong> farmyadri@gmail.com</p>
                                     <p><strong>Location:</strong> Lal Bahadur Shastri Marg, Mumbai, Maharashtra</p>
                                     <p><strong>Contact:</strong> Rushneet Singh</p>
@@ -1094,7 +1094,7 @@ const LandingPage = memo(() => {
                              <div className="flex space-x-2 sm:space-x-3">
                                  <a 
                                      href="mailto:farmyadri@gmail.com"
-                                     className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300 cursor-pointer"
+                                     className="w-7 h-7 sm:w-8 sm:h-8 bg-green-500 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300 cursor-pointer"
                                      title="Email us"
                                  >
                                      <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
