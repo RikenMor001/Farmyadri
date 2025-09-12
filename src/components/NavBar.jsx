@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import { useAuth } from "../context/AuthContext"
 import AuthModal from "./Auth/AuthModal"
+import logo from "../assets/logo/logo.png"
 
 const NavBar = () => {
     const [isScrolled, setIsScrolled] = useState(false)
@@ -43,14 +44,16 @@ const NavBar = () => {
                 <div className="container mx-auto px-4">
                     <div className="flex items-center justify-between h-16 sm:h-20">
                         {/* Logo */}
-                        <Link to="/" className="flex items-center space-x-2">
+                        <Link to="/" className="flex items-center">
                             <motion.div
                                 whileHover={{ scale: 1.05 }}
-                                className="text-xl sm:text-2xl font-bold font-serif"
+                                className="h-10 sm:h-12 w-auto"
                             >
-                                <span className={isScrolled ? "text-slate-900" : "text-white"}>
-                                    Farm Yadri
-                                </span>
+                                <img 
+                                    src={logo} 
+                                    alt="FarmYadri Logo" 
+                                    className="h-full w-auto object-contain"
+                                />
                             </motion.div>
                         </Link>
 
