@@ -64,14 +64,14 @@ const NavBar = () => {
                                     key={link.path}
                                     to={link.path}
                                     className={`relative font-medium transition-colors duration-300 ${
-                                        isScrolled ? "text-slate-700 hover:text-slate-900" : "text-white hover:text-amber-200"
+                                        isScrolled ? "text-slate-700 hover:text-emerald-700" : "text-white hover:text-emerald-700"
                                     }`}
                                 >
                                     {link.label}
                                     {location.pathname === link.path && (
                                         <motion.div
                                             layoutId="activeTab"
-                                            className="absolute -bottom-1 left-0 right-0 h-0.5 bg-amber-400"
+                                            className="absolute -bottom-1 left-0 right-0 h-0.5 bg-emerald-700"
                                         />
                                     )}
                                 </Link>
@@ -105,8 +105,8 @@ const NavBar = () => {
                                             }}
                                             className={`px-3 sm:px-4 py-2 rounded-lg transition-colors duration-300 text-xs sm:text-sm font-medium ${
                                                 isScrolled 
-                                                    ? "text-slate-700 hover:text-slate-900" 
-                                                    : "text-white hover:text-amber-200"
+                                                    ? "text-slate-700 hover:text-emerald-700" 
+                                                    : "text-white hover:text-emerald-700"
                                             }`}
                                         >
                                             Sign In
@@ -177,8 +177,8 @@ const NavBar = () => {
                                             onClick={() => setIsMobileMenuOpen(false)}
                                             className={`font-medium transition-colors duration-300 text-base py-2 px-3 rounded-lg ${
                                                 location.pathname === link.path
-                                                    ? "text-amber-600 bg-amber-50"
-                                                    : "text-slate-700 hover:text-slate-900 hover:bg-slate-50"
+                                                    ? "text-emerald-700 bg-emerald-50"
+                                                    : "text-slate-700 hover:text-emerald-700 hover:bg-emerald-50"
                                             }`}
                                         >
                                             {link.label}
