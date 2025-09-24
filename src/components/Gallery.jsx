@@ -179,7 +179,7 @@ const Gallery = memo(() => {
             </section>
 
             {/* Gallery Introduction */}
-            <section className="bg-gradient-to-br from-amber-50 to-stone-100 py-16">
+            <section className="bg-gradient-to-br from-emerald-700 to-emerald-800 py-16">
                 <div className="container mx-auto px-4 py-12">
                     <motion.div 
                         className="flex flex-col items-center justify-center"
@@ -188,8 +188,8 @@ const Gallery = memo(() => {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-slate-900 mb-6 sm:mb-8 font-serif px-4">Visual Journey Through Farmyadri</h2>
-                        <div className="text-base sm:text-lg md:text-xl text-center tracking-wider text-slate-900 font-serif max-w-4xl px-4 leading-relaxed space-y-4 sm:space-y-6">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-lime-500 mb-6 sm:mb-8 font-serif px-4">Visual Journey Through Farmyadri</h2>
+                        <div className="text-base sm:text-lg md:text-xl text-center tracking-wider text-white font-serif max-w-4xl px-4 leading-relaxed space-y-4 sm:space-y-6">
                             <p>Immerse yourself in the visual splendor of our Himalayan retreat through our carefully curated gallery. Each image tells a story of tranquility, natural beauty, and the transformative power of connecting with nature.</p>
                             
                             <p>From the majestic mountain vistas to the intimate moments of wellness and relaxation, our gallery captures the essence of what makes Farmyadri a truly special place for healing and rejuvenation.</p>
@@ -199,7 +199,7 @@ const Gallery = memo(() => {
             </section>
 
             {/* Main Gallery Grid */}
-            <section ref={photoCollectionRef} className="py-20 bg-gradient-to-br from-amber-50 to-stone-100">
+            <section ref={photoCollectionRef} className="py-20 bg-gradient-to-br from-emerald-700 to-emerald-800">
                 <div className="container mx-auto px-4">
                     <motion.div 
                         className="text-center mb-16"
@@ -208,8 +208,8 @@ const Gallery = memo(() => {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 font-serif px-4">Our Photo Collection</h2>
-                        <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto px-4">Discover the beauty and serenity of our wellness retreat through these stunning photographs.</p>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-lime-500 mb-4 sm:mb-6 font-serif px-4">Our Photo Collection</h2>
+                        <p className="text-lg sm:text-xl text-white max-w-3xl mx-auto px-4">Discover the beauty and serenity of our wellness retreat through these stunning photographs.</p>
                     </motion.div>
                     
                     {/* First Row - 4 images */}
@@ -317,7 +317,7 @@ const Gallery = memo(() => {
                         transition={{ duration: 0.8, delay: 1.0 }}
                         viewport={{ once: true }}
                     >
-                        <p className="text-lg text-slate-700 mb-6 font-serif">
+                        <p className="text-lg text-lime-500 mb-6 font-serif">
                             Ready to experience the beauty of Farmyadri in person?
                         </p>
                         <motion.button 
