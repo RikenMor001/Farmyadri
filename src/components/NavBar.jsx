@@ -26,6 +26,7 @@ const NavBar = () => {
         { path: "/about", label: "About" },
         { path: "/gallery", label: "Gallery" },
         { path: "/accomodation", label: "Accommodation" },
+        { path: "/restaurant", label: "Restaurant" },
         { path: "/contact-us", label: "Contact" }
     ]
 
