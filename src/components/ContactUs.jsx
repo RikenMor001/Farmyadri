@@ -55,7 +55,7 @@ const ContactUs = memo(() => {
         </section>
 
         {/* Contact Form Section */}
-        <section className="py-20 bg-gradient-to-br from-amber-50 to-stone-100">
+        <section className="py-20 bg-gradient-to-br from-emerald-700 to-emerald-800">
             <div className="container mx-auto px-4">
                 <div className="max-w-7xl mx-auto">
                     <motion.div 
@@ -73,7 +73,7 @@ const ContactUs = memo(() => {
                                 transition={{ duration: 0.8, delay: 0.2 }}
                                 viewport={{ once: true }}
                             >
-                                <h3 className="text-3xl font-bold text-slate-900 mb-6 font-serif">General Inquiries</h3>
+                                <h3 className="text-3xl font-bold text-lime-500 mb-6 font-serif">General Inquiries</h3>
                                 
                                 <div className="space-y-6">
                                     {/* Email */}
@@ -84,8 +84,8 @@ const ContactUs = memo(() => {
                                             </svg>
                                         </div>
                                         <div>
-                                            <h4 className="text-lg font-semibold text-slate-900 mb-1">Email</h4>
-                                            <a href="mailto:farmyadri@gmail.com" className="text-slate-600 hover:text-slate-900 transition-colors duration-300">
+                                            <h4 className="text-lg font-semibold text-white mb-1">Email</h4>
+                                            <a href="mailto:farmyadri@gmail.com" className="text-white hover:text-lime-500 transition-colors duration-300">
                                                 farmyadri@gmail.com
                                             </a>
                                         </div>
@@ -100,8 +100,8 @@ const ContactUs = memo(() => {
                                             </svg>
                                         </div>
                                         <div>
-                                            <h4 className="text-lg font-semibold text-slate-900 mb-1">Address</h4>
-                                            <p className="text-slate-600">
+                                            <h4 className="text-lg font-semibold text-white mb-1">Address</h4>
+                                            <p className="text-white">
                                                 Lal Bahadur Shastri Marg<br/>
                                                 Mumbai, Maharashtra, India
                                             </p>
@@ -116,8 +116,8 @@ const ContactUs = memo(() => {
                                             </svg>
                                         </div>
                                         <div>
-                                            <h4 className="text-lg font-semibold text-slate-900 mb-1">Phone</h4>
-                                            <a href="tel:+917718849577" className="text-slate-600 hover:text-slate-900 transition-colors duration-300">
+                                            <h4 className="text-lg font-semibold text-white mb-1">Phone</h4>
+                                            <a href="tel:+917718849577" className="text-white hover:text-lime-500 transition-colors duration-300">
                                                 +91 77188 49577
                                             </a>
                                         </div>
@@ -128,19 +128,19 @@ const ContactUs = memo(() => {
 
                         {/* Contact Form - Right Side */}
                         <motion.div 
-                            className="bg-white rounded-2xl shadow-xl p-8"
+                            className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl p-8"
                             initial={{ opacity: 0, x: 50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                             viewport={{ once: true }}
                         >
-                            <h3 className="text-2xl font-bold text-slate-900 mb-6 font-serif">Send us a Message</h3>
+                            <h3 className="text-2xl font-bold text-lime-500 mb-6 font-serif">Send us a Message</h3>
                             
                             <form className="space-y-6">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     {/* First Name */}
                                     <div>
-                                        <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-2">
+                                        <label htmlFor="firstName" className="block text-sm font-medium text-white mb-2">
                                             First Name *
                                         </label>
                                         <input
@@ -148,14 +148,14 @@ const ContactUs = memo(() => {
                                             id="firstName"
                                             name="firstName"
                                             required
-                                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all duration-300"
+                                            className="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-lime-500 transition-all duration-300 text-white placeholder-white/70"
                                             placeholder="Enter your first name"
                                         />
                                     </div>
 
                                     {/* Last Name */}
                                     <div>
-                                        <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-2">
+                                        <label htmlFor="lastName" className="block text-sm font-medium text-white mb-2">
                                             Last Name *
                                         </label>
                                         <input
@@ -163,7 +163,7 @@ const ContactUs = memo(() => {
                                             id="lastName"
                                             name="lastName"
                                             required
-                                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all duration-300"
+                                            className="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-lime-500 transition-all duration-300 text-white placeholder-white/70"
                                             placeholder="Enter your last name"
                                         />
                                     </div>
@@ -171,7 +171,7 @@ const ContactUs = memo(() => {
 
                                 {/* Email */}
                                 <div>
-                                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+                                    <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
                                         Email Address *
                                     </label>
                                     <input
@@ -179,28 +179,28 @@ const ContactUs = memo(() => {
                                         id="email"
                                         name="email"
                                         required
-                                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all duration-300"
+                                        className="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-lime-500 transition-all duration-300 text-white placeholder-white/70"
                                         placeholder="Enter your email address"
                                     />
                                 </div>
 
                                 {/* Phone Number */}
                                 <div>
-                                    <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-2">
+                                    <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
                                         Phone Number
                                     </label>
                                     <input
                                         type="tel"
                                         id="phone"
                                         name="phone"
-                                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all duration-300"
+                                        className="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-lime-500 transition-all duration-300 text-white placeholder-white/70"
                                         placeholder="Enter your phone number"
                                     />
                                 </div>
 
                                 {/* Message */}
                                 <div>
-                                    <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
+                                    <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
                                         Message *
                                     </label>
                                     <textarea
@@ -208,7 +208,7 @@ const ContactUs = memo(() => {
                                         name="message"
                                         rows="5"
                                         required
-                                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all duration-300 resize-none"
+                                        className="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-lime-500 transition-all duration-300 resize-none text-white placeholder-white/70"
                                         placeholder="Tell us about your inquiry..."
                                     ></textarea>
                                 </div>
@@ -216,7 +216,7 @@ const ContactUs = memo(() => {
                                 {/* Submit Button */}
                                 <motion.button
                                     type="submit"
-                                    className="w-full bg-slate-900 text-white py-4 px-6 rounded-lg hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg"
+                                    className="w-full bg-lime-500 text-slate-900 py-4 px-6 rounded-lg hover:bg-lime-400 transition-all duration-300 font-medium hover:scale-105 shadow-lg"
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                 >
@@ -225,8 +225,8 @@ const ContactUs = memo(() => {
                             </form>
 
                             {/* Additional Information */}
-                            <div className="mt-8 p-6 bg-amber-50 rounded-lg border border-amber-200">
-                                <p className="text-slate-700 leading-relaxed">
+                            <div className="mt-8 p-6 bg-black/30 backdrop-blur-sm rounded-lg border border-white/20">
+                                <p className="text-white leading-relaxed">
                                     Questions about booking a stay at Farmyadri Resort? Our team is always available 
                                     to answer any questions or concerns you may have—big or small. 
                                     Let us help plan your return to the wild.
