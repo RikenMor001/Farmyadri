@@ -5,7 +5,7 @@
     import cr2 from "../assets/cr2.jpg"
     import cr3 from "../assets/cr3.jpg"
     import cr4 from "../assets/cr4.jpg"
-import { Link } from "react-router-dom";
+    import { Link } from "react-router-dom";
 
     const About = memo(() => {
         const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -208,7 +208,7 @@ import { Link } from "react-router-dom";
                 </section>
 
                 {/* Mission & Values Section */}
-                <section className="py-20 bg-white">
+                <section className="py-20 bg-gradient-to-br from-emerald-700 to-emerald-800">
                     <div className="container mx-auto px-4">
                         <motion.div 
                             className="text-center mb-16"
@@ -217,17 +217,17 @@ import { Link } from "react-router-dom";
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 font-serif">
+                            <h2 className="text-4xl md:text-5xl font-bold text-lime-500 mb-6 font-serif">
                                 Our Mission & Values
                             </h2>
-                            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                            <p className="text-xl text-white max-w-3xl mx-auto">
                                 To create transformative experiences that reconnect people with nature, themselves, and the ancient wisdom of holistic wellness.
                             </p>
                         </motion.div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                             <motion.div 
-                                className="text-center p-8 rounded-2xl bg-gradient-to-br from-amber-50 to-stone-100 shadow-lg hover:shadow-xl transition-all duration-500"
+                                className="text-center p-8 rounded-2xl bg-black/30 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl transition-all duration-500"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -236,14 +236,14 @@ import { Link } from "react-router-dom";
                                 <div className="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-6">
                                     <span className="text-white text-2xl">🌿</span>
                                 </div>
-                                <h3 className="text-2xl font-bold text-slate-900 mb-4 font-serif">Holistic Wellness</h3>
-                                <p className="text-slate-600 leading-relaxed">
+                                <h3 className="text-2xl font-bold text-lime-500 mb-4 font-serif">Holistic Wellness</h3>
+                                <p className="text-white leading-relaxed">
                                     We integrate ancient Ayurvedic wisdom with modern wellness practices to provide comprehensive healing experiences that address the whole person.
                                 </p>
                             </motion.div>
 
                             <motion.div 
-                                className="text-center p-8 rounded-2xl bg-gradient-to-br from-amber-50 to-stone-100 shadow-lg hover:shadow-xl transition-all duration-500"
+                                className="text-center p-8 rounded-2xl bg-black/30 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl transition-all duration-500"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -252,14 +252,14 @@ import { Link } from "react-router-dom";
                                 <div className="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-6">
                                     <span className="text-white text-2xl">🌱</span>
                                 </div>
-                                <h3 className="text-2xl font-bold text-slate-900 mb-4 font-serif">Sustainable Living</h3>
-                                <p className="text-slate-600 leading-relaxed">
+                                <h3 className="text-2xl font-bold text-lime-500 mb-4 font-serif">Sustainable Living</h3>
+                                <p className="text-white leading-relaxed">
                                     We demonstrate and teach sustainable practices, from organic farming to eco-friendly hospitality, showing how to live in harmony with nature.
                                 </p>
                             </motion.div>
 
                             <motion.div 
-                                className="text-center p-8 rounded-2xl bg-gradient-to-br from-amber-50 to-stone-100 shadow-lg hover:shadow-xl transition-all duration-500"
+                                className="text-center p-8 rounded-2xl bg-black/30 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl transition-all duration-500"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -268,8 +268,8 @@ import { Link } from "react-router-dom";
                                 <div className="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center mx-auto mb-6">
                                     <span className="text-white text-2xl">🧘</span>
                                 </div>
-                                <h3 className="text-2xl font-bold text-slate-900 mb-4 font-serif">Inner Transformation</h3>
-                                <p className="text-slate-600 leading-relaxed">
+                                <h3 className="text-2xl font-bold text-lime-500 mb-4 font-serif">Inner Transformation</h3>
+                                <p className="text-white leading-relaxed">
                                     We create sacred spaces and experiences that facilitate deep personal growth, self-discovery, and lasting positive change.
                                 </p>
                             </motion.div>
@@ -278,7 +278,7 @@ import { Link } from "react-router-dom";
                 </section>
 
                 {/* Our Team Section */}
-                <section className="py-20 bg-gradient-to-br from-amber-50 to-stone-100">
+                <section className="py-20 bg-gradient-to-br from-emerald-700 to-emerald-800">
                     <div className="container mx-auto px-4">
                         <motion.div 
                             className="text-center mb-16"
@@ -287,10 +287,10 @@ import { Link } from "react-router-dom";
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 font-serif">
+                            <h2 className="text-4xl md:text-5xl font-bold text-lime-500 mb-6 font-serif">
                                 Meet Our Team
                             </h2>
-                            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                            <p className="text-xl text-white max-w-3xl mx-auto">
                                 The passionate individuals who make Farmyadri a place of healing and transformation.
                             </p>
                         </motion.div>
@@ -298,7 +298,7 @@ import { Link } from "react-router-dom";
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                             {/* Juhi Bhatt */}
                             <motion.div 
-                                className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500"
+                                className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -314,9 +314,9 @@ import { Link } from "react-router-dom";
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                                 </div>
                                 <div className="p-6">
-                                    <h3 className="text-xl font-bold text-slate-800 mb-2 font-serif">Juhi Bhatt</h3>
-                                    <p className="text-amber-600 font-medium mb-3">Founder, Health Coach, Wellness Chef</p>
-                                    <p className="text-slate-600 leading-relaxed text-sm">
+                                    <h3 className="text-xl font-bold text-lime-500 mb-2 font-serif">Juhi Bhatt</h3>
+                                    <p className="text-white font-medium mb-3">Founder, Health Coach, Wellness Chef</p>
+                                    <p className="text-white leading-relaxed text-sm">
                                         Juhi Bhatt is the passionate founder of Prajuri River Acres, an organic wellness retreat in Dehradun. With a background in engineering, she shifted from Mumbai's fast-paced lifestyle to a grounded, nature-centered path. A certified health coach from Hippocrates Wellness, Juhi is also a skilled healthy baker and chef, offering deeply nourishing farm-to-table experiences for body, mind, and spirit.
                                     </p>
                                 </div>
@@ -324,7 +324,7 @@ import { Link } from "react-router-dom";
 
                             {/* Rushneet Singh Gandhok */}
                             <motion.div 
-                                className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500"
+                                className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -340,9 +340,9 @@ import { Link } from "react-router-dom";
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                                 </div>
                                 <div className="p-6">
-                                    <h3 className="text-xl font-bold text-slate-800 mb-2 font-serif">Rushneet Singh Gandhok</h3>
-                                    <p className="text-amber-600 font-medium mb-3">Co-Founder</p>
-                                    <p className="text-slate-600 leading-relaxed text-sm">
+                                    <h3 className="text-xl font-bold text-lime-500 mb-2 font-serif">Rushneet Singh Gandhok</h3>
+                                    <p className="text-white font-medium mb-3">Co-Founder</p>
+                                    <p className="text-white leading-relaxed text-sm">
                                         Rushneet Singh Gandhok, Co-Founder of Prajuri River Acres, brings global hospitality finesse from Glion Institute, Switzerland. With a keen eye for design and guest experience, he oversees curation, strategy, and operations at the resort. Rushneet ensures that every detail reflects the values of mindful living, sustainability, and the essence of authentic hospitality.
                                     </p>
                                 </div>
@@ -350,7 +350,7 @@ import { Link } from "react-router-dom";
 
                             {/* Prashant Bhatt */}
                             <motion.div 
-                                className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500"
+                                className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -366,9 +366,9 @@ import { Link } from "react-router-dom";
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                                 </div>
                                 <div className="p-6">
-                                    <h3 className="text-xl font-bold text-slate-800 mb-2 font-serif">Prashant Bhatt</h3>
-                                    <p className="text-amber-600 font-medium mb-3">Founder</p>
-                                    <p className="text-slate-600 leading-relaxed text-sm">
+                                    <h3 className="text-xl font-bold text-lime-500 mb-2 font-serif">Prashant Bhatt</h3>
+                                    <p className="text-white font-medium mb-3">Founder</p>
+                                    <p className="text-white leading-relaxed text-sm">
                                         Prashant Bhatt, a marine engineer with 11 years at AP Moller Maersk, founded Prajuri River Acres in 2021. He transformed barren land into an organic sanctuary using permaculture, cow-based, and nakshatra farming. As a certified yoga teacher and sound healer, Prashant brings mindful wellness to the retreat, combining hands-on farming with healing practices.
                                     </p>
                                 </div>
@@ -376,7 +376,7 @@ import { Link } from "react-router-dom";
 
                             {/* Maninder Kaur Bedi */}
                             <motion.div 
-                                className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500"
+                                className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -392,9 +392,9 @@ import { Link } from "react-router-dom";
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                                 </div>
                                 <div className="p-6">
-                                    <h3 className="text-xl font-bold text-slate-800 mb-2 font-serif">Maninder Kaur Bedi</h3>
-                                    <p className="text-amber-600 font-medium mb-3">Founder, Visionary, Land Developer</p>
-                                    <p className="text-slate-600 leading-relaxed text-sm">
+                                    <h3 className="text-xl font-bold text-lime-500 mb-2 font-serif">Maninder Kaur Bedi</h3>
+                                    <p className="text-white font-medium mb-3">Founder, Visionary, Land Developer</p>
+                                    <p className="text-white leading-relaxed text-sm">
                                         Maninder Kaur Bedi, Founder and Director of Prajuri River Acres, is the heart behind its vision. With decades of work in social impact and community development, she leads the estate's philosophy and land planning. Her wisdom and compassion shape the retreat into a soulful space rooted in simplicity, sustainability, and nature's healing energy.
                                     </p>
                                 </div>
@@ -402,7 +402,7 @@ import { Link } from "react-router-dom";
 
                             {/* Vikrant Bhatt */}
                             <motion.div 
-                                className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500"
+                                className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.5 }}
@@ -418,9 +418,9 @@ import { Link } from "react-router-dom";
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                                 </div>
                                 <div className="p-6">
-                                    <h3 className="text-xl font-bold text-slate-800 mb-2 font-serif">Vikrant Bhatt</h3>
-                                    <p className="text-amber-600 font-medium mb-3">General Manager</p>
-                                    <p className="text-slate-600 leading-relaxed text-sm">
+                                    <h3 className="text-xl font-bold text-lime-500 mb-2 font-serif">Vikrant Bhatt</h3>
+                                    <p className="text-white font-medium mb-3">General Manager</p>
+                                    <p className="text-white leading-relaxed text-sm">
                                         Vikrant Bhatt, a B.Tech graduate from Graphic Era University (2009–2013), has served as General Manager of Prajuri River Acres since 2024. Despite being wheelchair-bound since a 2015 accident, his resilience fuels his leadership. Vikrant oversees daily operations, staff training, wellness programs, and sustainability efforts, ensuring seamless service and memorable guest experiences.
                                     </p>
                                 </div>
@@ -428,7 +428,7 @@ import { Link } from "react-router-dom";
 
                             {/* Wellness Team */}
                             <motion.div 
-                                className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500"
+                                className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500"
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: 0.6 }}
@@ -444,9 +444,9 @@ import { Link } from "react-router-dom";
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                                 </div>
                                 <div className="p-6">
-                                    <h3 className="text-xl font-bold text-slate-800 mb-2 font-serif">Our Wellness Team</h3>
-                                    <p className="text-amber-600 font-medium mb-3">Healing Practitioners</p>
-                                    <p className="text-slate-600 leading-relaxed text-sm">
+                                    <h3 className="text-xl font-bold text-lime-500 mb-2 font-serif">Our Wellness Team</h3>
+                                    <p className="text-white font-medium mb-3">Healing Practitioners</p>
+                                    <p className="text-white leading-relaxed text-sm">
                                         Our certified Ayurvedic practitioners, yoga instructors, and wellness experts bring decades of combined experience in holistic healing and transformative practices, ensuring every guest receives personalized care and guidance.
                                     </p>
                                 </div>
@@ -456,7 +456,7 @@ import { Link } from "react-router-dom";
                 </section>
 
                 {/* Sustainability Section */}
-                <section className="py-20 bg-white">
+                <section className="py-20 bg-gradient-to-br from-emerald-700 to-emerald-800">
                     <div className="container mx-auto px-4">
                         <motion.div 
                             className="max-w-6xl mx-auto"
@@ -472,29 +472,29 @@ import { Link } from "react-router-dom";
                                     transition={{ duration: 0.8, delay: 0.2 }}
                                     viewport={{ once: true }}
                                 >
-                                    <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 font-serif">
+                                    <h2 className="text-4xl md:text-5xl font-bold text-lime-500 mb-8 font-serif">
                                         Our Commitment to Sustainability
                                     </h2>
-                                    <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
+                                    <div className="space-y-6 text-lg text-white leading-relaxed">
                                         <p>
                                             At Farmyadri, sustainability isn't just a practice—it's a way of life. We believe that true wellness extends beyond individual health to encompass the health of our planet and communities.
                                         </p>
                                         <div className="space-y-4">
                                             <div className="flex items-start">
                                                 <div className="w-2 h-2 bg-green-500 rounded-full mr-3 mt-2"></div>
-                                                <span className="text-slate-700">100% organic farming practices</span>
+                                                <span className="text-white">100% organic farming practices</span>
                                             </div>
                                             <div className="flex items-start">
                                                 <div className="w-2 h-2 bg-green-500 rounded-full mr-3 mt-2"></div>
-                                                <span className="text-slate-700">Solar energy and renewable resources</span>
+                                                <span className="text-white">Solar energy and renewable resources</span>
                                             </div>
                                             <div className="flex items-start">
                                                 <div className="w-2 h-2 bg-green-500 rounded-full mr-3 mt-2"></div>
-                                                <span className="text-slate-700">Zero-waste initiatives</span>
+                                                <span className="text-white">Zero-waste initiatives</span>
                                             </div>
                                             <div className="flex items-start">
                                                 <div className="w-2 h-2 bg-green-500 rounded-full mr-3 mt-2"></div>
-                                                <span className="text-slate-700">Local community partnerships</span>
+                                                <span className="text-white">Local community partnerships</span>
                                             </div>
                                         </div>
                                     </div>
