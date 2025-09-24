@@ -10,6 +10,7 @@ const About = lazy(() => import("./components/About"))
 const Gallery = lazy(() => import("./components/Gallery"))
 const ContactUs = lazy(() => import("./components/ContactUs"))
 const Accomodation = lazy(() => import("./components/Accomodation"))
+const Restaurant = lazy(() => import("./components/Restaurant"))
 
 // Loading component
 const LoadingSpinner = () => (
@@ -34,6 +35,7 @@ function App() {
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/contact-us" element={<ContactUs/>}/>
               <Route path="/accomodation" element={<Accomodation/>}/>
+              <Route path="/restaurant" element={<Restaurant/>}/>
             </Routes>
           </Suspense>
           <WhatsAppButton />
