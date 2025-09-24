@@ -235,49 +235,49 @@ const Accomodation = memo(() => {
             </section>
 
             {/* Booking Search Section */}
-            <section className="bg-gradient-to-br from-amber-50 to-stone-100 py-12 sm:py-16">
+            <section className="bg-gradient-to-br from-emerald-700 to-emerald-800 py-12 sm:py-16">
                 <div className="container mx-auto px-4">
                     <motion.div 
-                        className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-6 sm:p-8"
+                        className="max-w-4xl mx-auto bg-black/30 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl p-6 sm:p-8"
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-4 sm:mb-6 text-center font-serif">
+                        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-lime-500 mb-4 sm:mb-6 text-center font-serif">
                             Find Your Perfect Stay
                         </h2>
                         
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                             {/* Check-in Date */}
                             <div>
-                                <label className="block text-sm font-medium text-slate-700 mb-2">Check-in</label>
+                                <label className="block text-sm font-medium text-white mb-2">Check-in</label>
                                 <input
                                     type="date"
                                     value={selectedDates.checkIn}
                                     onChange={(e) => handleDateChange('checkIn', e.target.value)}
-                                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all duration-300"
+                                    className="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-lime-500 transition-all duration-300 text-white"
                                 />
                             </div>
                             
                             {/* Check-out Date */}
                             <div>
-                                <label className="block text-sm font-medium text-slate-700 mb-2">Check-out</label>
+                                <label className="block text-sm font-medium text-white mb-2">Check-out</label>
                                 <input
                                     type="date"
                                     value={selectedDates.checkOut}
                                     onChange={(e) => handleDateChange('checkOut', e.target.value)}
-                                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all duration-300"
+                                    className="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-lime-500 transition-all duration-300 text-white"
                                 />
                             </div>
                             
                             {/* Guests */}
                             <div>
-                                <label className="block text-sm font-medium text-slate-700 mb-2">Guests</label>
+                                <label className="block text-sm font-medium text-white mb-2">Guests</label>
                                 <select
                                     value={selectedGuests}
                                     onChange={(e) => setSelectedGuests(parseInt(e.target.value))}
-                                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-900 focus:border-transparent transition-all duration-300"
+                                    className="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-lime-500 transition-all duration-300 text-white"
                                 >
                                     {[1,2,3,4,5,6,7,8].map(num => (
                                         <option key={num} value={num}>{num} {num === 1 ? 'Guest' : 'Guests'}</option>
@@ -287,7 +287,7 @@ const Accomodation = memo(() => {
                             
                             {/* Search Button */}
                             <div className="flex items-end sm:col-span-2 lg:col-span-1">
-                                <button className="w-full bg-slate-900 text-white py-3 px-4 sm:px-6 rounded-lg hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg hover:cursor-pointer text-sm sm:text-base">
+                                <button className="w-full bg-lime-500 text-slate-900 py-3 px-4 sm:px-6 rounded-lg hover:bg-lime-400 transition-all duration-300 font-medium hover:scale-105 shadow-lg hover:cursor-pointer text-sm sm:text-base">
                                     Search
                                 </button>
                             </div>
@@ -297,7 +297,7 @@ const Accomodation = memo(() => {
             </section>
 
             {/* Accommodations Grid */}
-            <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-amber-50 to-stone-100">
+            <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-emerald-700 to-emerald-800">
                 <div className="container mx-auto px-4">
                     <motion.div 
                         className="text-center mb-8 sm:mb-12 md:mb-16"
@@ -306,19 +306,472 @@ const Accomodation = memo(() => {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 sm:mb-4 md:mb-6 font-serif px-4">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-lime-500 mb-3 sm:mb-4 md:mb-6 font-serif px-4">
                             Choose Your Perfect Retreat
                         </h2>
-                        <p className="text-sm sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto px-4">
-                            From luxury villas to cozy treehouses, find the accommodation that speaks to your soul
+                        <p className="text-sm sm:text-lg md:text-xl text-white max-w-3xl mx-auto px-4">
+                            From budget-friendly dormitories to luxury cottages, find the accommodation that speaks to your soul
                         </p>
                     </motion.div>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
+
+                    {/* Dormitory Section */}
+                    <motion.div 
+                        className="mb-16"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-lime-500 mb-6 font-serif text-center">
+                            Dormitory Accommodations
+                        </h3>
+                        <p className="text-white text-center mb-8 max-w-2xl mx-auto">
+                            Perfect for solo travelers, groups, and those seeking a communal living experience with shared facilities
+                        </p>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
+                            {/* Shared Dormitory */}
+                            <motion.div 
+                                className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.1 }}
+                                viewport={{ once: true }}
+                                whileHover={{ y: -5 }}
+                            >
+                                <div className="relative h-64 overflow-hidden">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                                        alt="Shared Dormitory"
+                                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <div className="absolute top-4 right-4 bg-lime-500 px-3 py-1 rounded-full text-sm font-semibold text-slate-900">
+                                        ₹1,200/night
+                                    </div>
+                                </div>
+                                <div className="p-4 sm:p-6">
+                                    <h4 className="text-lg sm:text-xl font-bold text-lime-500 mb-1">Shared Dormitory</h4>
+                                    <p className="text-white text-xs sm:text-sm mb-3">Budget-friendly communal living</p>
+                                    <div className="flex flex-wrap items-center text-xs sm:text-sm text-white mb-4 gap-2 sm:gap-4">
+                                        <span>8 beds</span>
+                                        <span>Shared bathroom</span>
+                                        <span>Common area</span>
+                                    </div>
+                                    <p className="text-white mb-4 leading-relaxed text-sm">
+                                        Experience authentic backpacker-style accommodation with comfortable bunk beds, shared facilities, and a vibrant community atmosphere.
+                                    </p>
+                                    <div className="mb-6">
+                                        <h5 className="font-semibold text-lime-500 mb-2 text-sm sm:text-base">Amenities</h5>
+                                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                                            <span className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30">
+                                                Free WiFi
+                                            </span>
+                                            <span className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30">
+                                                Lockers
+                                            </span>
+                                            <span className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30">
+                                                Common Kitchen
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="flex justify-between items-center">
+                                        <div>
+                                            <span className="text-lg sm:text-xl font-bold text-lime-500">₹1,200</span>
+                                            <span className="text-white/70 text-xs sm:text-sm"> / night</span>
+                                        </div>
+                                        <motion.button
+                                            onClick={() => handleDirectPayment({
+                                                _id: 'dormitory-shared',
+                                                name: 'Shared Dormitory',
+                                                price: 1200
+                                            })}
+                                            className="bg-lime-500 text-slate-900 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:bg-lime-400 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm sm:text-base"
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ scale: 0.95 }}
+                                        >
+                                            Book Now
+                                        </motion.button>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Private Dormitory */}
+                            <motion.div 
+                                className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                                viewport={{ once: true }}
+                                whileHover={{ y: -5 }}
+                            >
+                                <div className="relative h-64 overflow-hidden">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1555854877-bab0ef0a7a8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                                        alt="Private Dormitory"
+                                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <div className="absolute top-4 right-4 bg-lime-500 px-3 py-1 rounded-full text-sm font-semibold text-slate-900">
+                                        ₹2,400/night
+                                    </div>
+                                </div>
+                                <div className="p-4 sm:p-6">
+                                    <h4 className="text-lg sm:text-xl font-bold text-lime-500 mb-1">Private Dormitory</h4>
+                                    <p className="text-white text-xs sm:text-sm mb-3">Semi-private with 4 beds</p>
+                                    <div className="flex flex-wrap items-center text-xs sm:text-sm text-white mb-4 gap-2 sm:gap-4">
+                                        <span>4 beds</span>
+                                        <span>Private bathroom</span>
+                                        <span>Balcony view</span>
+                                    </div>
+                                    <p className="text-white mb-4 leading-relaxed text-sm">
+                                        Enjoy more privacy with a smaller shared space, private bathroom, and your own balcony overlooking the mountains.
+                                    </p>
+                                    <div className="mb-6">
+                                        <h5 className="font-semibold text-lime-500 mb-2 text-sm sm:text-base">Amenities</h5>
+                                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                                            <span className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30">
+                                                Private Bathroom
+                                            </span>
+                                            <span className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30">
+                                                Mountain View
+                                            </span>
+                                            <span className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30">
+                                                Free WiFi
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="flex justify-between items-center">
+                                        <div>
+                                            <span className="text-lg sm:text-xl font-bold text-lime-500">₹2,400</span>
+                                            <span className="text-white/70 text-xs sm:text-sm"> / night</span>
+                                        </div>
+                                        <motion.button
+                                            onClick={() => handleDirectPayment({
+                                                _id: 'dormitory-private',
+                                                name: 'Private Dormitory',
+                                                price: 2400
+                                            })}
+                                            className="bg-lime-500 text-slate-900 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:bg-lime-400 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm sm:text-base"
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ scale: 0.95 }}
+                                        >
+                                            Book Now
+                                        </motion.button>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Family Dormitory */}
+                            <motion.div 
+                                className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.3 }}
+                                viewport={{ once: true }}
+                                whileHover={{ y: -5 }}
+                            >
+                                <div className="relative h-64 overflow-hidden">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                                        alt="Family Dormitory"
+                                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <div className="absolute top-4 right-4 bg-lime-500 px-3 py-1 rounded-full text-sm font-semibold text-slate-900">
+                                        ₹3,600/night
+                                    </div>
+                                </div>
+                                <div className="p-4 sm:p-6">
+                                    <h4 className="text-lg sm:text-xl font-bold text-lime-500 mb-1">Family Dormitory</h4>
+                                    <p className="text-white text-xs sm:text-sm mb-3">Perfect for families</p>
+                                    <div className="flex flex-wrap items-center text-xs sm:text-sm text-white mb-4 gap-2 sm:gap-4">
+                                        <span>6 beds</span>
+                                        <span>Private bathroom</span>
+                                        <span>Kitchenette</span>
+                                    </div>
+                                    <p className="text-white mb-4 leading-relaxed text-sm">
+                                        Spacious family-friendly accommodation with private facilities, kitchenette, and comfortable sleeping arrangements for larger groups.
+                                    </p>
+                                    <div className="mb-6">
+                                        <h5 className="font-semibold text-lime-500 mb-2 text-sm sm:text-base">Amenities</h5>
+                                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                                            <span className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30">
+                                                Kitchenette
+                                            </span>
+                                            <span className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30">
+                                                Family Size
+                                            </span>
+                                            <span className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30">
+                                                Private Bathroom
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="flex justify-between items-center">
+                                        <div>
+                                            <span className="text-lg sm:text-xl font-bold text-lime-500">₹3,600</span>
+                                            <span className="text-white/70 text-xs sm:text-sm"> / night</span>
+                                        </div>
+                                        <motion.button
+                                            onClick={() => handleDirectPayment({
+                                                _id: 'dormitory-family',
+                                                name: 'Family Dormitory',
+                                                price: 3600
+                                            })}
+                                            className="bg-lime-500 text-slate-900 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:bg-lime-400 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm sm:text-base"
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ scale: 0.95 }}
+                                        >
+                                            Book Now
+                                        </motion.button>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </motion.div>
+
+                    {/* Cottages Section */}
+                    <motion.div 
+                        className="mb-16"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-lime-500 mb-6 font-serif text-center">
+                            Cottage Accommodations
+                        </h3>
+                        <p className="text-white text-center mb-8 max-w-2xl mx-auto">
+                            Cozy, private cottages offering comfort and intimacy for couples, small families, and those seeking a peaceful retreat
+                        </p>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
+                            {/* Traditional Cottage */}
+                            <motion.div 
+                                className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.1 }}
+                                viewport={{ once: true }}
+                                whileHover={{ y: -5 }}
+                            >
+                                <div className="relative h-64 overflow-hidden">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                                        alt="Traditional Cottage"
+                                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <div className="absolute top-4 right-4 bg-lime-500 px-3 py-1 rounded-full text-sm font-semibold text-slate-900">
+                                        ₹2,800/night
+                                    </div>
+                                </div>
+                                <div className="p-4 sm:p-6">
+                                    <h4 className="text-lg sm:text-xl font-bold text-lime-500 mb-1">Traditional Cottage</h4>
+                                    <p className="text-white text-xs sm:text-sm mb-3">Rustic charm with modern comfort</p>
+                                    <div className="flex flex-wrap items-center text-xs sm:text-sm text-white mb-4 gap-2 sm:gap-4">
+                                        <span>2 guests</span>
+                                        <span>1 bedroom</span>
+                                        <span>1 bathroom</span>
+                                    </div>
+                                    <p className="text-white mb-4 leading-relaxed text-sm">
+                                        Experience authentic mountain living in our beautifully restored traditional cottage with modern amenities and stunning views.
+                                    </p>
+                                    <div className="mb-6">
+                                        <h5 className="font-semibold text-lime-500 mb-2 text-sm sm:text-base">Amenities</h5>
+                                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                                            <span className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30">
+                                                Fireplace
+                                            </span>
+                                            <span className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30">
+                                                Garden View
+                                            </span>
+                                            <span className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30">
+                                                Private Patio
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="flex justify-between items-center">
+                                        <div>
+                                            <span className="text-lg sm:text-xl font-bold text-lime-500">₹2,800</span>
+                                            <span className="text-white/70 text-xs sm:text-sm"> / night</span>
+                                        </div>
+                                        <motion.button
+                                            onClick={() => handleDirectPayment({
+                                                _id: 'cottage-traditional',
+                                                name: 'Traditional Cottage',
+                                                price: 2800
+                                            })}
+                                            className="bg-lime-500 text-slate-900 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:bg-lime-400 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm sm:text-base"
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ scale: 0.95 }}
+                                        >
+                                            Book Now
+                                        </motion.button>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Luxury Cottage */}
+                            <motion.div 
+                                className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.2 }}
+                                viewport={{ once: true }}
+                                whileHover={{ y: -5 }}
+                            >
+                                <div className="relative h-64 overflow-hidden">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                                        alt="Luxury Cottage"
+                                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <div className="absolute top-4 right-4 bg-lime-500 px-3 py-1 rounded-full text-sm font-semibold text-slate-900">
+                                        ₹4,500/night
+                                    </div>
+                                </div>
+                                <div className="p-4 sm:p-6">
+                                    <h4 className="text-lg sm:text-xl font-bold text-lime-500 mb-1">Luxury Cottage</h4>
+                                    <p className="text-white text-xs sm:text-sm mb-3">Premium comfort with mountain views</p>
+                                    <div className="flex flex-wrap items-center text-xs sm:text-sm text-white mb-4 gap-2 sm:gap-4">
+                                        <span>4 guests</span>
+                                        <span>2 bedrooms</span>
+                                        <span>2 bathrooms</span>
+                                    </div>
+                                    <p className="text-white mb-4 leading-relaxed text-sm">
+                                        Indulge in our premium cottage featuring spacious rooms, modern amenities, and breathtaking mountain vistas from every window.
+                                    </p>
+                                    <div className="mb-6">
+                                        <h5 className="font-semibold text-lime-500 mb-2 text-sm sm:text-base">Amenities</h5>
+                                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                                            <span className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30">
+                                                Mountain View
+                                            </span>
+                                            <span className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30">
+                                                Hot Tub
+                                            </span>
+                                            <span className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30">
+                                                Kitchen
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="flex justify-between items-center">
+                                        <div>
+                                            <span className="text-lg sm:text-xl font-bold text-lime-500">₹4,500</span>
+                                            <span className="text-white/70 text-xs sm:text-sm"> / night</span>
+                                        </div>
+                                        <motion.button
+                                            onClick={() => handleDirectPayment({
+                                                _id: 'cottage-luxury',
+                                                name: 'Luxury Cottage',
+                                                price: 4500
+                                            })}
+                                            className="bg-lime-500 text-slate-900 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:bg-lime-400 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm sm:text-base"
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ scale: 0.95 }}
+                                        >
+                                            Book Now
+                                        </motion.button>
+                                    </div>
+                                </div>
+                            </motion.div>
+
+                            {/* Romantic Cottage */}
+                            <motion.div 
+                                className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.3 }}
+                                viewport={{ once: true }}
+                                whileHover={{ y: -5 }}
+                            >
+                                <div className="relative h-64 overflow-hidden">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                                        alt="Romantic Cottage"
+                                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                    <div className="absolute top-4 right-4 bg-lime-500 px-3 py-1 rounded-full text-sm font-semibold text-slate-900">
+                                        ₹3,200/night
+                                    </div>
+                                </div>
+                                <div className="p-4 sm:p-6">
+                                    <h4 className="text-lg sm:text-xl font-bold text-lime-500 mb-1">Romantic Cottage</h4>
+                                    <p className="text-white text-xs sm:text-sm mb-3">Perfect for couples</p>
+                                    <div className="flex flex-wrap items-center text-xs sm:text-sm text-white mb-4 gap-2 sm:gap-4">
+                                        <span>2 guests</span>
+                                        <span>1 bedroom</span>
+                                        <span>1 bathroom</span>
+                                    </div>
+                                    <p className="text-white mb-4 leading-relaxed text-sm">
+                                        Create unforgettable memories in our intimate cottage designed for romance, featuring cozy interiors and private outdoor spaces.
+                                    </p>
+                                    <div className="mb-6">
+                                        <h5 className="font-semibold text-lime-500 mb-2 text-sm sm:text-base">Amenities</h5>
+                                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                                            <span className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30">
+                                                Private Garden
+                                            </span>
+                                            <span className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30">
+                                                Couples Spa
+                                            </span>
+                                            <span className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30">
+                                                Sunset View
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="flex justify-between items-center">
+                                        <div>
+                                            <span className="text-lg sm:text-xl font-bold text-lime-500">₹3,200</span>
+                                            <span className="text-white/70 text-xs sm:text-sm"> / night</span>
+                                        </div>
+                                        <motion.button
+                                            onClick={() => handleDirectPayment({
+                                                _id: 'cottage-romantic',
+                                                name: 'Romantic Cottage',
+                                                price: 3200
+                                            })}
+                                            className="bg-lime-500 text-slate-900 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:bg-lime-400 transition-all duration-300 font-medium hover:scale-105 shadow-lg text-sm sm:text-base"
+                                            whileHover={{ scale: 1.05 }}
+                                            whileTap={{ scale: 0.95 }}
+                                        >
+                                            Book Now
+                                        </motion.button>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </motion.div>
+
+                    {/* Premium Accommodations Section */}
+                    <motion.div 
+                        className="mb-16"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-lime-500 mb-6 font-serif text-center">
+                            Premium Accommodations
+                        </h3>
+                        <p className="text-white text-center mb-8 max-w-2xl mx-auto">
+                            Experience luxury and comfort in our premium accommodations with exceptional amenities and stunning views
+                        </p>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
                         {accommodations.map((accommodation, index) => (
                             <motion.div 
                                 key={accommodation._id}
-                                className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
+                                className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -334,7 +787,7 @@ const Accomodation = memo(() => {
                                         loading="lazy"
                                         decoding="async"
                                     />
-                                    <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-semibold text-slate-900">
+                                    <div className="absolute top-4 right-4 bg-lime-500 px-3 py-1 rounded-full text-sm font-semibold text-slate-900">
                                         {formatPrice(accommodation.price)}/night
                                     </div>
                                 </div>
@@ -344,42 +797,42 @@ const Accomodation = memo(() => {
                                     {/* Header */}
                                     <div className="flex justify-between items-start mb-3">
                                         <div className="flex-1 pr-2">
-                                            <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-1">{accommodation.name}</h3>
-                                            <p className="text-slate-600 text-xs sm:text-sm">{accommodation.type}</p>
+                                            <h3 className="text-lg sm:text-xl font-bold text-lime-500 mb-1">{accommodation.name}</h3>
+                                            <p className="text-white text-xs sm:text-sm">{accommodation.type}</p>
                                         </div>
                                         <div className="flex items-center flex-shrink-0">
                                             <span className="text-yellow-500 mr-1">★</span>
-                                            <span className="text-xs sm:text-sm font-semibold">{accommodation.rating}</span>
-                                            <span className="text-slate-500 text-xs sm:text-sm ml-1">({accommodation.reviews})</span>
+                                            <span className="text-xs sm:text-sm font-semibold text-white">{accommodation.rating}</span>
+                                            <span className="text-white/70 text-xs sm:text-sm ml-1">({accommodation.reviews})</span>
                                         </div>
                                     </div>
                                     
                                     {/* Details */}
-                                    <div className="flex flex-wrap items-center text-xs sm:text-sm text-slate-600 mb-4 gap-2 sm:gap-4">
+                                    <div className="flex flex-wrap items-center text-xs sm:text-sm text-white mb-4 gap-2 sm:gap-4">
                                         <span>{accommodation.guests} guests</span>
                                         <span>{accommodation.bedrooms} bedroom{accommodation.bedrooms > 1 ? 's' : ''}</span>
                                         <span>{accommodation.bathrooms} bathroom{accommodation.bathrooms > 1 ? 's' : ''}</span>
                                     </div>
                                     
                                     {/* Description */}
-                                    <p className="text-slate-700 mb-4 leading-relaxed">
+                                    <p className="text-white mb-4 leading-relaxed">
                                         {accommodation.description}
                                     </p>
                                     
                                     {/* Amenities */}
                                     <div className="mb-6">
-                                        <h4 className="font-semibold text-slate-900 mb-2 text-sm sm:text-base">Amenities</h4>
+                                        <h4 className="font-semibold text-lime-500 mb-2 text-sm sm:text-base">Amenities</h4>
                                         <div className="flex flex-wrap gap-1.5 sm:gap-2">
                                             {accommodation.amenities.slice(0, 4).map((amenity, idx) => (
                                                 <span 
                                                     key={idx}
-                                                    className="bg-slate-100 text-slate-700 px-2 sm:px-3 py-1 rounded-full text-xs font-medium"
+                                                    className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30"
                                                 >
                                                     {amenity}
                                                 </span>
                                             ))}
                                             {accommodation.amenities.length > 4 && (
-                                                <span className="bg-slate-100 text-slate-700 px-2 sm:px-3 py-1 rounded-full text-xs font-medium">
+                                                <span className="bg-lime-500/20 text-lime-500 px-2 sm:px-3 py-1 rounded-full text-xs font-medium border border-lime-500/30">
                                                     +{accommodation.amenities.length - 4} more
                                                 </span>
                                             )}
@@ -389,12 +842,12 @@ const Accomodation = memo(() => {
                                     {/* Price and Book Button */}
                                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
                                         <div>
-                                            <span className="text-xl sm:text-2xl font-bold text-slate-900">{formatPrice(accommodation.price)}</span>
-                                            <span className="text-slate-600 text-xs sm:text-sm"> / night</span>
+                                            <span className="text-xl sm:text-2xl font-bold text-lime-500">{formatPrice(accommodation.price)}</span>
+                                            <span className="text-white/70 text-xs sm:text-sm"> / night</span>
                                         </div>
                                         <motion.button
                                             onClick={() => handleDirectPayment(accommodation)}
-                                            className="w-full sm:w-auto bg-slate-900 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:bg-slate-700 transition-all duration-300 font-medium hover:scale-105 shadow-lg hover:cursor-pointer text-sm sm:text-base"
+                                            className="w-full sm:w-auto bg-lime-500 text-slate-900 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg hover:bg-lime-400 transition-all duration-300 font-medium hover:scale-105 shadow-lg hover:cursor-pointer text-sm sm:text-base"
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 0.95 }}
                                         >
@@ -404,7 +857,8 @@ const Accomodation = memo(() => {
                                 </div>
                             </motion.div>
                         ))}
-                    </div>
+                        </div>
+                    </motion.div>
                 </div>
             </section>
 
